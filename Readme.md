@@ -62,3 +62,5 @@ function doPost(e) {
   Bot.sendPhoto(myChatId, photo_url)
 }
 ```
+
+For additional bot examples see [examples]() folder
