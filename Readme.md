@@ -47,7 +47,7 @@ function doPost(e) {
 ```
 
 ```js
-const botUrl = Bot.TeleBot(botToken)
+const botUrl = Bot.Telesn(botToken)
 Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
@@ -56,7 +56,7 @@ function doPost(e) {
   let photo_url = 'https://www.google.com/imgre'
 
   //send Message to myself
-  Bot.sendText(myChatId, ' Hello Abdi')
+  Bot.sendMessage(myChatId, ' Hello Abdi')
 
   //send photo to myself
   Bot.sendPhoto(myChatId, photo_url)
