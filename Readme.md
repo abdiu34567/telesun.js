@@ -45,3 +45,20 @@ function doPost(e) {
   if (command == '/help') return Bot.reply('🙏 Please help')
 }
 ```
+
+```js
+const botUrl = Bot.TeleBot(botToken)
+Bot.setWebHook(webhookUrl)
+
+function doPost(e) {
+  const apiResponse = JSON.parse(e.postData.contents)
+  let myChatId = Bot.TextContents(apiResponse).id
+  let photo_url = 'https://www.google.com/imgre'
+
+  //send Message to myself
+  Bot.sendText(myChatId, ' Hello Abdi')
+
+  //send photo to myself
+  Bot.sendPhoto(myChatId, photo_url)
+}
+```
