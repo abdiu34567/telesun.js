@@ -5,6 +5,8 @@
 > For more check [logOut](https://core.telegram.org/bots/api#logout) method
 
 ```js
+const botUrl = Bot.Telesn(botToken)
+
 function loggingOutFromApiServer() {
   let loggingOut = Bot.logOut()
   return Logger.log(loggingOut)

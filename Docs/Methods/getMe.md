@@ -5,6 +5,8 @@
 > For more check [getMe](https://core.telegram.org/bots/api#getme) method
 
 ```js
+const botUrl = Bot.Telesn(botToken)
+
 function testingGetMe() {
 
   let getMeInfo = Bot.getMe()

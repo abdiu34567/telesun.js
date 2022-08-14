@@ -5,6 +5,8 @@
 > For more check [close](https://core.telegram.org/bots/api#close) method
 
 ```js
+const botUrl = Bot.Telesn(botToken)
+
 function closeBotInstance() {
   let closingBotInstance = Bot.close()
   return Logger.log(closingBotInstance)
