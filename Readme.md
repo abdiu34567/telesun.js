@@ -21,7 +21,7 @@ Telesn is a library that makes it simple for you to develop your own Telegram bo
 
 - Simpler
 - Full [Telegram Bot API 6.0](https://core.telegram.org/bots/api) support
-- easier wirking across Google products
+- easier working across Google products
 - per click Deployment on google cloud
 - Real Time Database(Google sheet) already integrated
 
