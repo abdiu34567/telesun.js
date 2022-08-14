@@ -1,13 +1,13 @@
-## close
+## logOut
 
-> Use this method to close the bot instance before moving it from one local server to another. You need to delete the webhook before calling this method to ensure that the bot isn't launched again after server restart. The method will return error 429 in the first 10 minutes after the bot is launched. Returns True on success. Requires no parameters
+> Use this method to log out from the cloud Bot API server before launching the bot locally. You must log out the bot before running it locally, otherwise there is no guarantee that the bot will receive updates. After a successful call, you can immediately log in on a local server, but will not be able to log in back to the cloud Bot API server for 10 minutes. Returns True on success. Requires no parameters
 
-For more check [close](https://core.telegram.org/bots/api#close) method
+> For more check [logOut](https://core.telegram.org/bots/api#logout) method
 
 ```js
-function closeBotInstance() {
-  let closingBotInstance = Bot.close()
-  return Logger.log(closingBotInstance)
+function loggingOutFromApiServer() {
+  let loggingOut = Bot.logOut()
+  return Logger.log(loggingOut)
 }
 
 // will return

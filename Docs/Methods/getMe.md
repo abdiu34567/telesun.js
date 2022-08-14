@@ -2,7 +2,7 @@
 
 > A simple method for testing your bot's authentication token. Requires no parameters. Returns basic information about the bot in form of a User object.
 
-For more check [getMe](https://core.telegram.org/bots/api#getme) method
+> For more check [getMe](https://core.telegram.org/bots/api#getme) method
 
 ```js
 function testingGetMe() {
