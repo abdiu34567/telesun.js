@@ -63,4 +63,17 @@ function doPost(e) {
 }
 ```
 
-For additional bot examples see [examples]() folder
+For additional bot examples see [examples](https://github.com/abdiu34567/telesn.js/tree/main/Docs/ExampleBots) folder
+
+### Resources
+
+- [Telegram group](https://t.me/App_Script_Js)
+- [GitHub Discussions](https://github.com/abdiu34567/telesn.js/discussions)
+
+## Getting started
+
+### Telegram token
+
+To use the Telegram Bot API, you first have to get a bot account by chatting with BotFather.
+
+BotFather will give you a token, something like **123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ**.
