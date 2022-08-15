@@ -1,53 +1,47 @@
-## editMessageMedia
+## editMessageCaption
 
-> Use this method to edit animation, audio, document, photo, or video messages. If a message is part of a message album, then it can be edited only to an audio for audio albums, only to a document for document albums and to a photo or a video otherwise. When an inline message is edited, a new file can't be uploaded; use a previously uploaded file via its file_id or specify a URL. On success, if the edited message is not an inline message, the edited Message is returned, otherwise True is returned
+> Use this method to edit captions of messages. On success, if the edited message is not an inline message, the edited Message is returned, otherwise True is returned
 >
-> For more check [editMessageMedia](https://core.telegram.org/bots/api#editmessagemedia) method
+> For more check [editMessageCaption](https://core.telegram.org/bots/api#editmessagecaption) method
 >
-> This method can take up 5 parameters and
+> This method can take up 7 parameters and
 > some of the parameters have default values
 >
 > - chat_id
 > - message_id
 > - inline_message_id
-> - media `required`
+> - caption
+> - parse_mode = 'HTML'
 > - reply_markup
+> - caption_entities
 >
 > For parameters like `caption_entities`, `reply_markup` check [Types](https://github.com/abdiu34567/telesn.js/tree/main/Docs/Types)
 >
-> editing message media directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
+> editing message caption directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
 
 ```js
 Bot.Telesn(botToken)
-function editMessagemedia() {
+function editMessageCaption() {
   let msg_id = 232
   let chat_id = '1173180004'
 
-  let media = {
-    type: 'photo',
-    media: 'https://www.nvisia.com/hubfs/agile-methodology-chicago.png',
-    caption: 'Photo is Changed',
-  }
-  return Bot.editMessageMedia(chat_id, msg_id, media)
+  return Bot.editMessageCaption(chat_id, msg_id, 'This Message is Edited')
 }
 ```
 
-> Editing message media when there is request coming from bot
+> Editing message caption when there is request coming from bot
 
 ```JavaScript
 Bot.Telesun(botToken)
 Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
+  const apiResponse = JSON.parse(e.postData.contents)
 
-  const apiResponse = JSON.parse(e.postData.contents);
+  //accessing user chat id from the response API
   let myChatId = Bot.TextContents(apiResponse).id
-  let msg_id = 234
-  let media = {
-    type: 'photo',
-    media: 'https://www.nvisia.com/hubfs/agile-methodology-chicago.png',
-    caption: "Photo is Changed"
-  }
-  return Bot.editMessageMedia(myChatId, msg_id, media)
+  let msg_id = 232
+
+  return Bot.editMessageCaption(myChatId, msg_id,'This Message is edited')
 }
 ```
