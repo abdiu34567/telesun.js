@@ -4,8 +4,7 @@
 >
 > For more check [sendMessage](https://core.telegram.org/bots/api#sendmessage) method
 >
-> This method can take up 10 parameters
->
+> This method can take up 10 parameters and
 > some of the parameters have default values
 >
 > - chat_id `required`
@@ -19,7 +18,7 @@
 > - reply_to_message_id
 > - allow_sending_without_reply = false
 >
-> For parameters like `caption_entities`, `reply_markup` check [Types]()
+> For parameters like `caption_entities`, `reply_markup` check [Types](https://github.com/abdiu34567/telesn.js/tree/main/Docs/Types)
 >
 > sending message directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
 

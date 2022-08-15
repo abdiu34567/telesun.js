@@ -4,8 +4,7 @@
 >
 > For more check [copyMessage](https://core.telegram.org/bots/api#copymessage) method
 >
-> This method can take up 11 parameters
->
+> This method can take up 11 parameters and
 > some of the parameters have default values
 >
 > - chat_id `required`
@@ -20,7 +19,7 @@
 > - reply_to_message_id
 > - allow_sending_without_reply = false
 >
-> For parameters like `caption_entities`, `reply_markup` check [Types]()
+> For parameters like `caption_entities`, `reply_markup` check [Types](https://github.com/abdiu34567/telesn.js/tree/main/Docs/Types)
 >
 > sending message directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
 
@@ -72,7 +71,6 @@ function doPost(e) {
   let originalChannel = '@App_Script_Js'
   let originalMsgId = 232
 
-  Bot.copyMessage(myChatId, originalChannel, originalMsgId)
-  return
+  return Bot.copyMessage(myChatId, originalChannel, originalMsgId)
 }
 ```

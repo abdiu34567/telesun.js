@@ -4,8 +4,7 @@
 >
 > For more check [forwardMessage](https://core.telegram.org/bots/api#forwardmessage) method
 >
-> This method can take up 5 parameters
->
+> This method can take up 5 parameters and
 > some of the parameters have default values
 >
 > - chat_id `required`
@@ -66,7 +65,6 @@ function doPost(e) {
   let originalChannel = '@App_Script_Js'
   let originalMsgId = 232
 
-  Bot.forwardMessage(myChatId, originalChannel, originalMsgId)
-  return
+  return Bot.forwardMessage(myChatId, originalChannel, originalMsgId)
 }
 ```
