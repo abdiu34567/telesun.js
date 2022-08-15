@@ -4,6 +4,8 @@
 
 > For more check [getMe](https://core.telegram.org/bots/api#getme) method
 
+> This needs `no deployment` , just create the function and run
+
 ```js
 const botUrl = Bot.Telesn(botToken)
 

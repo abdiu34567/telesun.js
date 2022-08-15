@@ -19,6 +19,8 @@
 > - reply_to_message_id
 > - allow_sending_without_reply = false
 
+> sending message directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
+
 ```js
 const botUrl = Bot.Telesn(botToken)
 
@@ -29,6 +31,8 @@ function sendMessage() {
   return Bot.sendMessage(someOneChatId, 'Hello Some One')
 }
 ```
+
+> sending message when there is any request coming from bot
 
 ```js
 const botUrl = Bot.Telesun(botToken)
@@ -44,6 +48,10 @@ function doPost(e) {
 }
 ```
 
+> applying all 10 parameters
+>
+> you can use `undefined` data type for all optional paramaters (never use `null`)
+
 ```js
 
 const botUrl = Bot.Telesun(botToken)
@@ -55,7 +63,6 @@ function doPost(e) {
   //accessing user chat id from the response API
   let myChatId = Bot.TextContents(apiResponse).id
 
-  //applying All parameters
 
   let inlinekeyboard = {
   "inline_keyboard": [
@@ -69,7 +76,7 @@ function doPost(e) {
   ]
 }
 
-    let entities = [{
+  let entities = [{
     type: 'mention',
     offset:0,
     length:10
@@ -83,7 +90,8 @@ function doPost(e) {
     entities,
     true,
     true,
-    undefined,
+    true,
+    322,//msg_Id
     true
   )
 ```
