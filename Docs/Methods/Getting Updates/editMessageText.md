@@ -4,10 +4,10 @@
 >
 > For more check [editMessageText](https://core.telegram.org/bots/api#editmessagetext) method
 >
-> This method can take up 14 parameters and
+> This method can take up 8 parameters and
 > some of the parameters have default values
 >
-> - chat_id `required`
+> - chat_id
 > - message_id
 > - inline_message_id,
 > - text
