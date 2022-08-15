@@ -27,7 +27,7 @@ Telesn is a library that makes it simple for you to develop your own Telegram bo
 
 ---
 
-## [Setting Up & Getting Started With Apps Script](https://github.com/abdiu34567/telesn.js/blob/main/GettingStartedWithAppScript.md)
+## [Setting Up & Getting Started With Apps Script](https://github.com/abdiu34567/telesn.js/blob/main/Getting%20Started%20With%20App%20Script.md)
 
 ---
 

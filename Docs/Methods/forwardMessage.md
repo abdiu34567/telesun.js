@@ -8,11 +8,11 @@
 >
 > some of the parameters have default values
 >
-> - chat_id,`required`
-> - from_chat_id,`required`
-> - message_id,`required`
-> - disable_notification = false,
-> - protect_content = false,
+> - chat_id `required`
+> - from_chat_id `required`
+> - message_id `required`
+> - disable_notification = false
+> - protect_content = false
 
 > sending message directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
 
