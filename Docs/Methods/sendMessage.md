@@ -24,11 +24,18 @@
 ```js
 const botUrl = Bot.Telesn(botToken)
 
-// create and run function like this if only you know chat id of the user.
+// create and run function like this if only you know chat id of the user or username of channel(group).
+
 // this function will send 'hello some one' message to 1173180004 (user)
-function sendMessage() {
+function sendMessageToBot() {
   let someOneChatId = '1173180004'
   return Bot.sendMessage(someOneChatId, 'Hello Some One')
+}
+
+//The bot have to be member of the Group or channel
+function sendMessageToChannelOrGroup() {
+  let channelorGroupUserName = '@App_Script_Js'
+  return Bot.sendMessage(channelorGroupUserName, 'Hello members')
 }
 ```
 
