@@ -19,7 +19,9 @@
 > - protect_content = false
 > - reply_to_message_id
 > - allow_sending_without_reply = false
-
+>
+> For parameters like `caption_entities`, `reply_markup` check [Types]()
+>
 > sending message directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
 
 ```js
