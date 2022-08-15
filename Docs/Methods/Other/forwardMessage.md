@@ -13,10 +13,10 @@
 > - disable_notification = false
 > - protect_content = false
 
-> sending message directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
+> forwarding message directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
 
 ```js
-const botUrl = Bot.Telesn(botToken)
+Bot.Telesn(botToken)
 
 // create and run function like this if only you know chat id of the user.
 
@@ -53,10 +53,10 @@ function forwardMessageFromBotToGroupOrChannel() {
 }
 ```
 
-> sending message when there is any request coming from bot
+> forwarding message when there is request coming from bot
 
 ```js
-const botUrl = Bot.Telesun(botToken)
+Bot.Telesun(botToken)
 Bot.setWebHook(webhookUrl)
 
 function doPost(e) {

@@ -21,9 +21,10 @@
 >
 > For parameters like `caption_entities`, `reply_markup` check [Types](https://github.com/abdiu34567/telesn.js/tree/main/Docs/Types)
 >
-> sending message directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
+> copying message directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
 
 ```js
+Bot.Telesn(botToken)
 // create and run function like this if only you know chat id of the user
 
 //copy message from @ab_trial group to @app_Script_js group
@@ -59,10 +60,10 @@ function copyMessageFromBotToGroupOrChannel() {
 }
 ```
 
-> sending message when there is any request coming from bot
+> copying message when there is request coming from bot
 
 ```js
-const botUrl = Bot.Telesun(botToken)
+Bot.Telesun(botToken)
 Bot.setWebHook(webhookUrl)
 
 function doPost(e) {

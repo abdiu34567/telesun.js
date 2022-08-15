@@ -26,9 +26,10 @@
 >
 > For parameters like `caption_entities`, `reply_markup` check [Types](https://github.com/abdiu34567/telesn.js/tree/main/Docs/Types)
 >
-> sending message directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
+> sending audio directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
 
 ```js
+Bot.Telesn(botToken)
 //sending audio to bot | group | channel by using Thier http Url
 function sendAudioWithUrl() {
   let userAbdi = '1173180004'
@@ -45,8 +46,10 @@ function sendAudioWithFileId() {
 }
 ```
 
+> sending audio when there is request coming from bot
+
 ```js
-const botUrl = Bot.Telesun(botToken)
+Bot.Telesun(botToken)
 Bot.setWebHook(webhookUrl)
 
 function doPost(e) {

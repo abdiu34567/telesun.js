@@ -7,7 +7,7 @@
 > This needs `no deployment` , just create the function and run
 
 ```js
-const botUrl = Bot.Telesn(botToken)
+Bot.Telesn(botToken)
 
 function testingGetMe() {
 

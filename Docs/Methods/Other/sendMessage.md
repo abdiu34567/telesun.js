@@ -23,7 +23,7 @@
 > sending message directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
 
 ```js
-const botUrl = Bot.Telesn(botToken)
+Bot.Telesn(botToken)
 
 // create and run function like this if only you know chat id of the user or username of channel(group).
 
@@ -43,7 +43,7 @@ function sendMessageToChannelOrGroup() {
 > sending message when there is any request coming from bot
 
 ```js
-const botUrl = Bot.Telesun(botToken)
+Bot.Telesun(botToken)
 Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
@@ -62,7 +62,7 @@ function doPost(e) {
 
 ```js
 
-const botUrl = Bot.Telesun(botToken)
+Bot.Telesun(botToken)
 Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
