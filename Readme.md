@@ -38,26 +38,13 @@ Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
-  let command = Bot.TextContents(apiResponse).text
-
-  if (command == '/start') return Bot.reply('🎗 welcome ')
-  if (command == '/help') return Bot.reply('🙏 Please help')
-}
-```
-
-```js
-const botUrl = Bot.Telesn(botToken)
-Bot.setWebHook(webhookUrl)
-
-function doPost(e) {
-  const apiResponse = JSON.parse(e.postData.contents)
-  let myChatId = Bot.TextContents(apiResponse).id
+  let ChatId = Bot.TextContents(apiResponse).id
   let photo_url = 'https://www.google.com/imgre'
 
-  //send Message to myself
+  //send Message to chat id
   Bot.sendMessage(myChatId, ' Hello Abdi')
 
-  //send photo to myself
+  //send photo to chat id
   Bot.sendPhoto(myChatId, photo_url)
 }
 ```

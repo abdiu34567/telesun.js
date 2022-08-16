@@ -13,7 +13,7 @@
 > - media `required`
 > - reply_markup
 >
-> For parameters like `reply_markup` check [Types](https://github.com/abdiu34567/telesn.js/tree/main/Docs/Types)
+> For parameters like `reply_markup`, `media` check [Types](https://github.com/abdiu34567/telesn.js/tree/main/Docs/Types)
 >
 > editing message media directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
 
