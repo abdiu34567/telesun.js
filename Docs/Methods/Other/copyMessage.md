@@ -25,7 +25,7 @@
 
 ```js
 Bot.Telesn(botToken)
-// create and run function like this if only you know chat id of the user
+// ⬇ create and run function like this if only you know chat id of the user
 
 //copy message from @ab_trial group to @app_Script_js group
 function copyMessageToChannelorgroup() {
