@@ -56,7 +56,7 @@ function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
   let myChatId = Bot.TextContents(apiResponse).id
 
-  //if audio found in the response then
+  //if user upload audio
   if (apiResponse.message.audio) return //save some where
 
   //sending audio from online (invalid Url)
