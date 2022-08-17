@@ -42,7 +42,7 @@ function sendPhotoWithFileId() {
 > sending photo when there is request coming from bot
 
 ```js
-Bot.Telesun(botToken)
+Bot.Telesn(botToken)
 Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
