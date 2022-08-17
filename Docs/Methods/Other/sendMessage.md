@@ -62,7 +62,7 @@ function doPost(e) {
 
 ```js
 
-Bot.Telesun(botToken)
+Bot.Telesn(botToken)
 Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
