@@ -49,7 +49,7 @@ function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
   let myChatId = Bot.TextContents(apiResponse).id
 
-  //if photo found in the request
+  //if user upload photo
   if (apiResponse.message.photo) return //save some where
 
   //sending photo from online
