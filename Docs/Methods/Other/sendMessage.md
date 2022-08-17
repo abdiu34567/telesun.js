@@ -43,7 +43,7 @@ function sendMessageToChannelOrGroup() {
 > sending message when there is any request coming from bot
 
 ```js
-Bot.Telesun(botToken)
+Bot.Telesn(botToken)
 Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
@@ -92,7 +92,7 @@ function doPost(e) {
 
   return Bot.sendMessage(
     myChatId,
-    'JavaScript data types',
+    '**JavaScript data types**',
     'MarkdownV2',
     inlinekeyboard,
     entities,
