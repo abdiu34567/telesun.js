@@ -31,7 +31,7 @@ function sendPhotoWithUrl() {
   return Bot.sendPhoto(userAbdi, photoUrl)
 }
 
-//sending photo to bot | group | channel by using Thier file_id, file id can be found only if you upload photo on Bot | group | channel
+//sending photo to bot | group | channel by using Thier file_id, file id can be found only if you upload file on Bot | group | channel
 function sendPhotoWithFileId() {
   let userAbdi = '1173180004'
   let photoFileId = `AgACAgQAAxkBAAEKB4Ri-faRkfkJPhtiuTMwxjvFdGb2EAACf7gxG5ZTyVNio98lZ7PwIgEAAwIAA3MAAykE`
@@ -39,7 +39,7 @@ function sendPhotoWithFileId() {
 }
 ```
 
-> sending photo when there is request coming from bot
+> sending photo on webhook
 
 ```js
 Bot.Telesn(botToken)
@@ -47,18 +47,18 @@ Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
-  let myChatId = Bot.TextContents(apiResponse).id
+  let chatId = Bot.TextContents(apiResponse).id
 
   //if user upload photo
   if (apiResponse.message.photo) return //save some where
 
   //sending photo from online
   let photoUrl = `https://www.nvisia.com/hubfs/agile-methodology-chicago.png`
-  Bot.sendPhoto(myChatId, photoUrl)
+  Bot.sendPhoto(chatId, photoUrl)
 
   //sending photo which is already uploaded to bot
   let photoFileId = `AgACAgQAAxkBAAEKB4Ri-faRkfkJPhtiuTMwxjvFdGb2EAACf7gxG5ZTyVNio98lZ7PwIgEAAwIAA3MAAykE`
-  Bot.sendPhoto(userAbdi, photoFileId)
+  Bot.sendPhoto(chatId, photoFileId)
 
   return
 }

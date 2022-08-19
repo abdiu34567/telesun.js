@@ -53,7 +53,7 @@ function forwardMessageFromBotToGroupOrChannel() {
 }
 ```
 
-> forwarding message when there is request coming from bot
+> forwarding message on webhook
 
 ```js
 Bot.Telesn(botToken)

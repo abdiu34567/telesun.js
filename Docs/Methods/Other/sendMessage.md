@@ -40,7 +40,7 @@ function sendMessageToChannelOrGroup() {
 }
 ```
 
-> sending message when there is any request coming from bot
+> sending message on webhook
 
 ```js
 Bot.Telesn(botToken)
@@ -49,7 +49,7 @@ Bot.setWebHook(webhookUrl)
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
 
-  //accessing user chat id from the response API
+  //accessing user chat id from the API
   let myChatId = Bot.TextContents(apiResponse).id
 
   return Bot.sendMessage(myChatId, ' Hello Who ever Using This Bot')
@@ -68,8 +68,8 @@ Bot.setWebHook(webhookUrl)
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
 
-  //accessing user chat id from the response API
-  let myChatId = Bot.TextContents(apiResponse).id
+  //accessing user chat id from the API
+  let chatId = Bot.TextContents(apiResponse).id
 
 
   let inlinekeyboard = {
@@ -91,7 +91,7 @@ function doPost(e) {
     }]
 
   return Bot.sendMessage(
-    myChatId,
+    chatId,
     '**JavaScript data types**',
     'MarkdownV2',
     inlinekeyboard,

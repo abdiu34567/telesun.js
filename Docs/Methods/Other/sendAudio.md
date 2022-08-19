@@ -37,7 +37,7 @@ function sendAudioWithUrl() {
   Bot.sendAudio(userAbdi, audioUrl)
 }
 
-//sending audio to bot | group | channel by using Thier file_id, file id can be found only if you upload audio on Bot | group | channel
+//sending audio to bot | group | channel by using Thier file_id, file id can be found only if you upload file on Bot | group | channel
 function sendAudioWithFileId() {
   let userAbdi = '1173180004'
   //invalid file_id
@@ -46,7 +46,7 @@ function sendAudioWithFileId() {
 }
 ```
 
-> sending audio when there is request coming from bot
+> sending audio on webhook
 
 ```js
 Bot.Telesn(botToken)
@@ -54,18 +54,18 @@ Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
-  let myChatId = Bot.TextContents(apiResponse).id
+  let chatId = Bot.TextContents(apiResponse).id
 
   //if user upload audio
   if (apiResponse.message.audio) return //save some where
 
   //sending audio from online (invalid Url)
   let audioUrl = `https://www.nvisia.com/hubfs/agile-methodology-chicago.mp3`
-  Bot.sendAudio(myChatId, audioUrl)
+  Bot.sendAudio(chatId, audioUrl)
 
   //sending audio which is already uploaded to bot
   let audioFileId = `AgACAgQAAxkBAAEKB4Ri-faRkfkJPhtiuTMwxjvFdGb2EAACf7gxG5ZTyVNio98lZ7PwIgEAAwIAA3MAAykE`
-  Bot.sendAudio(userAbdi, audioFileId)
+  Bot.sendAudio(chatId, audioFileId)
 
   return
 }

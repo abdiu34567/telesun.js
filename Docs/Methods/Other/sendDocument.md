@@ -33,7 +33,7 @@ function sendDocWithUrl() {
   return Bot.sendDocument(userAbdi, docUrl)
 }
 
-//sending document to bot | group | channel by using Thier file_id, file id can be found only if you upload audio on Bot | group | channel
+//sending document to bot | group | channel by using Thier file_id, file id can be found only if you upload file on Bot | group | channel
 function sendDocWithFileId() {
   let userAbdi = '1173180004'
   //invalid file_id
@@ -52,14 +52,14 @@ function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
   let chatId = Bot.TextContents(apiResponse).id
 
-  //if audio found in the response then
+  //if user upload document
   if (apiResponse.message.document) return //save some where
 
-  //sending audio from online (invalid Url)
+  //sending document from online (invalid Url)
   let docUrl = `https://www.nvisia.com/hubfs/agile-methodology-chicago.docx`
   Bot.sendDocument(chatId, docUrl)
 
-  //sending audio which is already uploaded to bot
+  //sending document which is already uploaded to bot
   let docFileId = `AgACAgQAAxkBAAEKB4Ri-faRkfkJPhtiuTMwxjvFdGb2EAACf7gxG5ZTyVNio98lZ7PwIgEAAwIAA3MAAykE`
   Bot.sendDocument(chatId, docFileId)
 
