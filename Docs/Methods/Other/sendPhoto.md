@@ -42,14 +42,14 @@ function sendPhotoWithFileId() {
 > sending photo when there is request coming from bot
 
 ```js
-Bot.Telesun(botToken)
+Bot.Telesn(botToken)
 Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
   let myChatId = Bot.TextContents(apiResponse).id
 
-  //if photo found in the response then
+  //if user upload photo
   if (apiResponse.message.photo) return //save some where
 
   //sending photo from online
