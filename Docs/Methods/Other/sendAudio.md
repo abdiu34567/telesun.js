@@ -33,7 +33,7 @@ Bot.Telesn(botToken)
 //sending audio to bot | group | channel by using Thier http Url
 function sendAudioWithUrl() {
   let userAbdi = '1173180004'
-  let audioUrl = `https://www.nvisia.com/hubfs/agile-methodology-chicago.png`
+  let audioUrl = `https://www.nvisia.com/hubfs/agile-methodology-chicago.mp3`
   Bot.sendAudio(userAbdi, audioUrl)
 }
 
@@ -49,18 +49,18 @@ function sendAudioWithFileId() {
 > sending audio when there is request coming from bot
 
 ```js
-Bot.Telesun(botToken)
+Bot.Telesn(botToken)
 Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
   let myChatId = Bot.TextContents(apiResponse).id
 
-  //if audio found in the response then
+  //if user upload audio
   if (apiResponse.message.audio) return //save some where
 
   //sending audio from online (invalid Url)
-  let audioUrl = `https://www.nvisia.com/hubfs/agile-methodology-chicago.png`
+  let audioUrl = `https://www.nvisia.com/hubfs/agile-methodology-chicago.mp3`
   Bot.sendAudio(myChatId, audioUrl)
 
   //sending audio which is already uploaded to bot

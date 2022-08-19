@@ -60,7 +60,7 @@ function copyMessageFromBotToGroupOrChannel() {
 }
 ```
 
-> copying message when there is request coming from bot
+> copying message on webhook
 
 ```js
 Bot.Telesun(botToken)
