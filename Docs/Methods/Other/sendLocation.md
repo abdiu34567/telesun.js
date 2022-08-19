@@ -26,7 +26,7 @@ Bot.Telesn(botToken)
 //sending location to bot | group | channel by using Thier http Url
 function sendLocation() {
   let userAbdi = '1173180004'
-  return Bot.sendLocation(me, 10.4333, 39.4)
+  return Bot.sendLocation(userAbdi, 10.4333, 39.4)
 }
 ```
 
