@@ -5,6 +5,7 @@
 > This can be accessible when user `clicks` inline keyboards
 
 ```js
+//this function is already defined in the library, you just need to call it on doPost function
 function CallbackContent(apiResponse) {
   return {
     id: apiResponse.callback_query.from.id,
@@ -17,7 +18,7 @@ function CallbackContent(apiResponse) {
 }
 ```
 
-> using on `dopost` function
+> using `CallbackContent` function on `dopost` function
 
 ```js
 // use this way on dopost() function

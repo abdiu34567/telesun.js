@@ -5,7 +5,8 @@
 > This can be accessible only when user share `contact`
 
 ```js
-function contactContents(apiResponse) {
+//this function is already defined in the library, you just need to call it on doPost function
+function ContactContents(apiResponse) {
   return {
     name: apiResponse.message.from.first_name,
     contact: apiResponse.message.contact.phone_number,
@@ -16,7 +17,7 @@ function contactContents(apiResponse) {
 }
 ```
 
-> using on `dopost` function
+> using `contactContents` function on `dopost` function
 
 ```js
 // use this way on dopost() function
