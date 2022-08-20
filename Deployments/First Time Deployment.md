@@ -15,7 +15,7 @@
 > - give anything or left empty to `new description`
 > - leave `execute as` to the default
 > - select <u>`Anyone`</u> from `who has access` drop down
->   finally click on `Deploy` button
+> - finally click on `Deploy` button
 
 ![Deploy](/assets/G9.png)
 
@@ -52,6 +52,6 @@
 ![coding](/assets/G16.png)
 
 > - add `dopost` function
-> - `Deploy` Again, but this time go for [Manage deployment](First%20Time%20Deployment.md)
+> - `Deploy` Again, but this time go for [Manage deployment](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/Manage%20Deployment.md))
 
 ![Update your Code](../assets/G17.png)

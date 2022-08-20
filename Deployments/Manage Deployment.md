@@ -16,3 +16,5 @@
 > - here don't need to copy anything just click on `Done` button
 
 ![Deploy](../assets/G21.png)
+
+**You Did it**, Go and check Your Bot
