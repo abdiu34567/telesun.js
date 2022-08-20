@@ -32,7 +32,7 @@ function medias() {
     }
   ]
  return Bot.editMessageMedia(userAbdi, 432,
- undefined//inline_message_id,
- medias)
+     undefined//inline_message_id,
+     medias)
 }
 ```
