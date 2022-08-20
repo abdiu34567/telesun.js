@@ -1,4 +1,4 @@
-** To see full api response from Bot **
+**To see full api response from Bot**
 
 ```js
 //invalid Bot token
@@ -15,6 +15,6 @@ function doPost(e) {
   let chatId = Bot.TextContents(apiResponse).id
 
   //this will send api response to your bot
-  return Bot.sendMessage(chatId, JSON.stringify(apiResponse))
+  return Bot.sendMessage(chatId, JSON.stringify(apiResponse, undefined, 2))
 }
 ```
