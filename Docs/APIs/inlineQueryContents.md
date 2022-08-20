@@ -5,6 +5,7 @@
 > This can be accessible only on `inline query`
 
 ```js
+//this function is already defined in the library, you just need to call it on doPost function
 function InlineContents(responseApi) {
   return {
     id: responseApi.inline_query.from.id,
