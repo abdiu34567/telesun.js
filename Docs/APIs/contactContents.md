@@ -5,19 +5,23 @@
 > This can be accessible only when user share `contact`
 
 ```js
-function contactContents(responseApi) {
+function contactContents(apiResponse) {
   return {
-    name: responseApi.message.from.first_name,
-    contact: responseApi.message.contact.phone_number,
-    id: responseApi.message.from.id,
-    username: responseApi.message.from.username,
-    msgid: responseApi.message.message_id,
+    name: apiResponse.message.from.first_name,
+    contact: apiResponse.message.contact.phone_number,
+    id: apiResponse.message.from.id,
+    username: apiResponse.message.from.username,
+    msgid: apiResponse.message.message_id,
   }
 }
+```
 
+> using on `dopost` function
+
+```js
 // use this way on dopost() function
-let chatId = contactContents(responseApi).id
-let contact = contactContents(responseApi).contact.phone_number
+let chatId = contactContents(apiResponse).id
+let contact = contactContents(apiResponse).contact.phone_number
 ```
 
 > Coming API `Example`

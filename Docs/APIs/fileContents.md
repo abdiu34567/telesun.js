@@ -6,19 +6,23 @@
 
 ```js
 //this function is already defined in the library, you just need to call it on doPost function
-function PhotoContents(responseApi) {
+function PhotoContents(apiResponse) {
   return {
-    name: responseApi.message.from.first_name,
-    photo: responseApi.message.photo.file_id,
-    id: responseApi.message.from.id,
-    username: responseApi.message.from.username,
-    msgid: responseApi.message.message_id,
+    name: apiResponse.message.from.first_name,
+    photo: apiResponse.message.photo.file_id,
+    id: apiResponse.message.from.id,
+    username: apiResponse.message.from.username,
+    msgid: apiResponse.message.message_id,
   }
 }
+```
 
+> using on `dopost` function
+
+```js
 // use this way on dopost() function
-let chatId = PhotoContents(responseApi).id
-let text = PhotoContents(responseApi).text
+let chatId = PhotoContents(apiResponse).id
+let text = PhotoContents(apiResponse).text
 ```
 
 > Coming Api `Example`

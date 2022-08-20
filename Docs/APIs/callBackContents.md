@@ -5,20 +5,24 @@
 > This can be accessible when user `clicks` inline keyboards
 
 ```js
-function CallbackContent(responseApi) {
+function CallbackContent(apiResponse) {
   return {
-    id: responseApi.callback_query.from.id,
-    callback_data: responseApi.callback_query.data,
-    callbackQueryId: responseApi.callback_query.id,
-    msg_id: responseApi.callback_query.message.message_id,
-    username: responseApi.callback_query.from.username,
-    text: responseApi.callback_query.message.text,
+    id: apiResponse.callback_query.from.id,
+    callback_data: apiResponse.callback_query.data,
+    callbackQueryId: apiResponse.callback_query.id,
+    msg_id: apiResponse.callback_query.message.message_id,
+    username: apiResponse.callback_query.from.username,
+    text: apiResponse.callback_query.message.text,
   }
 }
+```
 
+> using on `dopost` function
+
+```js
 // use this way on dopost() function
-let chatId = CallbackContent(responseApi).id
-let callback_data = CallbackContent(responseApi).callback_data
+let chatId = CallbackContent(apiResponse).id
+let callback_data = CallbackContent(apiResponse).callback_data
 ```
 
 > Coming Api `Example`

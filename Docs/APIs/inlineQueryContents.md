@@ -6,17 +6,21 @@
 
 ```js
 //this function is already defined in the library, you just need to call it on doPost function
-function InlineContents(responseApi) {
+function InlineContents(apiResponse) {
   return {
-    id: responseApi.inline_query.from.id,
-    firstName: responseApi.inline_query.from.first_name,
-    queryId: responseApi.inline_query.id,
-    query: responseApi.inline_query.query,
-    offset: responseApi.inline_query.offset,
+    id: apiResponse.inline_query.from.id,
+    firstName: apiResponse.inline_query.from.first_name,
+    queryId: apiResponse.inline_query.id,
+    query: apiResponse.inline_query.query,
+    offset: apiResponse.inline_query.offset,
   }
 }
+```
 
+> using on `dopost` function
+
+```js
 // use this way on dopost() function
-let chatId = InlineContents(responseApi).id
-let query = InlineContents(responseApi).query
+let chatId = InlineContents(apiResponse).id
+let query = InlineContents(apiResponse).query
 ```

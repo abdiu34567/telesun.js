@@ -5,19 +5,24 @@
 > This can be accessible when user send any `text` to bot, can be `numbers`
 
 ```js
-function TextContents(responseApi) {
+//this function is already defined in the library, you just need to call it on doPost function
+function TextContents(apiResponse) {
   return {
-    name: responseApi.message.from.first_name,
-    text: responseApi.message.text,
-    id: responseApi.message.from.id,
-    username: responseApi.message.from.username,
-    msgid: responseApi.message.message_id,
+    name: apiResponse.message.from.first_name,
+    text: apiResponse.message.text,
+    id: apiResponse.message.from.id,
+    username: apiResponse.message.from.username,
+    msgid: apiResponse.message.message_id,
   }
 }
+```
 
+> using on `dopost` function
+
+```js
 // use this way on dopost() function
-let chatId = TextContents(responseApi).id
-let text = TextContents(responseApi).text
+let chatId = TextContents(apiResponse).id
+let text = TextContents(apiResponse).text
 ```
 
 > Coming Api `Example`
