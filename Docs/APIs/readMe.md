@@ -1,4 +1,4 @@
-**To see full api response from Bot**
+> **To see full api response from Bot**
 
 ```js
 //invalid Bot token
@@ -8,7 +8,6 @@ let webHookUrl =
 
 Bot.Telesn(botToken)
 Bot.setWebHook(webHookUrl)
-// Bot.deleteWebhook()
 
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
