@@ -20,7 +20,7 @@
 
 ## ![web App](/assets/G8.png)
 
----
+## t
 
 > - give anything or left empty to `new description`
 > - leave `execute as` to the default
@@ -86,10 +86,12 @@
 
 > - `paste` The copied `web app url`
 > - `paste bot token` from bot father
+> - add any fuction to `setWebHook`
+> - `run` your function
 
 ---
 
-## ![coding](/assets/G16.png)
+## ![coding](../assets/G16.png)
 
 ---
 

@@ -10,7 +10,10 @@
 > - use `New Deployment` when you are deploying your script for the first time
 > - use `Manage Deployment` for deployments after first time deployment
 >
-> 🌟 _When using New Deployment you need to `copy` the web app Url and use it as webhook Url and run `setwebhook function`, but you don't need on Managed Deployment_
+> 🌟 \_When using New Deployment you need to:
+>
+> - `copy` the web app Url and use it as webhook Url and
+> - run `setwebhook function`
 
 ```js
 let webHookUrl =
@@ -23,6 +26,10 @@ function setWebHook() {
 }
 ```
 
+> 🌟 \_You don't need to commit anything on managed deployment
+
+> ✅ _you can create and run function `without deployment`, but functions not related to `doPost functions`_
+>
 > ⚠️ _Every Time you make a `change to your code` ,then you need to `deploy` to see a change_
 >
 > ➖➖ For more [here](https://developers.google.com/apps-script/concepts/deployments)

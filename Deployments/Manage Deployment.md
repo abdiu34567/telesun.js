@@ -6,7 +6,7 @@
 
 ---
 
-## ![manage Deployment](../assets/G17.png)
+## ![manage Deployment](../assets/G22.png)
 
 > - click on `pencil (edit)` button
 
@@ -39,4 +39,4 @@
 
 ![Deploy](../assets/G21.png)
 
-**You Did it**, Go and check Your Bot
+🌟 **You Did it**, Go and check Your Bot
