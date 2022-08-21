@@ -122,3 +122,26 @@ function doPost(e) {
   return Bot.sendMessage(myChatId, text)
 }
 ```
+
+## Best Practice
+
+app script won't show you any `code error` from `doPost`, so we need to track the error's by sending to bot as a message
+
+- edit `doPost` function as the following
+- add `try catch` error handling
+
+```js
+//admin chat id to send errors to
+let admin = '1173180004'
+//this will send any error to the Admin chat id you specified
+function doPost(e) {
+  try {
+    const apiResponse = JSON.parse(e.postData.contents)
+    let ChatId = Bot.TextContents(apiResponse).id
+    let text = TextContents(apiResponse).text
+    return Bot.sendMessage(myChatId, text)
+  } catch (err) {
+    return Bot.sendMessage(admin, err)
+  }
+}
+```
