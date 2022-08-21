@@ -93,7 +93,7 @@ function doPost(e) {
 
 ### <u>Deployment</u>
 
-after make any `change on your code`, then it is must you `Deploy` your code, otherwise you can't see any change, for more [here](https://github.com/abdiu34567/telesn.js/tree/main/Deployments)
+after make any `change on your code`, then it is must you `Deploy` your code, otherwise you can't see any change, for more [Deployment](https://github.com/abdiu34567/telesn.js/tree/main/Deployments)
 
 - if you are deploying your code first time follow [New Deploymet](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md)
 - if not follow [Manage Deployment](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md)
@@ -108,6 +108,7 @@ let botToken = '779238246:AAEkFeunpG-lg3pc8eoAda2svGHu3O_dIA'
 let webHookUrl =
   'https://script.google.com/macros/s/AKfycbxr03EKxm336KxtsaoHJ49JlEfaw5CzOG0ys0DMxPmKjlsaFkIFeqBVYM-1CGs-KjT_g/exec'
 
+Bot.Telesn(botToken)
 // for only new Deployment
 // this function will set webhook on
 function setWebHook() {
@@ -125,12 +126,19 @@ function doPost(e) {
 
 ## Best Practice
 
-app script won't show you any `code error` from `doPost`, so we need to track the error's by sending to bot as a message
+app script won't show you any `code error` from `doPost`, so we need to track the error's by sending to bot as a message, for more [Best Practices](https://github.com/abdiu34567/telesn.js/blob/main/Best%20Practices.md)
 
 - edit `doPost` function as the following
 - add `try catch` error handling
 
 ```js
+let botToken = '779238246:AAEkFeunpG-lg3pc8eoAda2svGHu3O_dIA'
+let webHookUrl =
+  'https://script.google.com/macros/s/AKfycbxr03EKxm336KxtsaoHJ49JlEfaw5CzOG0ys0DMxPmKjlsaFkIFeqBVYM-1CGs-KjT_g/exec'
+
+Bot.Telesn(botToken)
+Bot.setWebHook(webHookUrl) //u can use this way when managed deployment
+
 //admin chat id to send errors to
 let admin = '1173180004'
 //this will send any error to the Admin chat id you specified
