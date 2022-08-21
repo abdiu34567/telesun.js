@@ -41,7 +41,7 @@ Bot.Telesn(botToken)
 
 function SendMessage() {
   let chatId = '1173180004' //change this chat id to yours
-  Bot.sendMessage(chatId, 'hello User')
+  return Bot.sendMessage(chatId, 'hello User')
 }
 ```
 
