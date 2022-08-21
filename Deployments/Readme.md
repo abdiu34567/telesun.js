@@ -10,7 +10,7 @@
 > - use `New Deployment` when you are deploying your script for the first time
 > - use `Manage Deployment` for deployments after first time deployment
 >
-> 🌟 \_When using New Deployment you need to:
+> 🌟 \_When using `New Deployment` you need to:
 >
 > - `copy` the web app Url and use it as webhook Url and
 > - run `setwebhook function`
@@ -26,9 +26,18 @@ function setWebHook() {
 }
 ```
 
-> 🌟 \_You don't need to commit anything on managed deployment
+> 🌟 🌟 \_When using `managed deployment` :
+>
+> - You `don't need` to copy any url
+> - You can use `webhook url` the following way
 
-> ✅ _you can create and run function `without deployment`, but functions not related to `doPost functions`_
+```js
+ Bot.Telesn(botToken)
+ Bot.setWebHook(webHookUrl)
+ ---
+```
+
+> ✅ _You can create and run function `without deployment`, but functions not related to `doPost functions`_
 >
 > ⚠️ _Every Time you make a `change to your code` ,then you need to `deploy` to see a change_
 >
