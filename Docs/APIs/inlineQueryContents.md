@@ -17,7 +17,7 @@ function InlineContents(apiResponse) {
 }
 ```
 
-> using `InlineContents` function on `dopost` function
+> using `InlineContents` function from library on your `dopost` function
 
 ```js
 // use this way on dopost() function

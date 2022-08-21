@@ -1,4 +1,6 @@
 > **To see full api response from Bot**
+>
+> must `deploy` to see a change in your bot
 
 ```js
 //invalid Bot token

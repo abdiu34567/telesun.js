@@ -17,7 +17,7 @@ function ContactContents(apiResponse) {
 }
 ```
 
-> using `contactContents` function on `dopost` function
+> using `contactContents` function from library on your `dopost` function
 
 ```js
 // use this way on dopost() function

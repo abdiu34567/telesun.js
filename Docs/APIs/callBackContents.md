@@ -18,7 +18,7 @@ function CallbackContent(apiResponse) {
 }
 ```
 
-> using `CallbackContent` function on `dopost` function
+> using `CallbackContent` function from library on your `dopost` function
 
 ```js
 // use this way on dopost() function

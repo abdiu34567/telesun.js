@@ -2,6 +2,12 @@
 
 ---
 
+> - click on `Deploy -> Manage Deployment`
+
+---
+
+## ![manage Deployment](../assets/G17.png)
+
 > - click on `pencil (edit)` button
 
 ---

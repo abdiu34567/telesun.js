@@ -2,7 +2,7 @@
 
 ---
 
-> after deployment we always get the updated `webhook url`
+> Steps :
 >
 > - click on `Deploy` button
 > - click `New deployment`
@@ -84,8 +84,8 @@
 
 ---
 
-> - `paste` The copied web app url
-> - `bot token` from bot father
+> - `paste` The copied `web app url`
+> - `paste bot token` from bot father
 
 ---
 
@@ -98,4 +98,4 @@
 
 ---
 
-![Update your Code](../assets/G17.png)
+![manage Deployment](../assets/G17.png)

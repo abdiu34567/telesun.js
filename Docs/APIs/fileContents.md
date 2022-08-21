@@ -17,7 +17,7 @@ function PhotoContents(apiResponse) {
 }
 ```
 
-> using `PhotoContents` function on `dopost` function
+> using `PhotoContents` function on from library on your `dopost` function
 
 ```js
 // use this way on dopost() function

@@ -17,7 +17,7 @@ function TextContents(apiResponse) {
 }
 ```
 
-> using `TextContents` function on `dopost` function
+> using `TextContents` function from library on your `dopost` function
 
 ```js
 // use this way on dopost() function

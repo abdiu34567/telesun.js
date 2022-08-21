@@ -33,7 +33,7 @@ Telesn is a library that makes it simple for you to develop your own Telegram bo
 ### Example
 
 ```js
-const botUrl = Bot.Telesn(botToken)
+Bot.Telesn(botToken)
 Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
@@ -45,7 +45,7 @@ function doPost(e) {
   Bot.sendMessage(myChatId, ' Hello Abdi')
 
   //send photo to chat id
-  Bot.sendPhoto(myChatId, photo_url)
+  return Bot.sendPhoto(myChatId, photo_url)
 }
 ```
 
@@ -58,8 +58,90 @@ For additional bot examples see [examples](https://github.com/abdiu34567/telesn.
 
 ## Getting started
 
-### Telegram token
+### <u> Telegram token </u>
 
 To use the Telegram Bot API, you first have to get a bot account by chatting with BotFather.
 
 BotFather will give you a token, something like **123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ**.
+
+### <u> Import library </u>
+
+check [here](https://github.com/abdiu34567/telesn.js/blob/main/Getting%20Started%20With%20App%20Script.md) to follow the steps of importing library
+
+### coding
+
+for webhook url check [here](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md)
+
+```js
+// find from bot father
+let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
+
+//find on Deployment
+let webhookUrl =
+  'https://script.google.com/macros/s/AKfycbyTJNTD5HsnQMUsT-qX4AUQCd6Moex3zyf9cgdmlzly-mPxmlRlaxzt8lKhljq1zr6Ow/exec'
+
+Bot.Telesn(botToken)
+Bot.setWebHook(webhookUrl)
+
+//the bot will reply the same text message you sent
+function doPost(e) {
+  const apiResponse = JSON.parse(e.postData.contents)
+  let ChatId = Bot.TextContents(apiResponse).id
+  let text = TextContents(apiResponse).text
+  return Bot.sendMessage(myChatId, text)
+}
+```
+
+### <u>Deployment</u>
+
+after make any `change on your code`, then it is must you `Deploy` your code, unless you can't see any change
+
+- if you are deploying your code first time follow [New Deploymet](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md)
+- if not follow [Manage Deployment](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md)
+
+> you can use `new Deployment` any time you like, but after you deploy
+>
+> - Copy the web app url and paste on `webhookurl variable`
+> - create and run `setWebHook` function `(you don't need to deploy for this)`
+
+```js
+let botToken = '779238246:AAEkFeunpG-lg3pc8eoAda2svGHu3O_dIA'
+let webHookUrl =
+  'https://script.google.com/macros/s/AKfycbxr03EKxm336KxtsaoHJ49JlEfaw5CzOG0ys0DMxPmKjlsaFkIFeqBVYM-1CGs-KjT_g/exec'
+
+// for only new Deployment
+// this function will set webhook on
+function setWebHook() {
+  return Bot.setWebHook(webHookUrl)
+}
+
+//the bot will reply the same text message you sent
+function doPost(e) {
+  const apiResponse = JSON.parse(e.postData.contents)
+  let ChatId = Bot.TextContents(apiResponse).id
+  let text = TextContents(apiResponse).text
+  return Bot.sendMessage(myChatId, text)
+}
+```
+
+> - after successful call you can delete the `setWebHook` function
+
+```js
+// find from bot father
+let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
+
+//find on Deployment
+let webhookUrl =
+  'https://script.google.com/macros/s/AKfycbyTJNTD5HsnQMUsT-qX4AUQCd6Moex3zyf9cgdmlzly-mPxmlRlaxzt8lKhljq1zr6Ow/exec'
+
+const botUrl = Bot.Telesn(botToken)
+Bot.setWebHook(webhookUrl)
+
+//the bot will reply the same text message you sent
+function doPost(e) {
+  const apiResponse = JSON.parse(e.postData.contents)
+  let ChatId = Bot.TextContents(apiResponse).id
+  let text = TextContents(apiResponse).text
+  return Bot.sendMessage(myChatId, text)
+}
+```
