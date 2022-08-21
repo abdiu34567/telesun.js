@@ -26,7 +26,7 @@ function setWebHook() {
 }
 ```
 
-> 🌟 🌟 \_When using `managed deployment` :
+> 🌟 \_When using `managed deployment` :
 >
 > - You `don't need` to copy any url
 > - You can use `webhook url` the following way

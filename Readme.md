@@ -62,11 +62,11 @@ BotFather will give you a token, something like `123456789:AbCdfGhIJKlmNoQQRsTUV
 
 ### <u> Import library </u>
 
-check [here](https://github.com/abdiu34567/telesn.js/blob/main/Getting%20Started%20With%20App%20Script.md) to follow the steps of importing library
+- check [here](https://github.com/abdiu34567/telesn.js/blob/main/Getting%20Started%20With%20App%20Script.md) to follow the steps of importing library
 
 ### coding
 
-- for webhook url check [here](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md)
+- for `webhook url` check [here](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md)
 
 ```js
 // find from bot father
