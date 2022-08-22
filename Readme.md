@@ -60,13 +60,17 @@ To use the Telegram Bot API, you first have to get a bot account by chatting wit
 
 BotFather will give you a token, something like `123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ`.
 
-### <u> Import library </u>
+### Import library
 
 - check [here](https://github.com/abdiu34567/telesn.js/blob/main/Getting%20Started%20With%20App%20Script.md) to follow the steps of importing library
 
-### coding
+### Setting Webhook
 
-- for `webhook url` check [here](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md)
+You only need to `set webhook once(1)`, but if you `delete webhook` then you need to set it up again
+
+for `webhook url` check >> [here](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md)
+
+To `set webhook` then you need to `run` the following function called `SettingWebHook()`
 
 ```js
 // find from bot father
@@ -81,6 +85,21 @@ Bot.Telesn(botToken)
 function SettingWebHook() {
   return Bot.setWebHook(webHookUrl)
 }
+```
+
+### Adding `doPost` Function
+
+When a program sends the app an HTTP POST request, Apps Script runs `doPost(e)` function
+
+For more >> [here](https://developers.google.com/apps-script/guides/web)
+
+`Update` your previous code like this 👇
+
+```js
+// find from bot father
+let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
+
+Bot.Telesn(botToken)
 
 //the bot will reply the same text message you sent
 function doPost(e) {
@@ -90,6 +109,8 @@ function doPost(e) {
   return Bot.sendMessage(myChatId, text)
 }
 ```
+
+once you create your `doPost(e)` function this way then, you can delpoy with [managed deployment](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md) and check your `bot`
 
 ### <u>Deployment</u>
 
