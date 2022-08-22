@@ -46,7 +46,6 @@ function editMessageReplyMarkup() {
 
 ```JavaScript
 Bot.Telesun(botToken)
-Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
 

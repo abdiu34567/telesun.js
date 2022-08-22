@@ -34,7 +34,6 @@ function deleteMessageby_messageId() {
 
 ```JavaScript
 Bot.Telesun(botToken)
-Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
 

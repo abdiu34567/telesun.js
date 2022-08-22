@@ -44,7 +44,7 @@ function sendVoiceWithFileId() {
 > sending voice on webhook
 
 ```js
-Bot.Telesun(botToken)
+Bot.Telesn(botToken)
 
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
