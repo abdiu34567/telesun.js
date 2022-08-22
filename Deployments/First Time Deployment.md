@@ -86,7 +86,7 @@
 
 > - `paste` The copied `web app url`
 > - `paste bot token` from bot father
-> - create add run function like `SettingWebHook` in order to set `setWebHook`
+> - create add run function like `SettingWebHook` in order to set `WebHook`
 
 ---
 

@@ -34,7 +34,7 @@ function setWebHook() {
 ```js
 let botToken = '779238246:AAEkFeunpG-lg3pc8eoAda2svGHu3O_dIA'
 
-Bot.Telesn(botToken)
+Bot.Telesun(botToken)
 
 //admin chat id to send errors to
 let admin = '1173180004'
