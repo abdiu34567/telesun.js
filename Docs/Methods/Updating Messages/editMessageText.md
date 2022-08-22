@@ -21,7 +21,7 @@
 > editing message directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
 
 ```js
-Bot.Telesn(botToken)
+Bot.Telesun(botToken)
 function editMessagebyId() {
   let msg_id = 232
   let chat_id = '1173180004'
