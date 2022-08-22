@@ -156,11 +156,8 @@ app script won't show you any `code error` from `doPost`, so we need to track th
 
 ```js
 let botToken = '779238246:AAEkFeunpG-lg3pc8eoAda2svGHu3O_dIA'
-let webHookUrl =
-  'https://script.google.com/macros/s/AKfycbxr03EKxm336KxtsaoHJ49JlEfaw5CzOG0ys0DMxPmKjlsaFkIFeqBVYM-1CGs-KjT_g/exec'
 
 Bot.Telesn(botToken)
-Bot.setWebHook(webHookUrl) //u can use this way when managed deployment
 
 //admin chat id to send errors to
 let admin = '1173180004'
