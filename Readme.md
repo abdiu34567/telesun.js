@@ -66,7 +66,10 @@ BotFather will give you a token, something like `123456789:AbCdfGhIJKlmNoQQRsTUV
 
 ### Setting Webhook
 
-You only need to `set webhook once(1)`, but if you `delete webhook` then you need to set it up again
+You only need to `set webhook once(1)`, but :
+
+- if you `delete webhook` then you need to set it up again
+- also when you deploy using `new Deployment` you need to set webhook to the `updated url`
 
 for `webhook url` check >> [here](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md)
 
