@@ -28,7 +28,7 @@ function doPost(e) {
 }
 ```
 
-### Create and Run Functions for Test Purposes
+### Create and Run Functions for `Test` Purposes
 
 always making a change to `doPost` function and deploy to see a change is not good behaviour at all, rather create any function and `test` what you like
 
@@ -45,7 +45,7 @@ function SendMessage() {
 }
 ```
 
-### Returning Functions
+### `Returning` Functions
 
 forgeting `returning` function cause many problem to your program
 
@@ -58,6 +58,6 @@ function SendMessage() {
 }
 ```
 
-### Deployment
+### `Deployment`
 
 after your first deployment , it is better you use `managed deployment`
