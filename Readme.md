@@ -1,12 +1,12 @@
 <header>
 <img src="assets/abol.png" alt="logo" height="90" align="left">
-<h1 style="display: inline">telesn.js</h1>
+<h1 style="display: inline">telesun.js</h1>
 
 Modern Telegram Bot API framework for App Script
 
 [![Bot API Version](https://img.shields.io/badge/Bot%20API-v6.0-f36caf.svg?style=flat-square)](https://core.telegram.org/bots/api)
 ![JavaScript](https://img.shields.io/github/languages/top/abdiu34567/Lost_and_Found)
-[![Telesn](https://img.shields.io/badge/telesn-v1.0-f36caf.svg?style=flat-square)](https://core.telegram.org/bots/api)
+[![Telesun](https://img.shields.io/badge/telesun-v1.0-f36caf.svg?style=flat-square)](https://core.telegram.org/bots/api)
 [![English chat](https://img.shields.io/badge/English%20chat-grey?style=flat-square&logo=telegram)](https://t.me/App_Script_Js)
 
 </header>
@@ -15,7 +15,7 @@ Modern Telegram Bot API framework for App Script
 
 A Telegram bot is a program that offers functions and automations that Telegram users can integrate in their chats, channels, or groups
 
-Telesn is a library that makes it simple for you to develop your own Telegram bots using JavaScript and [Apps Script](https://developers.google.com/apps-script)
+Telesun is a library that makes it simple for you to develop your own Telegram bots using JavaScript and [Apps Script](https://developers.google.com/apps-script)
 
 ### Features
 
@@ -35,7 +35,7 @@ Telesn is a library that makes it simple for you to develop your own Telegram bo
 once you `import library`, and you identify your `telegram chat id`, then you can create function like the following and send direct message to the bot chat id
 
 ```js
-Bot.Telesn(botToken)
+Bot.Telesun(botToken)
 
 //create and run this function, the message will directly sent to the user chat Id
 
@@ -80,7 +80,7 @@ let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
 let webhookUrl =
   'https://script.google.com/macros/s/AKfycbyTJNTD5HsnQMUsT-qX4AUQCd6Moex3zyf9cgdmlzly-mPxmlRlaxzt8lKhljq1zr6Ow/exec'
 
-Bot.Telesn(botToken)
+Bot.Telesun(botToken)
 
 function SettingWebHook() {
   return Bot.setWebHook(webHookUrl)
@@ -99,7 +99,7 @@ For more >> [here](https://developers.google.com/apps-script/guides/web)
 // find from bot father
 let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
 
-Bot.Telesn(botToken)
+Bot.Telesun(botToken)
 
 //the bot will reply the same text message you sent
 function doPost(e) {
@@ -129,7 +129,7 @@ let botToken = '779238246:AAEkFeunpG-lg3pc8eoAda2svGHu3O_dIA'
 let webHookUrl =
   'https://script.google.com/macros/s/AKfycbxr03EKxm336KxtsaoHJ49JlEfaw5CzOG0ys0DMxPmKjlsaFkIFeqBVYM-1CGs-KjT_g/exec'
 
-Bot.Telesn(botToken)
+Bot.Telesun(botToken)
 // for only new Deployment
 // this function will set webhook on
 function setWebHook() {
@@ -157,7 +157,7 @@ app script won't show you any `code error` from `doPost`, so we need to track th
 ```js
 let botToken = '779238246:AAEkFeunpG-lg3pc8eoAda2svGHu3O_dIA'
 
-Bot.Telesn(botToken)
+Bot.Telesun(botToken)
 
 //admin chat id to send errors to
 let admin = '1173180004'
