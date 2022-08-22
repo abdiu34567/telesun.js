@@ -49,7 +49,6 @@ function sendVideoWithFileId() {
 
 ```js
 Bot.Telesun(botToken)
-Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)

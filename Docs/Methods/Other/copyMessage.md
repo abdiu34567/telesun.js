@@ -65,7 +65,6 @@ function copyMessageFromBotToGroupOrChannel() {
 
 ```js
 Bot.Telesn(botToken)
-Bot.setWebHook(webhookUrl)
 
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)

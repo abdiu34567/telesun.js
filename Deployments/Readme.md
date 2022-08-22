@@ -29,15 +29,29 @@ function setWebHook() {
 > 🌟 \_When using `managed deployment` :
 >
 > - You `don't need` to copy any url
-> - You can use `webhook url` the following way
+> - You can `delete` `webHookUrl` variable and `setWebHook` function
 
 ```js
- Bot.Telesn(botToken)
- Bot.setWebHook(webHookUrl)
- ---
+let botToken = '779238246:AAEkFeunpG-lg3pc8eoAda2svGHu3O_dIA'
+
+Bot.Telesn(botToken)
+
+//admin chat id to send errors to
+let admin = '1173180004'
+//this will send any error to the Admin chat id you specified
+function doPost(e) {
+  try {
+    const apiResponse = JSON.parse(e.postData.contents)
+    let chatId = Bot.TextContents(apiResponse).id
+    let text = TextContents(apiResponse).text
+    return Bot.sendMessage(chatId, text)
+  } catch (err) {
+    return Bot.sendMessage(admin, err)
+  }
+}
 ```
 
-> ✅ _You can create and run function `without deployment`, but functions not related to `doPost functions`_
+> ✅ _You can create and run function `without deployment`, but functions not related to `doPost `functions_
 >
 > ⚠️ _Every Time you make a `change to your code` ,then you need to `deploy` to see a change_
 >
