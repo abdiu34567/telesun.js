@@ -21,7 +21,7 @@
 > For parameters like `allowed_updates` check [Types](https://github.com/abdiu34567/telesn.js/tree/main/Docs/Types)
 
 ```js
-Bot.Telesn(botToken)
+Bot.Telesun(botToken)
 
 function setWebHook() {
   let webHookUrl =

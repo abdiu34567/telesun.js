@@ -11,7 +11,7 @@
 > - drop_pending_updates
 
 ```js
-Bot.Telesn(botToken)
+Bot.Telesun(botToken)
 
 function deleteWebhook() {
   return Bot.deleteWebhook()
