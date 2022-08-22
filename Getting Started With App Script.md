@@ -55,7 +55,7 @@
 ---
 
 > - click `Look Up` button,
-> - leave <u>varsion</u> name as `HEAD (Developing mode)`
+> - leave <u>varsion</u> name as `HEAD (Developing mode)`, you can also select `specific version`
 > - leave <u>identifier</u> name as `Bot`
 > - Click on `Add` button at the bottom
 

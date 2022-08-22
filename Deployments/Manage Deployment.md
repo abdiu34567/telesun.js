@@ -39,4 +39,4 @@
 
 ![Deploy](../assets/G21.png)
 
-🌟 **You Did it**, Go and check Your Bot
+🌟💪 **You Did it**, Go and check Your Bot

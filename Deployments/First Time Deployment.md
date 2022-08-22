@@ -86,12 +86,11 @@
 
 > - `paste` The copied `web app url`
 > - `paste bot token` from bot father
-> - add any fuction to `setWebHook`
-> - `run` your function
+> - create add run function like `SettingWebHook` in order to set `setWebHook`
 
 ---
 
-## ![coding](../assets/G16.png)
+## ![setting webhook](../assets/G16.png)
 
 ---
 

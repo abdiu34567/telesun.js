@@ -8,7 +8,7 @@
 //invalid Bot token
 let botToken = '779238246:AAEFeuhnpG-lg3pc8eoAda2svGHu3O_dIA'
 
-Bot.Telesn(botToken)
+Bot.Telesun(botToken)
 
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
