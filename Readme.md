@@ -145,6 +145,8 @@ function doPost(e) {
 }
 ```
 
+> you can delete `setWebHook` function and `webhookurl variable` when deploying with `managed deployment`
+
 ## Best Practice
 
 app script won't show you any `code error` from `doPost`, so we need to track the error's by sending to bot as a message, for more [Best Practices](https://github.com/abdiu34567/telesn.js/blob/main/Best%20Practices.md)
