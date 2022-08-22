@@ -104,9 +104,9 @@ Bot.Telesn(botToken)
 //the bot will reply the same text message you sent
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
-  let ChatId = Bot.TextContents(apiResponse).id
+  let chatId = Bot.TextContents(apiResponse).id
   let text = TextContents(apiResponse).text
-  return Bot.sendMessage(myChatId, text)
+  return Bot.sendMessage(chatId, text)
 }
 ```
 
@@ -139,9 +139,9 @@ function setWebHook() {
 //the bot will reply the same text message you sent
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
-  let ChatId = Bot.TextContents(apiResponse).id
+  let chatId = Bot.TextContents(apiResponse).id
   let text = TextContents(apiResponse).text
-  return Bot.sendMessage(myChatId, text)
+  return Bot.sendMessage(chatId, text)
 }
 ```
 
@@ -166,9 +166,9 @@ let admin = '1173180004'
 function doPost(e) {
   try {
     const apiResponse = JSON.parse(e.postData.contents)
-    let ChatId = Bot.TextContents(apiResponse).id
+    let chatId = Bot.TextContents(apiResponse).id
     let text = TextContents(apiResponse).text
-    return Bot.sendMessage(myChatId, text)
+    return Bot.sendMessage(chatId, text)
   } catch (err) {
     return Bot.sendMessage(admin, err)
   }
