@@ -7,7 +7,7 @@
 > This needs `no deployment` , just create the function and run
 
 ```js
-Bot.Telesn(botToken)
+Bot.Telesun(botToken)
 
 function testingGetMe() {
 

@@ -43,7 +43,7 @@ function sendMessageToChannelOrGroup() {
 > sending message on webhook
 
 ```js
-Bot.Telesn(botToken)
+Bot.Telesun(botToken)
 
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)

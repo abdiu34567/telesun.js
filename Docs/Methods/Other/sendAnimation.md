@@ -27,7 +27,7 @@
 > sending animations directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
 
 ```js
-Bot.Telesn(botToken)
+Bot.Telesun(botToken)
 //sending animation to bot | group | channel by using Thier http Url
 function sendAnimationWithUrl() {
   let userAbdi = '1173180004'
