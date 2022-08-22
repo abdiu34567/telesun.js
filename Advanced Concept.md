@@ -54,3 +54,7 @@ function StartFunction(id) {
   return Bot.sendMessage(id, 'My Account Id' + id)
 }
 ```
+
+### `Cache Storage` to speed up
+
+For more check [here](https://developers.google.com/apps-script/reference/cache/cache)
