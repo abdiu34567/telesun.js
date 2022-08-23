@@ -3,13 +3,13 @@
 ```js
 function medias() {
   let userAbdi = '1173180004'
-  let medias = [
+  let medias =
     {
       type: 'photo',
       media:
         'AgACAgQAAxkBAAEKB4Ri-faRkfkJPhtiuTMwxjvFdGb2EAACf7gxG5ZTyVNio98lZ7PwIgEAAwIAA3MAAykE',
-    },
-  ]
+    }
+
  return Bot.editMessageMedia(userAbdi, 432,
  undefined//inline_message_id,
  medias)

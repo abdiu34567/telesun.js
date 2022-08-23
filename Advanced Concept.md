@@ -16,8 +16,8 @@ function doPost(e) {
   try {
     const apiResponse = JSON.parse(e.postData.contents)
 
-    if (apiResponse.message.callback_query) return Callbacks(apiResponse)
-    else if (apiResponse.message.inline_query) return MyInline(apiResponse)
+    if (apiResponse.callback_query) return Callbacks(apiResponse)
+    else if (apiResponse.inline_query) return MyInline(apiResponse)
     else if (apiResponse.message.photo) return PhotoManager(apiResponse)
     else if (apiResponse.message.contact) return ContactManager()
     else return TextManager(apiResponse)
