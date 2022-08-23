@@ -15,7 +15,7 @@
 - first we need `bot token` from bot father
 
 ```js
-                                       //code.gs 
+                                                              //code.gs 
 
 // find from bot father
 let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
@@ -28,7 +28,7 @@ Bot.Telesun(botToken)
 - add `setMyCommands` function and run
 - on successful call, you will see the commands on your bot by typing >>  `/`
 ```js
-                                     //code.gs
+                                                               //code.gs
 function setMyCommands() {
   let cmd = [{
     'command': 'start',
@@ -55,7 +55,7 @@ function setMyCommands() {
 > create and run function `SettingWebHook()`
 
 ```js
-                                      //code.gs
+                                                                 //code.gs
 // find from bot father
 let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
 
@@ -76,7 +76,7 @@ function SettingWebHook() {
 > add `doPost()` function, and doPost function is where all of our code goes in
 
 ```js
-                                        //code.gs
+                                                                //code.gs
 // find from bot father
 let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
 
@@ -101,7 +101,7 @@ function doPost(e) {
 > create another `file` with any name but i will go with `commands.gs`
 
 ```js
-                                       //commands.gs
+                                                           //commands.gs
 //runs when user send /start command 
 function WelcomeMsg(chatId) {
   let msg = `👤 Welcome ${user}\n\n` +
