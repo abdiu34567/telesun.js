@@ -50,7 +50,7 @@
 1vpcYoddrc8KQnf_joubGhxeXyEStJ17LDgXnNqBYqdL6mvOKJXioRw7u
 ```
 
-> - `copy` the script Id and paste on `Script Id` text input
+> - `copy` one of the script Id and paste on `Script Id` text input
 
 ---
 
