@@ -84,7 +84,7 @@ function FetchGoogleBooks(chatId, query) {
   let date = result[0].volumeInfo.publishedDate
 
   let caption =
-    `📚 <b>🎖 Title : </b>``<code>${title}</code>\n` +
+    `📚 <b>🎖 Title : </b><code>${title}</code>\n` +
     `<b>🎗 Sub Title : </b><code>${subtitle}</code>\n` +
     `<b>🧓 Authors : </b><code>${authors}</code>\n` +
     `<b>⏰ Published Date : </b><code>${date}</code>\n` +
