@@ -1,5 +1,5 @@
 <header>
-<img src="assets/abol.png" alt="logo" height="90" align="left">
+<img src="./assets/telesun.jpg" alt="logo" height="90" align="left">
 <h1 style="display: inline">telesun.js</h1>
 
 Modern Telegram Bot API framework for App Script
