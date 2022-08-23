@@ -2,6 +2,8 @@
 
 > in this tutorial we are going to develop a bot that changes from the first photo to the next
 
+![Image Changer](../../assets/example/Image%20changer.png)
+
 ## Getting Started
 
 - first we need `bot token` from bot father
