@@ -65,7 +65,6 @@ function setMyCommands() {
 // find from bot father
 let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
 
-//find on Deployment
 let webhookUrl =
   'https://script.google.com/macros/s/AKfycbyTJNTD5HsnQMUsT-qX4AUQCd6Moex3zyf9cgdmlzly-mPxmlRlaxzt8lKhljq1zr6Ow/exec'
 
@@ -85,12 +84,10 @@ function SettingWebHook() {
 ```js
 //<<code.gs>>
 
-// find from bot father
 let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
 
 Bot.Telesun(botToken)
 
-//the bot will reply the same text message you sent
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
   let chatId = Bot.TextContents(apiResponse).id

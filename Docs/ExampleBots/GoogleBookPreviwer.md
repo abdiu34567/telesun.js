@@ -28,7 +28,6 @@ Bot.Telesun(botToken)
 // find from bot father
 let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
 
-//find on Deployment
 let webhookUrl =
   'https://script.google.com/macros/s/AKfycbyTJNTD5HsnQMUsT-qX4AUQCd6Moex3zyf9cgdmlzly-mPxmlRlaxzt8lKhljq1zr6Ow/exec'
 
@@ -48,12 +47,10 @@ function SettingWebHook() {
 ```js
 //<<code.gs>>
 
-// find from bot father
 let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
 
 Bot.Telesun(botToken)
 
-//the bot will reply the same text message you sent
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
   let chatId = Bot.TextContents(apiResponse).id
@@ -68,7 +65,7 @@ function doPost(e) {
 ```js
 //<<GoogleBookFetcher.gs>>
 
-//runs when user send /start command
+//runs when user send any message
 function FetchGoogleBooks(chatId, query) {
   const books = UrlFetchApp.fetch(
     `https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyARWN-E4fPF-Qqva71wyLelQtO51Ysb81Y&country=DE`
@@ -76,7 +73,7 @@ function FetchGoogleBooks(chatId, query) {
   let result = JSON.parse(books).items
   let totalItems = JSON.parse(books).totalItems
   if (Number(totalItems) == 0) {
-    return Bot.sendText(id, `❌ <i>No book found</i>`)
+    return Bot.sendText(chatId, `❌ <i>No book found</i>`)
   }
 
   let photo = result[0].volumeInfo.previewLink
