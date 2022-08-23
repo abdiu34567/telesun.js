@@ -98,9 +98,9 @@ function doPost(e) {
   let command = Bot.TextContents(apiResponse).text
 
   if (command == '/start') return WelcomeMsg(chatId, user)
-  else if (command == '/inline keyboard') return InlineKbd(chatId)
-  else if (command == '/reply keyboard') return Replykbd(chatId)
-  else if (command == '/hide keyboard') return HideKbd(chatId)
+  else if (command == '/inlinekeyboard') return InlineKbd(chatId)
+  else if (command == '/replykeyboard') return Replykbd(chatId)
+  else if (command == '/hidekeyboard') return HideKbd(chatId)
 
   return Bot.sendMessage(chatId, '❌ Command Not Found')
 }
