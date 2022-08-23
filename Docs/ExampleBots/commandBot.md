@@ -9,6 +9,8 @@
 > - `/replykeyboard`
 > - `/hidekeyboard`
 
+![Result](../../assets/example/commandbot.png)
+
 ## Getting Started
 
 - first we need `bot token` from bot father
