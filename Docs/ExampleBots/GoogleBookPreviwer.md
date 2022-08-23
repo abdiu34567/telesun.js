@@ -56,7 +56,7 @@ function doPost(e) {
   let chatId = Bot.TextContents(apiResponse).id
   let query = Bot.TextContents(apiResponse).text
 
-  return return FetchGoogleBooks(chatId, query)
+  return FetchGoogleBooks(chatId, query)
 }
 ```
 
