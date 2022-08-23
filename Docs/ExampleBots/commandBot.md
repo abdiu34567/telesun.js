@@ -103,7 +103,7 @@ function doPost(e) {
 ```js
                                                            //commands.gs
 //runs when user send /start command 
-function WelcomeMsg(chatId) {
+function WelcomeMsg(chatId, user) {
   let msg = `👤 Welcome ${user}\n\n` +
     `🎗 Commands You Can Use :\n` +
     `➖ /start\n` +
