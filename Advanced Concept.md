@@ -51,7 +51,7 @@ function MyInline(apiResponse) {
 
 ```js
 function StartFunction(id) {
-  return Bot.sendMessage(id, 'My Account Id' + id)
+  return Bot.sendMessage(id, 'My Account Id: ' + id)
 }
 ```
 

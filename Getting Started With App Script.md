@@ -43,7 +43,11 @@
 > **Script Id :**
 
 ```js
-1cXQG33N3aWnWUUpOyWdNF1Hwah5b6DwxutpuK1n5FTXn3L7RAgNdars4
+1B2hUWl9dz_eks2MyqMTMcVRbK4_oALtXZhVgzTIIQIvm3l7Agu_R-2uC
+```
+
+```js
+1vpcYoddrc8KQnf_joubGhxeXyEStJ17LDgXnNqBYqdL6mvOKJXioRw7u
 ```
 
 > - `copy` the script Id and paste on `Script Id` text input
