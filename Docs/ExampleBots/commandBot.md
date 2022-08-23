@@ -15,7 +15,7 @@
 - then `import` bot library, you can follow [here](https://github.com/abdiu34567/telesun.js/blob/main/Getting%20Started%20With%20App%20Script.md)
 
 ```js
-//code.gs
+//<<code.gs>>
 
 // find from bot father
 let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
