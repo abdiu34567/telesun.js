@@ -29,7 +29,7 @@ Bot.Telesun(botToken)
 - on successful call, you will see the commands on your bot by typing >> `/`
 
 ```js
-//code.gs
+//<<code.gs>>
 function setMyCommands() {
   let cmd = [
     {
@@ -60,7 +60,8 @@ function setMyCommands() {
 > create and run function `SettingWebHook()`
 
 ```js
-//code.gs
+//<<code.gs>>
+
 // find from bot father
 let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
 
@@ -82,7 +83,8 @@ function SettingWebHook() {
 > add `doPost()` function, and doPost function is where all of our code goes in
 
 ```js
-//code.gs
+//<<code.gs>>
+
 // find from bot father
 let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
 
@@ -93,7 +95,7 @@ function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
   let chatId = Bot.TextContents(apiResponse).id
   let user = Bot.TextContents(apiResponse).name
-  let command = TextContents(apiResponse).text
+  let command = Bot.TextContents(apiResponse).text
 
   if (command == '/start') return WelcomeMsg(chatId, user)
   else if (command == '/inline keyboard') return InlineKbd(chatId)
@@ -107,7 +109,8 @@ function doPost(e) {
 > create another `file` with any name but i will go with `commands.gs`
 
 ```js
-//commands.gs
+//<<commands.gs>>
+
 //runs when user send /start command
 function WelcomeMsg(chatId, user) {
   let msg =
