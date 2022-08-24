@@ -1,6 +1,6 @@
 ## Inline Query Bot
 
-> in this tutorial we are going to develop a bot that can query inline datas by using title and description from json data
+> in this tutorial we are going to develop a bot that can query inline datas by using `title` and `description` from json data
 >
 > ![Result](../../assets/example/inlineQuery.png)
 
@@ -8,6 +8,8 @@
 
 - first we need `bot token` from bot father
 - then `import` bot library, you can follow [here](https://github.com/abdiu34567/telesun.js/blob/main/Getting%20Started%20With%20App%20Script.md)
+- in order for inline query to work for your bot follow :
+  - `Bot Father -> /mybots -> (chose your bot) -> Bot Setting -> inline mode -> Turn inline mode on`
 
 ```js
 //<<code.gs>>
@@ -66,6 +68,7 @@ function doPost(e) {
 ```js
 //<<InlineQuery.gs>>
 
+//runs when user types bot username like @Tryandcatchbot
 function QueryData(apiResponse) {
   let datas = [
     {
