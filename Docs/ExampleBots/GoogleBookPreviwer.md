@@ -1,6 +1,6 @@
 ## Google Books Preveiwer Bot
 
-> in this tutorial we are going to develop a bot that ca search across google books, by using Google book api
+> in this tutorial we are going to develop a bot that search across google books, by using Google book api
 > ![Result](../../assets/example/googlebook.png)
 
 ## Getting Started
