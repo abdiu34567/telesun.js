@@ -1,6 +1,5 @@
 <header>
-<img src="../../../assets/methods/1
-.png" alt="logo"  align="left">
+<img src="../../../assets/methods/1.png" alt="logo"  align="left">
 
 </header>
 
