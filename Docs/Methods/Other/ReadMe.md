@@ -5,9 +5,7 @@
 
 For More 💫 check <a href='https://core.telegram.org/bots/api#available-methods'>Available Methods</a>
 
-<section align="right">
-
-To access the methods :
+To access methods :
 
 ```js
 Bot.close()
@@ -16,5 +14,3 @@ Bot.sendMessage()
 Bot. ....
 .........
 ```
-
-</section>
