@@ -3,7 +3,7 @@
 
 </header>
 
- <pre>For More 💫 check <a href='https://core.telegram.org/bots/api#available-methods'>Available Methods</a>  </pre>
+For More 💫 check <a href='https://core.telegram.org/bots/api#available-methods'>Available Methods</a>
 
 <section align="right">
 
