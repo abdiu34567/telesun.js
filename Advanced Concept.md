@@ -19,7 +19,7 @@ function doPost(e) {
     if (apiResponse.callback_query) return Callbacks(apiResponse)
     else if (apiResponse.inline_query) return MyInline(apiResponse)
     else if (apiResponse.message.photo) return PhotoManager(apiResponse)
-    else if (apiResponse.message.contact) return ContactManager()
+    else if (apiResponse.message.contact) return ContactManager(apiResponse)
     else return TextManager(apiResponse)
   } catch (err) {
     return Bot.sendMessage(admin, err)
