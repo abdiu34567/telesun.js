@@ -3,7 +3,7 @@
 
 </header>
 
-For More 💫 check <a href='https://core.telegram.org/bots/api#available-methods'>Available Methods</a>
+For More 💫 check [Available Methods](https://core.telegram.org/bots/api#available-methods)
 
 To access methods :
 
