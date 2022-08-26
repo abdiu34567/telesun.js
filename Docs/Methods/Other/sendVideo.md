@@ -4,8 +4,7 @@
 >
 > For more check [sendVideo](https://core.telegram.org/bots/api#sendvideo) method
 >
-> This method can take up 15 parameters and
-> some of the parameters have default values
+> parameters :
 >
 > - chat_id `required`
 > - video `required`

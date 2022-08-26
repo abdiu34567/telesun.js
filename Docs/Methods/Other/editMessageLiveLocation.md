@@ -4,7 +4,7 @@
 >
 > For more check [editMessageLiveLocation](https://core.telegram.org/bots/api#editmessagelivelocation) method
 >
-> This method can take up 12 parameters
+> parameters :
 >
 > - chat_id
 > - message_id

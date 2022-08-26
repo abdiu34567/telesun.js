@@ -4,7 +4,7 @@
 >
 > For more check [sendMediaGroup](https://core.telegram.org/bots/api#sendmediagroup) method
 >
-> This method can take up 6 parameters
+> parameters :
 >
 > - chat_id `required`
 > - media `required`

@@ -4,8 +4,7 @@
 >
 > For more check [copyMessage](https://core.telegram.org/bots/api#copymessage) method
 >
-> This method can take up 11 parameters and
-> some of the parameters have default values
+> parameters :
 >
 > - chat_id `required`
 > - from_chat_id `required`

@@ -4,7 +4,7 @@
 >
 > For more check [sendLocation](https://core.telegram.org/bots/api#sendlocation) method
 >
-> This method can take up 12 parameters
+> parameters :
 >
 > - chat_id `required`
 > - latitude `required`

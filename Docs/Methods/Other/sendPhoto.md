@@ -4,8 +4,7 @@
 >
 > For more check [sendPhoto](https://core.telegram.org/bots/api#sendphoto) method
 >
-> This method can take up 10 parameters and
-> some of the parameters have default values
+> parameters :
 >
 > - chat_id `required`
 > - photo `required`

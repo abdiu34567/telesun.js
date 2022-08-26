@@ -4,7 +4,7 @@
 >
 > For more check [sendVideoNote](https://core.telegram.org/bots/api#sendvideonote) method
 >
-> This method can take up 10 parameters
+> parameters :
 >
 > - chat_id `required`
 > - video_note `required`

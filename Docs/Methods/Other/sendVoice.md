@@ -4,8 +4,7 @@
 >
 > For more check [sendVoice](https://core.telegram.org/bots/api#sendvoice) method
 >
-> This method can take up 11 parameters and
-> some of the parameters have default values
+> parameters :
 >
 > chat_id `required`
 > voice `required`

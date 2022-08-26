@@ -6,8 +6,7 @@
 >
 > For more check [sendAudio](https://core.telegram.org/bots/api#sendaudio) method
 >
-> This method can take up 14 parameters and
-> some of the parameters have default values
+> parameters :
 >
 > - chat_id `required`
 > - audio `required`

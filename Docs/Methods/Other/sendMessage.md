@@ -4,8 +4,7 @@
 >
 > For more check [sendMessage](https://core.telegram.org/bots/api#sendmessage) method
 >
-> This method can take up 10 parameters and
-> some of the parameters have default values
+> parameters :
 >
 > - chat_id `required`
 > - text `required`
