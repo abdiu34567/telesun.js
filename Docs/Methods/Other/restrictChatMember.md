@@ -10,3 +10,5 @@
 > - user_id `required`
 > - permissions `required`
 > - until_date
+>
+> For parameters like `reply_markup` check [Types](https://github.com/abdiu34567/telesn.js/tree/main/Docs/Types)
