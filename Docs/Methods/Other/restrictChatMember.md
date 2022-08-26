@@ -11,4 +11,4 @@
 > - permissions `required`
 > - until_date
 >
-> For parameters like `reply_markup` check [Types](https://github.com/abdiu34567/telesn.js/tree/main/Docs/Types)
+> For parameters like `permissions` check [Types](https://github.com/abdiu34567/telesn.js/tree/main/Docs/Types)
