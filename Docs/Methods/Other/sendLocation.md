@@ -19,6 +19,8 @@
 > - reply_to_message_id
 > - allow_sending_without_reply
 >
+> For parameters like `reply_markup` check [Types](https://github.com/abdiu34567/telesn.js/tree/main/Docs/Types)
+>
 > sending location directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
 
 ```js

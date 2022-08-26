@@ -1,6 +1,6 @@
 ## editMessageLiveLocation
 
-> Use this method to send point on the map. On success, the sent Message is returned
+> Use this method to edit live location messages. A location can be edited until its live_period expires or editing is explicitly disabled by a call to stopMessageLiveLocation. On success, if the edited message is not an inline message, the edited Message is returned, otherwise True is returned
 >
 > For more check [editMessageLiveLocation](https://core.telegram.org/bots/api#editmessagelivelocation) method
 >
@@ -9,12 +9,14 @@
 > - chat_id
 > - message_id
 > - inline_message_id
-> - latitude
-> - longitude
+> - latitude `required`
+> - longitude `required`
 > - reply_markup
 > - horizontal_accuracy
 > - heading
 > - proximity_alert_radius
+>
+> For parameters like `reply_markup` check [Types](https://github.com/abdiu34567/telesn.js/tree/main/Docs/Types)
 >
 > sending location directly, without any request, use this for `test` purposes , because of this can be done without any `deployment`
 
