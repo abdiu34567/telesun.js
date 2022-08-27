@@ -1,6 +1,6 @@
 ## sendGame
 
-> This object represents a game. Use BotFather to create and edit games, their short names will act as unique identifiers
+> Use this method to send a game. On success, the sent Message is returned
 >
 > For more check [sendGame](https://core.telegram.org/bots/api#sendgame) method
 >
