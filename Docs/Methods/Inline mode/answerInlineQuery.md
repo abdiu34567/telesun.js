@@ -5,8 +5,7 @@
 >
 > For more check [answerInlineQuery](https://core.telegram.org/bots/api#answerinlinequery) method
 >
-> This method can take up 7 parameters and
-> some of the parameters have default values
+> parameters :
 >
 > - inline_query_id `required`
 > - results `required`
