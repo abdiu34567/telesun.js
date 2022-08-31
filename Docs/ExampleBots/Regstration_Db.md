@@ -78,8 +78,7 @@ function TextManager(apiResponse) {
   let spreadsheetName = 'Sheet1'
 
   //check if user already registered
-  let _db_ =
-    SpreadsheetApp.openById(spreadsheetId).getSheetByName(spreadsheetName)
+  let _db_ = SpreadsheetApp.openById(spreadsheetId).getSheetByName(spreadsheetName)
   let _row_ = _db_.createTextFinder(chatId).findNext()
 
   //if user found
