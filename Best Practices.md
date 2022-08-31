@@ -53,7 +53,7 @@ forgeting `returning` function cause many problem to your program
 function SendMessage() {
   let chatId = '1173180004' //change this chat id to yours
 
-  //returning(closing) function here
+   //returning(closing) function here
   return Bot.sendMessage(chatId, 'hello User')
 }
 ```
