@@ -16,8 +16,7 @@
 > - run `setwebhook function`
 
 ```js
-let webHookUrl =
-  'https://script.google.com/macros/s/AKfycbxr03EKxm336KxtsaoHJ49JlEfaw5CzOG0ys0DMxPmKjlsaFkIFeqBVYM-1CGs-KjT_g/exec'
+let webHookUrl = 'https://script.google.com/macros/s/AKfycbxr03EKxm336KxtsaoHJ49JlEfaw5CzOG0ys0DMxPmKjlsaFkIFeqBVYM-1CGs-KjT_g/exec'
 
 // after only new Deployment
 // this function will set webhook on updated webHook url (no need deployment to create and run this function)
