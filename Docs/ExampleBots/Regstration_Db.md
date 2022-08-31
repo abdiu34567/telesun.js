@@ -7,6 +7,8 @@
 > - `Password`
 > - `username`
 
+![Connection](../../assets/example/res.png)
+
 ### Getting Started
 
 - first we need `bot token` from bot father
@@ -63,7 +65,7 @@ function doPost(e) {
 ```
 
 > - create another `file` with any name but i will go with `Reg.gs`
-> - create Spreadsheet and `copy Spreadsheet Id and Spreadsheet Name`, Follow [here]()
+> - create Spreadsheet and `copy Spreadsheet Id and Spreadsheet Name`, Follow [here](https://github.com/abdiu34567/telesun.js/blob/main/more/CreatSpreadsheet.md)
 
 ```js
 //<<Reg.gs>>
