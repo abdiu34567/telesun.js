@@ -23,7 +23,7 @@ Telesun is a library that makes it simple for you to develop your own Telegram b
 - Simpler 🌟
 - easier working across Google products
 - per click Deployment on google cloud
-- Real Time Database(Google sheet) already integrated
+- Real-Time Database(Google sheet) already integrated
 
 ---
 
