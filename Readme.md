@@ -109,7 +109,7 @@ Bot.Telesun(botToken)
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
   let chatId = Bot.TextContents(apiResponse).id
-  let text = TextContents(apiResponse).text
+  let text = Bot.TextContents(apiResponse).text
   return Bot.sendMessage(chatId, text)
 }
 ```
@@ -144,7 +144,7 @@ function setWebHook() {
 function doPost(e) {
   const apiResponse = JSON.parse(e.postData.contents)
   let chatId = Bot.TextContents(apiResponse).id
-  let text = TextContents(apiResponse).text
+  let text = Bot.TextContents(apiResponse).text
   return Bot.sendMessage(chatId, text)
 }
 ```
@@ -170,7 +170,7 @@ function doPost(e) {
   try {
     const apiResponse = JSON.parse(e.postData.contents)
     let chatId = Bot.TextContents(apiResponse).id
-    let text = TextContents(apiResponse).text
+    let text = Bot.TextContents(apiResponse).text
     return Bot.sendMessage(chatId, text)
   } catch (err) {
     return Bot.sendMessage(admin, err)
