@@ -9,7 +9,7 @@
 function PhotoContents(apiResponse) {
   return {
     name: apiResponse.message.from.first_name,
-    photo: apiResponse.message.photo.file_id,
+    photo: apiResponse.message.photo[0].file_id,
     id: apiResponse.message.from.id,
     username: apiResponse.message.from.username,
     msgid: apiResponse.message.message_id,
