@@ -22,7 +22,7 @@ function PhotoContents(apiResponse) {
 ```js
 // use this way on dopost() function
 let chatId = PhotoContents(apiResponse).id
-let text = PhotoContents(apiResponse).text
+let photo = PhotoContents(apiResponse).photo
 ```
 
 > Coming Api `Example`
