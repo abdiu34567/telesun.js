@@ -22,7 +22,7 @@ function ContactContents(apiResponse) {
 ```js
 // use this way on dopost() function
 let chatId = contactContents(apiResponse).id
-let contact = contactContents(apiResponse).contact.phone_number
+let contact = contactContents(apiResponse).contact
 ```
 
 > Coming API `Example`
