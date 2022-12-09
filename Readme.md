@@ -40,7 +40,7 @@ Telesun is a library that makes it simple for you to develop your own Telegram b
 once you `import library`, then you can create the following function and `go send any message to your bot` and **run** `WelcomeToTelesun` function
 
 ```js
-//create and send message to your bot, then run this function
+// send message to your bot, then create the following function and run the function
 
 function WelcomeToTelesun() {
   //pass your bot token
@@ -77,7 +77,7 @@ For additional bot examples see [examples](https://github.com/abdiu34567/telesn.
 
 ### 💊 Telegram token
 
-To use the Telegram Bot API, you first have to get a bot account by chatting with BotFather.
+To use the Telegram Bot API, you first have to get a bot account by chatting with [BotFather](https://t.me/BotFather).
 
 BotFather will give you a token, something like `123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ`.
 
@@ -97,7 +97,7 @@ BotFather will give you a token, something like `123456789:AbCdfGhIJKlmNoQQRsTUV
  * create function called doPost()
  * copy and paste the following code to your doPost()
  * go and type << /startreg >> command on your bot
- * go to apps script and run dopost()
+ * go back to apps script and run dopost()
  * then check your bot
  *
  */
@@ -135,7 +135,7 @@ function doPost(){
  */
 function doPost(){
 
-  ......
+  ......//❌ don't remove previos codes
 
   //if stage is already username
   Bot.Stage('username', (ctx)=>{
@@ -202,8 +202,13 @@ Then, we need to `set webhook` <br>
 
 ```js
 /**
- * Create a setWebHook() function above <<doPost>> but below <<Bot.Telesun()>>
- *
+ * pass your bot token
+ * connecting the bot to Telesun Library
+*/
+Bot.Telesun(<<botToken>>);
+
+/**
+ * Create a setWebHook() function
  * run setWebHook() function
  * then check the log, if successfully set
  * after successfully set, then you can <<delete>> setWebhook() function

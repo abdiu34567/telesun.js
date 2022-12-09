@@ -41,4 +41,6 @@ Deploy with managed deployment every time after first time.
 
 ![Deploy](../assets/G21.png)
 
+### 🌟 `web app url is your webhook url` 🌟
+
 🌟💪 **You Did it**, Go and check Your Bot
