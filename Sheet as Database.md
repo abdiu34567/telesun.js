@@ -11,7 +11,27 @@ Google sheets are :
 
 `Telesun` simplifies the way you can get started with google sheet, just by using the library
 
-Methods:
+⚠️ Permission required for Telesun to be able to talk with your google sheet. so you need to do the following :
+
+> - Go under `Project Settings` under sidebar
+> - Check `-- show "appsscript.json" manifest file in editor --`
+
+![Permision](assets/Permission.png)
+
+> - Go back to `editor`
+> - open `appsscript.json`
+>
+> ```js
+> //add the following codes as in the screnshoot
+> "oauthScopes": [
+>     "https://www.googleapis.com/auth/spreadsheets"
+>   ]
+>
+> ```
+
+![oauth](assets/oauthScopes.png)
+
+### Getting Started
 
 > - To find spread sheet Id, check [HERE](https://github.com/abdiu34567/telesun.js/blob/main/CreatSpreadsheet.md)
 
