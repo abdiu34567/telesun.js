@@ -9,7 +9,7 @@
 > - `/replykeyboard`
 > - `/hidekeyboard`
 
-![Result](../../assets/example/commandbot.png)
+![Result](../../../assets/example/commandbot.png)
 
 ## Getting Started
 

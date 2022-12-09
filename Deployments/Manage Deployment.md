@@ -1,5 +1,7 @@
 ## Manage Deployments
 
+Deploy with managed deployment every time after first time.
+
 ---
 
 > - click on `Deploy -> Manage Deployment`
@@ -33,7 +35,7 @@
 
 ---
 
-> - here don't need to copy anything just click on `Done` button
+> - click on `Done` button, and you are done
 
 ---
 

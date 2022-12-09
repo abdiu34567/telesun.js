@@ -26,7 +26,7 @@ let chatId = CallbackContent(apiResponse).id
 let callback_data = CallbackContent(apiResponse).callback_data
 ```
 
-> Coming Api `Example`
+> Coming response `Example`
 
 ```js
 {

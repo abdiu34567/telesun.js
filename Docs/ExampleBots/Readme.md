@@ -1,6 +1,6 @@
 ## Example Bots
 
-Example bots helps by simplifing the overall process of developing bots within Apps script
+Example bots helps by simplifing the overall process of developing bots within Telesun
 
 soon more Example bots will be added
 

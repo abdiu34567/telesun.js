@@ -7,7 +7,7 @@
 > - `Password`
 > - `username`
 
-![Connection](../../assets/example/res.png)
+![Connection](../../../assets/example/res.png)
 
 ### Getting Started
 

@@ -1,7 +1,6 @@
 > refer [permissions](https://core.telegram.org/bots/api#chatpermissions) for more
 
 ```js
-function restrictingChatMember() {
   let group_username = '@App_Script_Js'
   let userAbdi = '1173180004'
   let permissions	 =
@@ -10,6 +9,5 @@ function restrictingChatMember() {
       can_send_media_messages: true
     }
 
- return Bot.restrictChatMember(group_username, userAbdi,permissions)
-}
+ ctx.restrictChatMember({chat_id:group_username, user_id:userAbdi,permissions:permissions)
 ```

@@ -1,6 +1,6 @@
 <header>
 <img src="./assets/telesun.jpg" alt="logo" height="90" align="left">
-<h1 style="display: inline">telesun.js</h1>
+<h1 style="display: inline">Telesun.js</h1>
 
 Modern Telegram Bot API framework for App Script
 
@@ -21,9 +21,11 @@ Telesun is a library that makes it simple for you to develop your own Telegram b
 
 - Full [Telegram Bot API 6.0](https://core.telegram.org/bots/api) support
 - Simpler 🌟
-- easier working across Google products
-- per click Deployment on google cloud
-- Real-Time Database(Google sheet) already integrated
+- easier working across Google products like `Youtube`, `Drive`, `Gmail...`
+- per click `Deployment` on google cloud
+- `Real-Time Database` (Google sheet) already integrated
+- Develop `100+` of your Bots
+- `Vanilla Javascript` is enough 
 
 ---
 
@@ -31,149 +33,185 @@ Telesun is a library that makes it simple for you to develop your own Telegram b
 
 ---
 
+<br>
+
 ### Example
 
-once you `import library`, and you identify your `telegram chat id`, then you can create function like the following and send direct message to the bot chat id
+once you `import library`, then you can create the following function and `go send any message to your bot` and **run** `WelcomeToTelesun` function
 
 ```js
-Bot.Telesun(botToken)
+//create and send message to your bot, then run this function
 
-//create and run this function, the message will directly sent to the user chat Id
+function WelcomeToTelesun() {
+  //pass your bot token
+  Bot.Telesun(<<botToken>>);
 
-function SendMessage() {
-  let chatId = '1173180004' //change this chat id to yours
-  return Bot.sendMessage(chatId, 'hello User')
+  //will executed always
+  Bot.Use((ctx) => ctx.reply("Hello World!"));
+
+  //executed when <</start>> command sent to bot
+  Bot.Start((ctx)=> ctx.reply("This is start Command"))
+
+  //when <hello> message sent
+  Bot.Hears('hello', (ctx)=> ctx.reply("This is hello message"))
+
+  //when photo sent
+  Bot.Photo((ctx)=> ctx.reply("This is photo"))
 }
 ```
 
 For additional bot examples see [examples](https://github.com/abdiu34567/telesn.js/tree/main/Docs/ExampleBots) folder
 
+<br>
+
 ### Resources
 
-- [Telegram group](https://t.me/App_Script_Js)
-- [GitHub Discussions](https://github.com/abdiu34567/telesn.js/discussions)
+- **[Telegram Group](https://t.me/App_Script_Js)**
+- **[GitHub Discussions](https://github.com/abdiu34567/telesn.js/discussions)**
+
+<br>
 
 ## Getting started
 
-### <u> Telegram token </u>
+<br>
+
+### 💊 Telegram token
 
 To use the Telegram Bot API, you first have to get a bot account by chatting with BotFather.
 
 BotFather will give you a token, something like `123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ`.
 
-### Import library
 
-- check [here](https://github.com/abdiu34567/telesn.js/blob/main/Getting%20Started%20With%20App%20Script.md) to follow the steps of importing library
+<br>
 
-### Setting Webhook
+### 👩‍💻 Create Your First Registration bot
 
-You only need to `set webhook once(1)`, but :
+➖ The bot will register `username` and `password` by [long polling](),<br>
+➖ then finally we deploy the bot within just 2 clicks as `webhook` on google cloud
 
-- if you `delete webhook` then you need to set it up again
-- also when you deploy using `new Deployment` you need to set webhook to the `updated url`
-
-for `webhook url` check >> [here](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md)
-
-To `set webhook` then you need to `run` the following function called `SettingWebHook()`
+> - [Create apps script project]() 
+> - [Import library]()
 
 ```js
-// find from bot father
-let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
 
-//find on Deployment
-let webhookUrl =
-  'https://script.google.com/macros/s/AKfycbyTJNTD5HsnQMUsT-qX4AUQCd6Moex3zyf9cgdmlzly-mPxmlRlaxzt8lKhljq1zr6Ow/exec'
+/**
+ * create function called doPost()
+ * copy and paste the following code to your doPost()
+ * go and type << /startreg >> command on your bot
+ * go to apps script and run dopost()
+ * then check your bot
+ *
+ */
 
-Bot.Telesun(botToken)
+/**
+ * pass your bot token
+ * connecting the bot to Telesun Library
+*/
+Bot.Telesun(<<botToken>>);
 
-function SettingWebHook() {
-  return Bot.setWebHook(webHookUrl)
+function doPost(){
+
+ /**
+  * when user send /startreg command
+  */
+  Bot.Command('startreg',(ctx)=>{
+
+    //ask user to send thier username
+    ctx.reply("Please type Your username ?")
+
+    //save stage that, next the bot is waiting for username
+    ctx.setStage("username")
+  })
+
+}
+
+```
+
+```js
+/**
+ * Add the following function to the doPost(), but don't delete the previous code
+ * go to bot and send your username
+ * go to apps script and run doPost() again
+ * then check your bot
+ */
+function doPost(){
+
+  ......
+  
+  //if stage is already username
+  Bot.Stage('username', (ctx)=>{
+      //accessing message text as username
+      let _Username = ctx.message().text
+
+      //saving to temporary session which lasts 10 minutes by default
+      Bot.TSession.set('username', _Username)
+
+      //ask user to send thier password
+      ctx.reply("Please type Your password ?")
+
+      //save stage as waiting for password
+      ctx.setStage('password')
+  })
+
 }
 ```
 
-### Adding `doPost` Function
-
-When a program sends the app an HTTP POST request, Apps Script runs `doPost(e)` function
-
-For more >> [here](https://developers.google.com/apps-script/guides/web)
-
-`Update` your previous code like this 👇
-
 ```js
-// find from bot father
-let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
+/**
+ * Add the following function to the doPost(), but don't delete the previous code
+ * go to bot and send your password
+ * go to apps script and run doPost() again
+ * then check your bot
+ */
+function doPost(){
 
-Bot.Telesun(botToken)
+  ...... //❌ don't remove previos codes
 
-//the bot will reply the same text message you sent
-function doPost(e) {
-  const apiResponse = JSON.parse(e.postData.contents)
-  let chatId = Bot.TextContents(apiResponse).id
-  let text = Bot.TextContents(apiResponse).text
-  return Bot.sendMessage(chatId, text)
+  ......//❌ don't remove previos codes
+
+   //if stage is already password
+  Bot.Stage('password', (ctx)=>{
+
+       //accessing username from temporary session
+      let _Username = Bot.TSession.getValue('username')
+
+      //send Message as user already finished the registration
+      ctx.reply(`User Registered\n\n`+
+     `UserName: ${_Username}`+
+     `Password: ${ctx.message().text}`)
+    }
+  })
+
+
 }
+
+
 ```
 
-once you create your `doPost(e)` function this way then, you can delpoy with [managed deployment](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md) and check your `bot`
+<br>
 
-### <u>Deployment</u>
+### 📡 Deploying Registration Bot
 
-after make any `change on your code`, then it is must you `Deploy` your code, otherwise you can't see any change, for more [Deployment](https://github.com/abdiu34567/telesn.js/tree/main/Deployments)
+In Order to deploy your bot, first, check :
 
-- if you are deploying your code first time follow [New Deploymet](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md)
-- if not follow [Manage Deployment](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md)
+- your main file is `code.gs`
+- your main function is `doPost(e)`
 
-> you can use `new Deployment` any time you like, but after you deploy
->
-> - Copy the web app url and paste on `webhookurl variable`
-> - run `setWebHook` function `(you don't need to deploy for this)`
+Then, we need to `set webhook` <br>
+> you can get your `webhook url` after u have followed [Deployment]() steps
 
 ```js
-let botToken = '779238246:AAEkFeunpG-lg3pc8eoAda2svGHu3O_dIA'
-let webHookUrl =
-  'https://script.google.com/macros/s/AKfycbxr03EKxm336KxtsaoHJ49JlEfaw5CzOG0ys0DMxPmKjlsaFkIFeqBVYM-1CGs-KjT_g/exec'
-
-Bot.Telesun(botToken)
-// for only new Deployment
-// this function will set webhook on
-function setWebHook() {
-  return Bot.setWebHook(webHookUrl)
+/**
+ * Create a setWebHook() function above <<doPost>> but below <<Bot.Telesun()>>
+ * 
+ * run setWebHook() function
+ * then check the log, if successfully set
+ * after successfully set, then you can <<delete>> setWebhook() function
+ * finally go and play with your bot
+ *
+ */
+function setWebhook(){
+  Bot.setWebHook({url:'https://....'})
 }
 
-//the bot will reply the same text message you sent
-function doPost(e) {
-  const apiResponse = JSON.parse(e.postData.contents)
-  let chatId = Bot.TextContents(apiResponse).id
-  let text = Bot.TextContents(apiResponse).text
-  return Bot.sendMessage(chatId, text)
-}
-```
-
-> you can delete `setWebHook` function and `webhookurl variable` when deploying with `managed deployment`
-
-## Best Practice
-
-app script won't show you any `code error` from `doPost`, so we need to track the error's by sending to bot as a message, for more [Best Practices](https://github.com/abdiu34567/telesn.js/blob/main/Best%20Practices.md)
-
-- edit `doPost` function as the following
-- add `try catch` error handling
-
-```js
-let botToken = '779238246:AAEkFeunpG-lg3pc8eoAda2svGHu3O_dIA'
-
-Bot.Telesun(botToken)
-
-//admin chat id to send errors to
-let admin = '1173180004'
-//this will send any error to the Admin chat id you specified
-function doPost(e) {
-  try {
-    const apiResponse = JSON.parse(e.postData.contents)
-    let chatId = Bot.TextContents(apiResponse).id
-    let text = Bot.TextContents(apiResponse).text
-    return Bot.sendMessage(chatId, text)
-  } catch (err) {
-    return Bot.sendMessage(admin, err)
-  }
-}
 ```

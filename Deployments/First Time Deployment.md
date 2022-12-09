@@ -84,19 +84,8 @@
 
 ---
 
-> - `paste` The copied `web app url`
-> - `paste bot token` from bot father
-> - create add run function like `SettingWebHook` in order to set `WebHook`
+###  🌟 `web app url is your webhook url` 🌟
 
----
+> - `you will use this url to set webhook for your bot `
 
-## ![setting webhook](../assets/G16.png)
 
----
-
-> - add `dopost` function
-> - `Deploy` Again, but this time go for [Manage deployment](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/Manage%20Deployment.md))
-
----
-
-![manage Deployment](../assets/G17.png)

@@ -1,17 +1,20 @@
-## Advanced Concepts
+## Old Ways
 
-- apps script file extension is `.gs`
-- try to refactor your `doPost` function this way
+old ways are also a good choice ,but if you can set up everything from `scratch`
 
-> copy this code to `code.gs` file
+Example:
 
+create different files like `code.gs, functions.gs, and startfunction.gs`
+
+> `code.gs` 
 ```js
-let botToken = '779238246:AAEkFeunpG-lg3pc8eoAda2svGHu3O_dIA'
+let botToken = '779238246:AAEkFeunpG-lg3c8eoAda2svGHu3O_dIA'
 
 Bot.Telesun(botToken)
 
 //admin chat id to send errors to
 let admin = '1173180004'
+
 function doPost(e) {
   try {
     const apiResponse = JSON.parse(e.postData.contents)
@@ -27,7 +30,7 @@ function doPost(e) {
 }
 ```
 
-> create another file with any name like `functions.gs`
+> `functions.gs`
 
 ```js
 function Callbacks(apiResponse) {
@@ -47,7 +50,7 @@ function MyInline(apiResponse) {
 }
 ```
 
-> also create another file like `startfunction.gs`
+> `startfunction.gs`
 
 ```js
 function StartFunction(id) {
@@ -55,6 +58,4 @@ function StartFunction(id) {
 }
 ```
 
-### `Cache Storage` to speed up
 
-For more check [here](https://developers.google.com/apps-script/reference/cache/cache)
