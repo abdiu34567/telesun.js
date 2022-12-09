@@ -4,8 +4,8 @@ within help of apps script, now telesun provide the easy way to work across sess
 
 Telesun provides 2 kinds of sessions :
 
-> - Temporary Sessions
-> - Permanent Sessions
+> - `Temporary Sessions`
+> - `Permanent Sessions`
 
 ### Temporary Sessions
 

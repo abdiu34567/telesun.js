@@ -13,7 +13,7 @@ Google sheets are :
 
 Methods:
 
-> - To find spread sheet Id, check [HERE]()
+> - To find spread sheet Id, check [HERE](https://github.com/abdiu34567/telesun.js/blob/main/CreatSpreadsheet.md)
 
 ```js
 /**

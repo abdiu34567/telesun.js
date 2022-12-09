@@ -1,9 +1,9 @@
-## Getting Updates 
+## Getting Updates
 
 There is 2 ways to get updates from your bot
 
-> - [Webhook]()
-> - [Polling]()
+> - [Webhook](https://github.com/abdiu34567/telesun.js/blob/main/WebHooks.md)
+> - [Polling](https://github.com/abdiu34567/telesun.js/blob/main/LongPolling.md)
 
 How To Use :
 
@@ -22,7 +22,7 @@ How To Use :
 Bot.getUpdates({...})
 
 /**
- * Use this method to specify a URL and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified URL, containing a JSON-serialized Update. In case of an unsuccessful request, we will give up after a reasonable amount of attempts. 
+ * Use this method to specify a URL and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified URL, containing a JSON-serialized Update. In case of an unsuccessful request, we will give up after a reasonable amount of attempts.
  * If you'd like to make sure that the webhook was set by you, you can specify secret data in the parameter secret_token. If specified, the request will contain a header “X-Telegram-Bot-Api-Secret-Token” with the secret token as content
 * https://core.telegram.org/bots/api#setwebhook
 * @param {object} Param - Object Parameter to set webhook

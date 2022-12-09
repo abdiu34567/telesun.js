@@ -1,6 +1,6 @@
 ## **Context** (`ctx`)
 
-ctx is a Telesun globally passed parametr to callback functions and you can access as [**Bot..**]()
+ctx is a Telesun globally passed parametr to callback functions and you can access as [**Bot..**](https://github.com/abdiu34567/telesun.js/blob/main/Bot.md)
 
 ctx is an `object` containing :
 

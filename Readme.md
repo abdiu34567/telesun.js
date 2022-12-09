@@ -25,7 +25,7 @@ Telesun is a library that makes it simple for you to develop your own Telegram b
 - per click `Deployment` on google cloud
 - `Real-Time Database` (Google sheet) already integrated
 - Develop `100+` of your Bots
-- `Vanilla Javascript` is enough 
+- `Basic Javascript` is enough
 
 ---
 
@@ -81,16 +81,15 @@ To use the Telegram Bot API, you first have to get a bot account by chatting wit
 
 BotFather will give you a token, something like `123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ`.
 
-
 <br>
 
 ### 👩‍💻 Create Your First Registration bot
 
-➖ The bot will register `username` and `password` by [long polling](),<br>
+➖ The bot will register `username` and `password` by [long polling](https://github.com/abdiu34567/telesun.js/blob/main/LongPolling.md),<br>
 ➖ then finally we deploy the bot within just 2 clicks as `webhook` on google cloud
 
-> - [Create apps script project]() 
-> - [Import library]()
+> - [Create apps script project](https://github.com/abdiu34567/telesun.js/blob/main/Getting%20Started%20With%20App%20Script.md)
+> - [Import library](https://github.com/abdiu34567/telesun.js/blob/main/ImportingLib.md)
 
 ```js
 
@@ -137,7 +136,7 @@ function doPost(){
 function doPost(){
 
   ......
-  
+
   //if stage is already username
   Bot.Stage('username', (ctx)=>{
       //accessing message text as username
@@ -198,20 +197,20 @@ In Order to deploy your bot, first, check :
 - your main function is `doPost(e)`
 
 Then, we need to `set webhook` <br>
-> you can get your `webhook url` after u have followed [Deployment]() steps
+
+> you can get your `webhook url` after u have followed [Deployment](https://github.com/abdiu34567/telesun.js/tree/main/Deployments) steps
 
 ```js
 /**
  * Create a setWebHook() function above <<doPost>> but below <<Bot.Telesun()>>
- * 
+ *
  * run setWebHook() function
  * then check the log, if successfully set
  * after successfully set, then you can <<delete>> setWebhook() function
  * finally go and play with your bot
  *
  */
-function setWebhook(){
-  Bot.setWebHook({url:'https://....'})
+function setWebhook() {
+  Bot.setWebHook({ url: "https://...." });
 }
-
 ```

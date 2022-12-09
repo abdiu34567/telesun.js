@@ -6,17 +6,17 @@
 
 untill you `change` or `delete` webhook url, the bot will always send POST request to saved webhook url when there is an update
 
-> - **[long polling]() is not possible on webhook**
+> - **[long polling](https://github.com/abdiu34567/telesun.js/blob/main/LongPolling.md) is not possible on webhook**
 
 You only need to `set webhook once after deploying your code`
 
-> for `webhook url` see **[Deployment](https://github.com/abdiu34567/telesn.js/blob/main/Deployments/First%20Time%20Deployment.md)**
+> for `webhook url` see **[Deployment](https://github.com/abdiu34567/telesun.js/tree/main/Deployments)**
 
 <br>
 
 ### Steps
 
-> - first deploy your code as [web App]()
+> - first deploy your code as `web App`
 > - then copy the url. which you will get after you have deployed
 
 <br>
