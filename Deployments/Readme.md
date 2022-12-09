@@ -14,6 +14,3 @@
 >
 > - use `New Deployment` when you are deploying your script for the `first time`
 > - use `Manage Deployment` for deployments `after` first time deployment
-
-
-

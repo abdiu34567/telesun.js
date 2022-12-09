@@ -9,7 +9,7 @@
 function PhotoContents(apiResponse) {
   return {
     name: apiResponse.message.from.first_name,
-    photo: apiResponse.message.photo.file_id,
+    photo: apiResponse.message.photo[0].file_id,
     id: apiResponse.message.from.id,
     username: apiResponse.message.from.username,
     msgid: apiResponse.message.message_id,
@@ -22,7 +22,7 @@ function PhotoContents(apiResponse) {
 ```js
 // use this way on dopost() function
 let chatId = PhotoContents(apiResponse).id
-let text = PhotoContents(apiResponse).text
+let photo = PhotoContents(apiResponse).photo
 ```
 
 > Coming Api `Example`

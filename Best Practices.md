@@ -6,9 +6,6 @@
 
 - ### `Use google sheet database for parmanent data storage`
 
-
-
-
 ### Deployment
 
- - Always use `managed deployment` after first time deployment
+- Always use `managed deployment` after first time deployment
