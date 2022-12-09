@@ -9,13 +9,3 @@ On successful call, a JSON-object containing the result will be returned
 <br>
 
 For More 💫 check [Available Methods](https://core.telegram.org/bots/api#available-methods)
-
-To access methods :
-
-```js
-Bot.close()
-Bot.getMe()
-Bot.sendMessage()
-Bot. ....
-.........
-```
