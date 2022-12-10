@@ -177,13 +177,12 @@ After, you have deployed your code and get your `webhook url` :
 /**
  * Create this function and run once, then you can delete it
  *
-*/
-fuction settingWebhook(){
+ */
+function settingWebhook() {
   const token = "5862849341:AAHvKMVz2HGq5y9NBD4B4YAsEI0X9qE";
   Bot.Telesun(token);
-  Bot.setWebHook()
+  Bot.setWebHook();
 }
-
 ```
 
 🤖 -- Go & CHECK YOUR BOT -- 🤖
