@@ -190,7 +190,7 @@ After, you have deployed your code and get your `webhook url` :
  *
  */
 function settingWebhook() {
-  const token = "5862849341:AAHvKMVz2HGq5y9NBD4B4YAsEI0X9qE";
+  const token = "5862849341:AAHvKMVz2H5y9NBD4B4YAsEI0X9qE";
   Bot.Telesun(token);
   Bot.setWebHook();
 }
