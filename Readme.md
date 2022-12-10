@@ -202,20 +202,15 @@ Then, we need to `set webhook` <br>
 
 ```js
 /**
- * pass your bot token
- * connecting the bot to Telesun Library
-*/
-Bot.Telesun(<<botToken>>);
-
-/**
- * Create a setWebHook() function
- * run setWebHook() function
- * then check the log, if successfully set
- * after successfully set, then you can <<delete>> setWebhook() function
- * finally go and play with your bot
- *
+ * Create this function and run once, then you can delete it
  */
-function setWebhook() {
-  Bot.setWebHook({ url: "https://...." });
+function settingWebhook() {
+  const token = "5862849341:AAHvKz2HGq5y9NBD4B4YAsEI0X9qE";
+  Bot.Telesun(token);
+
+  //use your webhook url as url object parameter
+  Bot.setWebHook({ url: "https://..." });
 }
 ```
+
+🌟💪 `Finally Check Your Bot`
