@@ -14,15 +14,15 @@
 ## Getting Started
 
 - first we need `bot token` from bot father
-- then `import` bot library, you can follow [here](https://github.com/abdiu34567/telesun.js/blob/main/Getting%20Started%20With%20App%20Script.md)
+- then `import` bot library, you can follow [here](https://github.com/abdiu34567/telesun.js/blob/main/ImportingLib.md)
 
 ```js
 //<<code.gs>>
 
 // find from bot father
-let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
+let botToken = "123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ";
 
-Bot.Telesun(botToken)
+Bot.Telesun(botToken);
 ```
 
 ### Setting our bot `commands`
@@ -35,23 +35,23 @@ Bot.Telesun(botToken)
 function setMyCommands() {
   let cmd = [
     {
-      command: 'start',
-      description: 'Starting The bot',
+      command: "start",
+      description: "Starting The bot",
     },
     {
-      command: 'inlinekeyboard',
-      description: 'Sending inline keyboards',
+      command: "inlinekeyboard",
+      description: "Sending inline keyboards",
     },
     {
-      command: 'replykeyboard',
-      description: 'sending reply keyboards',
+      command: "replykeyboard",
+      description: "sending reply keyboards",
     },
     {
-      command: 'hidekeyboard',
-      description: 'deleting reply keyboards',
+      command: "hidekeyboard",
+      description: "deleting reply keyboards",
     },
-  ]
-  return Bot.setMyCommands(cmd)
+  ];
+  return Bot.setMyCommands(cmd);
 }
 ```
 
@@ -65,15 +65,15 @@ function setMyCommands() {
 //<<code.gs>>
 
 // find from bot father
-let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
+let botToken = "123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ";
 
 let webhookUrl =
-  'https://script.google.com/macros/s/AKfycbyTJNTD5HsnQMUsT-qX4AUQCd6Moex3zyf9cgdmlzly-mPxmlRlaxzt8lKhljq1zr6Ow/exec'
+  "https://script.google.com/macros/s/AKfycbyTJNTD5HsnQMUsT-qX4AUQCd6Moex3zyf9cgdmlzly-mPxmlRlaxzt8lKhljq1zr6Ow/exec";
 
-Bot.Telesun(botToken)
+Bot.Telesun(botToken);
 
 function SettingWebHook() {
-  return Bot.setWebHook(webHookUrl)
+  return Bot.setWebHook(webHookUrl);
 }
 ```
 
@@ -86,22 +86,22 @@ function SettingWebHook() {
 ```js
 //<<code.gs>>
 
-let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
+let botToken = "123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ";
 
-Bot.Telesun(botToken)
+Bot.Telesun(botToken);
 
 function doPost(e) {
-  const apiResponse = JSON.parse(e.postData.contents)
-  let chatId = Bot.TextContents(apiResponse).id
-  let user = Bot.TextContents(apiResponse).name
-  let command = Bot.TextContents(apiResponse).text
+  const apiResponse = JSON.parse(e.postData.contents);
+  let chatId = Bot.TextContents(apiResponse).id;
+  let user = Bot.TextContents(apiResponse).name;
+  let command = Bot.TextContents(apiResponse).text;
 
-  if (command == '/start') return WelcomeMsg(chatId, user)
-  else if (command == '/inlinekeyboard') return InlineKbd(chatId)
-  else if (command == '/replykeyboard') return Replykbd(chatId)
-  else if (command == '/hidekeyboard') return HideKbd(chatId)
+  if (command == "/start") return WelcomeMsg(chatId, user);
+  else if (command == "/inlinekeyboard") return InlineKbd(chatId);
+  else if (command == "/replykeyboard") return Replykbd(chatId);
+  else if (command == "/hidekeyboard") return HideKbd(chatId);
 
-  return Bot.sendMessage(chatId, '❌ Command Not Found')
+  return Bot.sendMessage(chatId, "❌ Command Not Found");
 }
 ```
 
@@ -118,54 +118,54 @@ function WelcomeMsg(chatId, user) {
     `➖ /start\n` +
     `➖ /inlinekeyboard\n` +
     `➖ /replykeyboard\n` +
-    `➖ /hidekeyboard\n`
-  return Bot.sendMessage(chatId, msg)
+    `➖ /hidekeyboard\n`;
+  return Bot.sendMessage(chatId, msg);
 }
 
 //runs when user send /inlineKeyboard command
 function InlineKbd(chatId) {
-  let msg = `I Love Js, What about you ?`
+  let msg = `I Love Js, What about you ?`;
   let kbd = {
     inline_keyboard: [
       [
         {
-          text: 'Me 2',
-          callback_data: 'me2',
+          text: "Me 2",
+          callback_data: "me2",
         },
       ],
       [
         {
           text: "I don't like",
-          callback_data: 'no',
+          callback_data: "no",
         },
       ],
     ],
-  }
-  return Bot.sendMessage(chatId, msg, kbd)
+  };
+  return Bot.sendMessage(chatId, msg, kbd);
 }
 
 //runs when user send /ReplyKeyboard command
 function Replykbd(chatId) {
-  let msg = `I Love Js, What about you`
+  let msg = `I Love Js, What about you`;
   let replyKeyboard = {
     keyboard: [
-      [{ text: '/start' }, { text: '/inlinekeyboard' }],
-      [{ text: '/replykeyboard' }],
-      [{ text: '/hidekeyboard' }],
+      [{ text: "/start" }, { text: "/inlinekeyboard" }],
+      [{ text: "/replykeyboard" }],
+      [{ text: "/hidekeyboard" }],
     ],
     one_time_keyboard: true,
     resize_keyboard: true,
-  }
-  return Bot.sendMessage(chatId, msg, replyKeyboard)
+  };
+  return Bot.sendMessage(chatId, msg, replyKeyboard);
 }
 
 //runs when user send /hideKeyboard command
 function HideKbd(chatId) {
-  let msg = `Hideing Reply Keyboard`
+  let msg = `Hideing Reply Keyboard`;
   let removingReply = {
     remove_keyboard: true,
-  }
-  return Bot.sendMessage(chatId, msg, removingReply)
+  };
+  return Bot.sendMessage(chatId, msg, removingReply);
 }
 ```
 
