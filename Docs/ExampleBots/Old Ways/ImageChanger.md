@@ -7,7 +7,7 @@
 ## Getting Started
 
 - first we need `bot token` from bot father
-- then `import` bot library, you can follow [here](https://github.com/abdiu34567/telesun.js/blob/main/Getting%20Started%20With%20App%20Script.md)
+- then `import` bot library, you can follow [here](https://github.com/abdiu34567/telesun.js/blob/main/ImportingLib.md)
 
 ```js
 //<<code.gs>>

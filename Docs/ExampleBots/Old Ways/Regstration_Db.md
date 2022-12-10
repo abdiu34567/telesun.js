@@ -12,15 +12,15 @@
 ### Getting Started
 
 - first we need `bot token` from bot father
-- then `import` bot library, you can follow [here](https://github.com/abdiu34567/telesun.js/blob/main/Getting%20Started%20With%20App%20Script.md)
+- then `import` bot library, you can follow [here](https://github.com/abdiu34567/telesun.js/blob/main/ImportingLib.md)
 
 ```js
 //<<code.gs>>
 
 // find from bot father
-let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
+let botToken = "123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ";
 
-Bot.Telesun(botToken)
+Bot.Telesun(botToken);
 ```
 
 ### Setting Webhook
@@ -33,15 +33,15 @@ Bot.Telesun(botToken)
 //<<code.gs>>
 
 // find from bot father
-let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
+let botToken = "123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ";
 
 let webhookUrl =
-  'https://script.google.com/macros/s/AKfycbyTJNTD5HsnQMUsT-qX4AUQCd6Moex3zyf9cgdmlzly-mPxmlRlaxzt8lKhljq1zr6Ow/exec'
+  "https://script.google.com/macros/s/AKfycbyTJNTD5HsnQMUsT-qX4AUQCd6Moex3zyf9cgdmlzly-mPxmlRlaxzt8lKhljq1zr6Ow/exec";
 
-Bot.Telesun(botToken)
+Bot.Telesun(botToken);
 
 function SettingWebHook() {
-  return Bot.setWebHook(webHookUrl)
+  return Bot.setWebHook(webHookUrl);
 }
 ```
 
@@ -52,15 +52,15 @@ function SettingWebHook() {
 ```js
 //<<code.gs>>
 
-let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
+let botToken = "123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ";
 
-Bot.Telesun(botToken)
+Bot.Telesun(botToken);
 
 function doPost(e) {
-  const apiResponse = JSON.parse(e.postData.contents)
-  if (apiResponse.message) return TextManager(apiResponse)
+  const apiResponse = JSON.parse(e.postData.contents);
+  if (apiResponse.message) return TextManager(apiResponse);
 
-  return
+  return;
 }
 ```
 
@@ -72,106 +72,107 @@ function doPost(e) {
 
 //runs when user send any text message
 function TextManager(apiResponse) {
-  let chatId = Bot.TextContents(apiResponse).id
+  let chatId = Bot.TextContents(apiResponse).id;
 
-  let spreadsheetId = '1l5gUq-UF1zvwHxqhda--glhxq1vnVKfBj222E9SpwSg'
-  let spreadsheetName = 'Sheet1'
+  let spreadsheetId = "1l5gUq-UF1zvwHxqhda--glhxq1vnVKfBj222E9SpwSg";
+  let spreadsheetName = "Sheet1";
 
   //check if user already registered
-  let _db_ = SpreadsheetApp.openById(spreadsheetId).getSheetByName(spreadsheetName)
-  let _row_ = _db_.createTextFinder(chatId).findNext()
+  let _db_ =
+    SpreadsheetApp.openById(spreadsheetId).getSheetByName(spreadsheetName);
+  let _row_ = _db_.createTextFinder(chatId).findNext();
 
   //if user found
   if (_row_)
-    return Bot.sendMessage(chatId, '👩‍💻 ____You are already registered_____ ')
+    return Bot.sendMessage(chatId, "👩‍💻 ____You are already registered_____ ");
 
   //____ if user not found _________
 
   //if cache have some data (username | password)
-  let cache = CacheService.getScriptCache()
+  let cache = CacheService.getScriptCache();
   if (cache.get(chatId)) {
-    let _toJson_ = JSON.parse(cache.get(chatId))
-    let _state_ = _toJson_.state
+    let _toJson_ = JSON.parse(cache.get(chatId));
+    let _state_ = _toJson_.state;
 
     switch (_state_) {
-      case 'username':
-        saveUserNameToCache(apiResponse)
-        return Bot.sendMessage(chatId, '👩‍💻 Type Your password ❔')
+      case "username":
+        saveUserNameToCache(apiResponse);
+        return Bot.sendMessage(chatId, "👩‍💻 Type Your password ❔");
 
-      case 'password':
-        savePasswordToCache(apiResponse)
-        saveToDb(apiResponse)
+      case "password":
+        savePasswordToCache(apiResponse);
+        saveToDb(apiResponse);
         return Bot.sendMessage(
           chatId,
-          '👩‍💻 ____You are already registered_____ '
-        )
+          "👩‍💻 ____You are already registered_____ "
+        );
     }
   }
 
   //_______if no data on cache______
-  return askForUsername(chatId)
+  return askForUsername(chatId);
 }
 
 /*************************** */
 function askForUsername(chatId) {
-  Bot.sendMessage(chatId, `Type Your Full Name ❔`)
+  Bot.sendMessage(chatId, `Type Your Full Name ❔`);
 
   //save state to cache by creating object
-  let obj = { state: 'username' }
-  let objToSave = JSON.stringify(obj) //must to save on cache
+  let obj = { state: "username" };
+  let objToSave = JSON.stringify(obj); //must to save on cache
 
-  let cache = CacheService.getScriptCache()
-  return cache.put(chatId, objToSave)
+  let cache = CacheService.getScriptCache();
+  return cache.put(chatId, objToSave);
 }
 
 /*************************** */
 function saveUserNameToCache(apiResponse) {
   //user chat id
-  let chatId = Bot.TextContents(apiResponse).id
-  let userFullName = Bot.TextContents(apiResponse).text
+  let chatId = Bot.TextContents(apiResponse).id;
+  let userFullName = Bot.TextContents(apiResponse).text;
 
-  let cache = CacheService.getScriptCache()
-  let obj = JSON.parse(cache.get(chatId))
+  let cache = CacheService.getScriptCache();
+  let obj = JSON.parse(cache.get(chatId));
 
-  obj['username'] = userFullName //save full name to object
-  obj['state'] = 'password' //updating state to password
+  obj["username"] = userFullName; //save full name to object
+  obj["state"] = "password"; //updating state to password
 
-  let objToSave = JSON.stringify(obj)
-  return cache.put(chatId, objToSave) //update cache with full name
+  let objToSave = JSON.stringify(obj);
+  return cache.put(chatId, objToSave); //update cache with full name
 }
 
 /*************************** */
 function savePasswordToCache(apiResponse) {
   //user chat id
-  let chatId = Bot.TextContents(apiResponse).id
-  let password = Bot.TextContents(apiResponse).text
+  let chatId = Bot.TextContents(apiResponse).id;
+  let password = Bot.TextContents(apiResponse).text;
 
-  let cache = CacheService.getScriptCache()
-  let obj = JSON.parse(cache.get(chatId))
-  obj['password'] = password //save password to object
+  let cache = CacheService.getScriptCache();
+  let obj = JSON.parse(cache.get(chatId));
+  obj["password"] = password; //save password to object
 
-  let objToSave = JSON.stringify(obj)
-  return cache.put(chatId, objToSave) //update cache with full name
+  let objToSave = JSON.stringify(obj);
+  return cache.put(chatId, objToSave); //update cache with full name
 }
 
 /*************************** */
 function saveToDb(apiResponse) {
-  let chatId = Bot.TextContents(apiResponse).id
-  let cache = CacheService.getScriptCache()
-  let userData = JSON.parse(cache.get(chatId))
+  let chatId = Bot.TextContents(apiResponse).id;
+  let cache = CacheService.getScriptCache();
+  let userData = JSON.parse(cache.get(chatId));
 
-  let username = userData.username
-  let userPassword = userData.password
+  let username = userData.username;
+  let userPassword = userData.password;
 
   //_________SavingToSheet_________
-  let spreadsheetId = '1l5gUq-UF1zvwHxqhda--glhxq1vnVKfBj222E9SpwSg'
-  let spreadsheetName = 'Sheet1'
+  let spreadsheetId = "1l5gUq-UF1zvwHxqhda--glhxq1vnVKfBj222E9SpwSg";
+  let spreadsheetName = "Sheet1";
 
   //check if user already registered
   let _db_ =
-    SpreadsheetApp.openById(spreadsheetId).getSheetByName(spreadsheetName)
-  _db_.appendRow([chatId, username, userPassword])
-  return cache.remove(chatId) //finaly you can remove cache
+    SpreadsheetApp.openById(spreadsheetId).getSheetByName(spreadsheetName);
+  _db_.appendRow([chatId, username, userPassword]);
+  return cache.remove(chatId); //finaly you can remove cache
 }
 ```
 

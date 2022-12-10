@@ -6,15 +6,15 @@
 ## Getting Started
 
 - first we need `bot token` from bot father
-- then `import` bot library, you can follow [here](https://github.com/abdiu34567/telesun.js/blob/main/Getting%20Started%20With%20App%20Script.md)
+- then `import` bot library, you can follow [here](https://github.com/abdiu34567/telesun.js/blob/main/ImportingLib.md)
 
 ```js
 //<<code.gs>>
 
 // find from bot father
-let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
+let botToken = "123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ";
 
-Bot.Telesun(botToken)
+Bot.Telesun(botToken);
 ```
 
 ### Setting Webhook
@@ -27,15 +27,15 @@ Bot.Telesun(botToken)
 //<<code.gs>>
 
 // find from bot father
-let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
+let botToken = "123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ";
 
 let webhookUrl =
-  'https://script.google.com/macros/s/AKfycbyTJNTD5HsnQMUsT-qX4AUQCd6Moex3zyf9cgdmlzly-mPxmlRlaxzt8lKhljq1zr6Ow/exec'
+  "https://script.google.com/macros/s/AKfycbyTJNTD5HsnQMUsT-qX4AUQCd6Moex3zyf9cgdmlzly-mPxmlRlaxzt8lKhljq1zr6Ow/exec";
 
-Bot.Telesun(botToken)
+Bot.Telesun(botToken);
 
 function SettingWebHook() {
-  return Bot.setWebHook(webHookUrl)
+  return Bot.setWebHook(webHookUrl);
 }
 ```
 
@@ -48,16 +48,16 @@ function SettingWebHook() {
 ```js
 //<<code.gs>>
 
-let botToken = '123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ'
+let botToken = "123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ";
 
-Bot.Telesun(botToken)
+Bot.Telesun(botToken);
 
 function doPost(e) {
-  const apiResponse = JSON.parse(e.postData.contents)
-  let chatId = Bot.TextContents(apiResponse).id
-  let query = Bot.TextContents(apiResponse).text
+  const apiResponse = JSON.parse(e.postData.contents);
+  let chatId = Bot.TextContents(apiResponse).id;
+  let query = Bot.TextContents(apiResponse).text;
 
-  return FetchGoogleBooks(chatId, query)
+  return FetchGoogleBooks(chatId, query);
 }
 ```
 
@@ -70,28 +70,28 @@ function doPost(e) {
 function FetchGoogleBooks(chatId, query) {
   const books = UrlFetchApp.fetch(
     `https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyARWN-E4fPF-Qqva71wyLelQtO51Ysb81Y&country=DE`
-  )
-  let result = JSON.parse(books).items
-  let totalItems = JSON.parse(books).totalItems
+  );
+  let result = JSON.parse(books).items;
+  let totalItems = JSON.parse(books).totalItems;
   if (Number(totalItems) == 0) {
-    return Bot.sendText(chatId, `❌ <i>No book found</i>`)
+    return Bot.sendText(chatId, `❌ <i>No book found</i>`);
   }
 
-  let photo = result[0].volumeInfo.previewLink
-  let title = result[0].volumeInfo.title
-  let subtitle = result[0].volumeInfo.subtitle
-  let authors = result[0].volumeInfo.authors
-  let selfLink = result[0].volumeInfo.previewLink
-  let date = result[0].volumeInfo.publishedDate
+  let photo = result[0].volumeInfo.previewLink;
+  let title = result[0].volumeInfo.title;
+  let subtitle = result[0].volumeInfo.subtitle;
+  let authors = result[0].volumeInfo.authors;
+  let selfLink = result[0].volumeInfo.previewLink;
+  let date = result[0].volumeInfo.publishedDate;
 
   let caption =
     `📚 <b>🎖 Title : </b><code>${title}</code>\n` +
     `<b>🎗 Sub Title : </b><code>${subtitle}</code>\n` +
     `<b>🧓 Authors : </b><code>${authors}</code>\n` +
     `<b>⏰ Published Date : </b><code>${date}</code>\n` +
-    `<b>📡 Self Link : </b><a>${selfLink}</a>`
+    `<b>📡 Self Link : </b><a>${selfLink}</a>`;
 
-  return Bot.sendPhoto(chatId, photo, 'HTML', caption)
+  return Bot.sendPhoto(chatId, photo, "HTML", caption);
 }
 ```
 

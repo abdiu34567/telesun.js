@@ -154,6 +154,7 @@ Now, Let Us `Deploy our code and make our bot live`
 ```js
 /**
  * update your code as the following
+ * add the parameter <e>
 */
 
 function doPost(e) {
