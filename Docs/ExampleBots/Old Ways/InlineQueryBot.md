@@ -7,7 +7,7 @@
 ## Getting Started
 
 - first we need `bot token` from bot father
-- then `import` bot library, you can follow [here](https://github.com/abdiu34567/telesun.js/blob/main/Getting%20Started%20With%20App%20Script.md)
+- then `import` bot library, you can follow [here](https://github.com/abdiu34567/telesun.js/blob/main/ImportingLib.md)
 - in order for inline query to work for your bot follow :
   - `Bot Father -> /mybots -> (chose your bot) -> Bot Setting -> inline mode -> Turn inline mode on`
 

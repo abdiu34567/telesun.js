@@ -1,6 +1,6 @@
 ## Command Bot
 
-> in this tutorial we are going to develop a bot send specific messages for the following commands we sent
+> In this tutorial we are going to develop a bot send specific messages for the following commands we sent
 >
 > `Commands` are:
 >
@@ -13,7 +13,8 @@
 
 ## Getting Started
 
-- first we need `bot token` from bot father
+- first setup [Apps script project](https://github.com/abdiu34567/telesun.js/blob/main/Getting%20Started%20With%20App%20Script.md)
+- then we need `bot token` from bot father
 - then `import` bot library, you can follow [here](https://github.com/abdiu34567/telesun.js/blob/main/ImportingLib.md)
 
 ```js
@@ -58,9 +59,13 @@ function doPost() {
 }
 ```
 
-> Now, go and send any of the provided command to your bot and see the response
+> - Now, go and send any of the provided command to your bot
+> - then, run your `doPost` function manually
+> - and check your bot response
 
-Let us continue, to send beautiful responses
+<br>
+
+Let us continue, and send beautiful responses
 
 ```js
 /**
@@ -147,6 +152,12 @@ function doPost() {
 }
 ```
 
+> - Now, go and send any of the provided command to your bot
+> - then, run your `dopost` function manually
+> - and check your bot response
+
+<br>
+
 🌟💪 Wow, You have made it.
 
 Now, Let Us `Deploy our code and make our bot live`
@@ -185,4 +196,4 @@ function settingWebhook() {
 }
 ```
 
-🤖 -- Go & CHECK YOUR BOT -- 🤖
+🤖 -- GO & CHECK YOUR BOT -- 🤖
