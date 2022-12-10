@@ -35,4 +35,4 @@
 
 ![Add](assets/G6.png)
 
-     🌟💪 **congratulation**, u are now imported the library
+🌟💪 **congratulation**, u are now imported the library
