@@ -1062,6 +1062,19 @@ No more than 50 results per query are allowed
    */
   ctx.reply(Message, {...})
 
+   /**
+   * Use this method to edit text and game messages. On success, if the edited message is not an inline message, the edited Message is returned, otherwise True is returned
+   * https://core.telegram.org/bots/api#editmessagetext
+   * @param {object} Param - Object Parameter to edit message text
+   * @param {number} [Param.inline_message_id] - Required if chat_id and message_id are not specified. Identifier of the inline message
+   * @param {string} Param.text - New text of the message, 1-4096 characters after entities parsing
+   * @param {string} [Param.parse_mode] - Mode for parsing entities in the message text
+   * @param {object} [Paramreply_markup] - object for an inline keyboard
+   * @param {object} [Param.entities] - list of special entities that appear in message text, which can be specified instead of parse_mode
+   * @param {boolean} [Param.disable_web_page_preview] - Disables link previews for links in this message
+   */
+  ctx.replyWithEditedMessage(Message, {...})
+
     /**
    * Reply Message With HTML anywhere
    * @param {string|number} Message

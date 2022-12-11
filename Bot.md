@@ -61,6 +61,39 @@ Bot.Command('hello',(ctx)=>{...})
 
 //Executes on username stage only
 Bot.Stage('username', (ctx)=>{...})
+
+//Executes on any Edited messages
+Bot.Edited_message((ctx)=>{})
+
+//Executes on any channel post
+Bot.Channel_post((ctx)=>{})
+
+//Executes on any edited channel posts
+Bot.Edited_channel_post((ctx)=>{})
+
+//Executes on any chosen inline result
+Bot.Chosen_inline_result((ctx)=>{})
+
+//Executes on shipping query
+Bot.Shipping_query((ctx)=>{}))
+
+//Executes on pre checkout query
+Bot.Pre_checkout_query((ctx)=>{})
+
+//Executes on Poll sent by bots
+Bot.Poll((ctx)=>{})
+
+//Executes on answered poll
+Bot.Poll_answer((ctx)=>{})
+
+//Executes on when bot is blocker or unblocked on chats
+Bot.My_chat_member((ctx)=>{})
+
+//Executes when a chat member's status was updated in a chat
+Bot.Chat_member((ctx)=>{})
+
+//Executes when request to join the chat has been sent
+Bot.Chat_join_request((ctx)=>{})
 ```
 
 ### Use()
