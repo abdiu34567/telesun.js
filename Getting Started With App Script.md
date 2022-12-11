@@ -30,9 +30,4 @@
 
 ---
 
-> [Import Telesun Library]() to get started with Telegram bots
-
-
-
-
-
+> [Import Telesun Library](https://github.com/abdiu34567/telesun.js/blob/main/ImportingLib.md) to get started with Telegram bots
