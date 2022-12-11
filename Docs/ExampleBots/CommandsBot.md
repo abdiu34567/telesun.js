@@ -54,7 +54,7 @@ function doPost() {
 
   //Executed when user sent /hidekeyboard command
   Bot.Command('hidekeyboard',(ctx)=>{
-      ctx.reply('hidekeyboard command sent)
+      ctx.reply('hidekeyboard command sent')
   })
 }
 ```
