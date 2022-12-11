@@ -12,5 +12,5 @@
 >
 > **Recommendation**
 >
-> - use `New Deployment` when you are deploying your script for the `first time`
-> - use `Manage Deployment` for deployments `after` first time deployment
+> - use [New Deployment](https://github.com/abdiu34567/telesun.js/blob/main/Deployments/First%20Time%20Deployment.md) when you are deploying your script for the `first time`
+> - use [Manage Deployment](https://github.com/abdiu34567/telesun.js/blob/main/Deployments/Manage%20Deployment.md) for deployments `after` first time deployment
