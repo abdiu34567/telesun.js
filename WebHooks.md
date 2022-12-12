@@ -56,6 +56,6 @@ function deletingWebHook() {
 
   Bot.Telesun(botToken);
 
-  return Bot.deleteWebHook();
+  Bot.deleteWebhook();
 }
 ```
