@@ -26,18 +26,16 @@ To `set webhook` then you need to `create` and `run` the function like the follo
 > - This is manual work. you `create and run` the following function, then the webhook will be set
 
 ```js
-// find from bot father
-let botToken = "123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ";
-
-//you will found the url after you deploy your code
-let webhookUrl =
-  "https://script.google.com/macros/s/AKfycbyTJNTD5HsnQMUsT-qX4AUQCd6Moex3zyf9cgdmlzly-mPxmlRlaxzt8lKhljq1zr6Ow/exec";
-
-Bot.Telesun(botToken);
-
 //run this function by clicking run button on apps script editor
 function SettingWebHook() {
-  return Bot.setWebHook(url:");
+  // find from bot father
+  let botToken = "123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ";
+  Bot.Telesun(botToken);
+
+  //you will found the url after you deploy your code
+  let webhookUrl =
+    "https://script.google.com/macros/s/AKfycbyTJNTD5HsnQMUsT-qX4AUQCd6Moex3zyf9cgdmlzly-mPxmlRlaxzt8lKhljq1zr6Ow/exec";
+  Bot.setWebHook({ url: webhookUrl });
 }
 ```
 
