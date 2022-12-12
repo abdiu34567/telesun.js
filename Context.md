@@ -39,6 +39,11 @@ ctx is an `object` containing :
   ctx.setStage(stage)
 
   /**
+   * Remove the stage
+  */
+  ctx.clearStage()
+
+  /**
    * A simple method for testing your bot's authentication token
    * @returns basic information about the bot in form of a User object
    *

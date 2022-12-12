@@ -50,7 +50,7 @@ You can `❌ delete SettingWebHook()` function once after successfully set your 
 > `Deleting webhook will drop our bot from production mode to development mode`
 
 ```js
-//run this function by clicking run button by selecting deletingWebHook function
+//run this function by clicking run button and selecting deletingWebHook function
 function deletingWebHook() {
   let botToken = "123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ";
 
