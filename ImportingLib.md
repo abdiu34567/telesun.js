@@ -11,11 +11,11 @@
 > **Script Id :**
 
 ```js
-1VCNeAN9bPAJhNuutpEWXXnEzICiDXnUUEco1mg6oHeub_a3gVuvh9kuq
+1dIf0iiRfVTW4mtuemogbhHkDtolPNCjZWrpKOtnru3OgxftfbGQA7o1z
 ```
 
 ```js
-1QTjAshY_ry2XQGFxIhLu7098YXSyJd120AN4uCVd9uuIxS6c99jv5xP7
+1G1iCbi5C9LZShW0zd-5qAaKCfydqJJdlhrbtkftV-7tcnqP2EMl4Logl
 ```
 
 > - `copy` one of the script Id and paste on `Script Id` text input
