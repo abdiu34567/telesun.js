@@ -37,10 +37,25 @@ Bot.Telesun(botToken);
 
 //run this function by clicking run button on apps script editor
 function SettingWebHook() {
-  return Bot.setWebHook(webHookUrl);
+  return Bot.setWebHook(url:");
 }
 ```
 
 You can `❌ delete SettingWebHook()` function once after successfully set your webhook, because unless you delete or change webhook, you don't need it again
 
 📡 `finally after successfully setting your webhook, your bot will start sending POST request to your webhook url and your bot if fully live 🌟`
+
+## Deleting Webhook
+
+> `Deleting webhook will drop our bot from production mode to development mode`
+
+```js
+//run this function by clicking run button by selecting deletingWebHook function
+function deletingWebHook() {
+  let botToken = "123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ";
+
+  Bot.Telesun(botToken);
+
+  return Bot.deleteWebHook();
+}
+```
