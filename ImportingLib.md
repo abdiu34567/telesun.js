@@ -1,5 +1,20 @@
 ## Imporing Library
 
+There is multiple ways to import library
+
+- by `importing source code`
+- by using `library token`
+
+### Importing by Source Code
+
+`importing source code` got better <u>performance</u> and auto completion comparing to `library token`
+
+-- copy and paste the [ [source code](https://script.google.com/home/projects/1naKPHeBGcpgARUWtq7F-12VjQirwjSv4i4ESdD3hAkXQnnHYhnWiYIKQ/edit) ]⬅️ , to your script project --
+
+⛔️ `you don't need to import library token, if you import the source code already`
+
+### Importing by Library Token
+
 > - Click on The `+` button in the right side of `libraries`
 
 ---
