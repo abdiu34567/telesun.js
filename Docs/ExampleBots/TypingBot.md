@@ -1,4 +1,4 @@
-## Command Bot
+## Typing Bot
 
 > In this tutorial we are going to develop a sample `typing bot`
 
