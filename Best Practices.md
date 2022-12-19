@@ -9,3 +9,7 @@
 ### Deployment
 
 - Always use `managed deployment` after first time deployment
+
+### Logging
+
+- use `Logger.log(..)` other than `console.log`
