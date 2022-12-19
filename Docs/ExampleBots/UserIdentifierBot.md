@@ -1,4 +1,4 @@
-## Command Bot
+## User Identifier Bot
 
 > In this tutorial we are going to develop a sample `User identifier bot`
 
