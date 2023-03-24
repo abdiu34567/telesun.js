@@ -32,12 +32,41 @@ Bot.sheetConnect(spreadsheetId, sheetName);
  * @param {array} like ['name', 'phone','id']
 */
 Bot.SheetDB.AppendRow([...])
+```
 
+Example:
+
+```js
+let spreadsheetId = ?//your spreadsheet ID
+let sheetName = ?//your sheet name
+
+Bot.sheetConnect(spreadsheetId, sheetName);
+
+Bot.SheetDB.AppendRow(['Name', 'Phone', 'ID'])
+```
+
+<br>
+
+```
 /**
  * Clears the whole cells in a sheet which you provided with sheet name
 */
-Bot.SheetDB.ClearFullSheet()
 
+Bot.SheetDB.ClearFullSheet()
+```
+
+```js
+let spreadsheetId = ?//your spreadsheet ID
+let sheetName = ?//your sheet name
+
+Bot.sheetConnect(spreadsheetId, sheetName);
+
+Bot.SheetDB.ClearByRange(1,1,1,1)
+```
+
+<br>
+
+```js
 /**
  * clear cells within parameters provided
  * @param {number} row - row to clear from
