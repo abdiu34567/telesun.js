@@ -32,8 +32,6 @@ Google sheets are :
 
 <br>
 
-> Then :
-
 > **Arguments:**
 >
 > - `Array` _[required]_
