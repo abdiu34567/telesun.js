@@ -60,7 +60,7 @@ Google sheets are :
 >
 > `Bot.SheetDB.ClearFullSheet();`
 >
-> 🎗 clearing The Total sheet
+> 🎗 Clearing The Total sheet
 >
 > **Example:**
 >
@@ -76,27 +76,27 @@ Google sheets are :
 
 <br>
 
-```js
-/**
- * clear cells within parameters provided
- * @param {number} row - row to clear from
- * @param {number} col - col to clear from
- * @param {number} [howManyRow] - up to how many row to clear cells
- * @param {number} [howManyCol] - up to how many col to clear cells
- *
-*/
-Bot.SheetDB.ClearByRange(1,1,..)
-```
-
-**Example:**
-
+> **Arguments**
+>
+> - `row` _[required]_
+> - `column` _[required]_
+> - `howManyRow` _[optional]_
+> - `howManyCol` _[optional]_
+>
+> `Bot.SheetDB.ClearByRange(1,1,.,.);`
+>
+> 🎗 Clearing Datas per specified Range from the sheet
+>
+> **Example:**
+>
 > ```js
 > let spreadsheetId = ?//your spreadsheet ID
 > let sheetName = ?//your sheet name
 >
 > Bot.sheetConnect(spreadsheetId, sheetName);
 >
-> Bot.SheetDB.ClearByRange(1,1,1,1)
+> Bot.SheetDB.ClearByRange(1,1,1,)
+>
 > ```
 
 ```js
