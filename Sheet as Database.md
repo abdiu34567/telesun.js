@@ -15,14 +15,20 @@ Google sheets are :
 
 > - To find spread sheet Id & Sheet Name, check [HERE](https://github.com/abdiu34567/telesun.js/blob/main/CreatSpreadsheet.md)
 
-```js
-/**
- * First you need to get connected with a sheet
- * @param {string} spreadsheetId - unique sheet id
- * @param {string} sheetName - unique sheet name
- */
-Bot.sheetConnect(spreadsheetId, sheetName);
-```
+---
+
+**Arguments:**
+
+> - `spreadsheetId` _[required]_
+> - `sheetName` _[required]_
+>
+> `Bot.sheetConnect(spreadsheetId, sheetName);`
+>
+> ```
+> This Helps to connect to your Google spreadhseet by using Spreadsheet id and sheet name
+> ```
+
+<br>
 
 > Then :
 
@@ -78,7 +84,20 @@ Bot.SheetDB.ClearFullSheet()
  *
 */
 Bot.SheetDB.ClearByRange(1,1,..)
+```
 
+**Example:**
+
+> ```js
+> let spreadsheetId = ?//your spreadsheet ID
+> let sheetName = ?//your sheet name
+>
+> Bot.sheetConnect(spreadsheetId, sheetName);
+>
+> Bot.SheetDB.ClearByRange(1,1,1,1)
+> ```
+
+```js
 /**
  * clear single value
  * @param {number} row - row to clear from
