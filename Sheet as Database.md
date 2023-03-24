@@ -95,7 +95,7 @@ Google sheets are :
 >
 > Bot.sheetConnect(spreadsheetId, sheetName);
 >
-> Bot.SheetDB.ClearByRange(1,1,1,)
+> Bot.SheetDB.ClearByRange(1,1,1,1)
 >
 > ```
 
