@@ -99,6 +99,31 @@ Google sheets are :
 >
 > ```
 
+<br>
+
+> **Arguments**
+>
+> - `row` _[required]_
+> - `column` _[required]_
+>
+> `Bot.SheetDB.ClearValue(1,1);`
+>
+> 🎗 Deleting single value by using Row and Column
+>
+> **Example:**
+>
+> ```js
+> let spreadsheetId = ?//your spreadsheet ID
+> let sheetName = ?//your sheet name
+>
+> Bot.sheetConnect(spreadsheetId, sheetName);
+>
+> Bot.SheetDB.ClearValue(1,1)
+>
+> ```
+
+<br>
+
 ```js
 /**
  * clear single value
