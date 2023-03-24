@@ -63,7 +63,7 @@ Bot.SheetDB.ClearFullSheet()
 >
 > Bot.sheetConnect(spreadsheetId, sheetName);
 >
-> Bot.SheetDB.ClearByRange(1,1,1,1)
+> Bot.SheetDB.ClearFullSheet()
 > ```
 
 <br>
