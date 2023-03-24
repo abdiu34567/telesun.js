@@ -34,16 +34,16 @@ Bot.sheetConnect(spreadsheetId, sheetName);
 Bot.SheetDB.AppendRow([...])
 ```
 
-Example:
+**Example:**
 
-```js
-let spreadsheetId = ?//your spreadsheet ID
-let sheetName = ?//your sheet name
-
-Bot.sheetConnect(spreadsheetId, sheetName);
-
-Bot.SheetDB.AppendRow(['Name', 'Phone', 'ID'])
-```
+> ```js
+> let spreadsheetId = ?//your spreadsheet ID
+> let sheetName = ?//your sheet name
+>
+> Bot.sheetConnect(spreadsheetId, sheetName);
+>
+> Bot.SheetDB.AppendRow(['Name', 'Phone', 'ID'])
+> ```
 
 <br>
 
@@ -55,14 +55,16 @@ Bot.SheetDB.AppendRow(['Name', 'Phone', 'ID'])
 Bot.SheetDB.ClearFullSheet()
 ```
 
-```js
-let spreadsheetId = ?//your spreadsheet ID
-let sheetName = ?//your sheet name
+**Example:**
 
-Bot.sheetConnect(spreadsheetId, sheetName);
-
-Bot.SheetDB.ClearByRange(1,1,1,1)
-```
+> ```js
+> let spreadsheetId = ?//your spreadsheet ID
+> let sheetName = ?//your sheet name
+>
+> Bot.sheetConnect(spreadsheetId, sheetName);
+>
+> Bot.SheetDB.ClearByRange(1,1,1,1)
+> ```
 
 <br>
 
