@@ -17,31 +17,33 @@ Google sheets are :
 
 ---
 
-**Arguments:**
-
+> **Arguments:**
+>
 > - `spreadsheetId` _[required]_
 > - `sheetName` _[required]_
 >
 > `Bot.sheetConnect(spreadsheetId, sheetName);`
 >
 > ```
-> This Helps to connect to your Google spreadhseet by using Spreadsheet id and sheet name
+> This helps to connect to your Google spreadsheet by using Spreadsheet id and sheet name
+>
+> ⚠️ Always Required
 > ```
 
 <br>
 
 > Then :
 
-```js
-/**
- * appends values in the array to the last row of the sheet where data present
- * @param {array} like ['name', 'phone','id']
-*/
-Bot.SheetDB.AppendRow([...])
-```
-
-**Example:**
-
+> **Arguments:**
+>
+> - `Array` _[required]_
+>
+> `Bot.SheetDB.AppendRow([...]);`
+>
+> 🎗 This helps to append or insert Array of datas
+>
+> **Example:**
+>
 > ```js
 > let spreadsheetId = ?//your spreadsheet ID
 > let sheetName = ?//your sheet name
@@ -49,20 +51,21 @@ Bot.SheetDB.AppendRow([...])
 > Bot.sheetConnect(spreadsheetId, sheetName);
 >
 > Bot.SheetDB.AppendRow(['Name', 'Phone', 'ID'])
+>
 > ```
 
 <br>
 
-```
-/**
- * Clears the whole cells in a sheet which you provided with sheet name
-*/
-
-Bot.SheetDB.ClearFullSheet()
-```
-
-**Example:**
-
+> **No Arguments**
+>
+> - `--`
+>
+> `Bot.SheetDB.ClearFullSheet();`
+>
+> 🎗 clearing The Total sheet
+>
+> **Example:**
+>
 > ```js
 > let spreadsheetId = ?//your spreadsheet ID
 > let sheetName = ?//your sheet name
@@ -70,6 +73,7 @@ Bot.SheetDB.ClearFullSheet()
 > Bot.sheetConnect(spreadsheetId, sheetName);
 >
 > Bot.SheetDB.ClearFullSheet()
+>
 > ```
 
 <br>
