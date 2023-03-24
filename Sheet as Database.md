@@ -83,7 +83,7 @@ Google sheets are :
 > - `howManyRow` _[optional]_
 > - `howManyCol` _[optional]_
 >
-> `Bot.SheetDB.ClearByRange(1,1,.,.);`
+> `Bot.SheetDB.ClearByRange(row,column,howManyRow,howManyCol);`
 >
 > 🎗 Clearing Datas per specified Range from the sheet
 >
@@ -106,7 +106,7 @@ Google sheets are :
 > - `row` _[required]_
 > - `column` _[required]_
 >
-> `Bot.SheetDB.ClearValue(1,1);`
+> `Bot.SheetDB.ClearValue(row,col);`
 >
 > 🎗 Deleting single value by using Row and Column
 >
