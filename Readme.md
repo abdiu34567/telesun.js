@@ -1,5 +1,5 @@
 <header>
-<img src="./assets/telesun.jpg" alt="logo" height="90" align="left">
+<img src="https://github.com/abdiu34567/telesun.js/blob/main/assets/telesun.jpg" alt="logo" height="90" align="left">
 <h1 style="display: inline">Telesun.js</h1>
 
 Modern Telegram Bot API framework for App Script
@@ -29,7 +29,7 @@ Telesun is a library that makes it simple for you to develop your own Telegram b
 
 ---
 
-## [Setting Up & Getting Started With Apps Script](https://github.com/abdiu34567/telesn.js/blob/main/Getting%20Started%20With%20App%20Script.md)
+## [Setting Up & Getting Started With Apps Script](https://github.com/abdiu34567/telesun.js/wiki/Getting-Started)
 
 ---
 
@@ -60,7 +60,7 @@ function WelcomeToTelesun() {
 }
 ```
 
-For additional bot examples see [examples](https://github.com/abdiu34567/telesn.js/tree/main/Docs/ExampleBots) folder
+For additional bot examples see [examples](https://github.com/abdiu34567/telesun.js/wiki/Example-Bots) folder
 
 <br>
 
@@ -68,6 +68,7 @@ For additional bot examples see [examples](https://github.com/abdiu34567/telesn.
 
 - **[Telegram Group](https://t.me/App_Script_Js)**
 - **[GitHub Discussions](https://github.com/abdiu34567/telesn.js/discussions)**
+- **[Documentation](https://github.com/abdiu34567/telesun.js/wiki)**
 
 <br>
 
@@ -85,11 +86,11 @@ BotFather will give you a token, something like `123456789:AbCdfGhIJKlmNoQQRsTUV
 
 ### 👩‍💻 Create Your First Registration bot
 
-➖ The bot will register `username` and `password` by [long polling](https://github.com/abdiu34567/telesun.js/blob/main/LongPolling.md),<br>
+➖ The bot will register `username` and `password` by [long polling](https://github.com/abdiu34567/telesun.js/wiki/Long-Polling),<br>
 ➖ then finally we deploy the bot within just 2 clicks as `webhook` on google cloud
 
-> - [Create apps script project](https://github.com/abdiu34567/telesun.js/blob/main/Getting%20Started%20With%20App%20Script.md)
-> - [Import library](https://github.com/abdiu34567/telesun.js/blob/main/ImportingLib.md)
+> - [Create apps script project](https://github.com/abdiu34567/telesun.js/wiki/Getting-Started)
+> - [Import library](https://github.com/abdiu34567/telesun.js/wiki/Import-Telesun)
 
 ```js
 
@@ -198,7 +199,7 @@ In Order to deploy your bot, first, check :
 
 Then, we need to `set webhook` <br>
 
-> you can get your `webhook url` after u have followed [Deployment](https://github.com/abdiu34567/telesun.js/tree/main/Deployments) steps
+> you can get your `webhook url` after u have followed [Deployment](https://github.com/abdiu34567/telesun.js/wiki/Deployments) steps
 
 ```js
 /**
