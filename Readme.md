@@ -44,19 +44,19 @@ once you `import library`, then you can create the following function and `go se
 
 function WelcomeToTelesun() {
   //pass your bot token
-  Bot.Telesun(<<botToken>>);
+  const bot = new Bot.Telesun(<<botToken>>);
 
   //will executed always
-  Bot.Use((ctx) => ctx.reply("Hello World!"));
+  bot.Use((ctx) => ctx.reply("Hello World!"));
 
   //executed when <</start>> command sent to bot
-  Bot.Start((ctx)=> ctx.reply("This is start Command"))
+  bot.Start((ctx)=> ctx.reply("This is start Command"))
 
   //when <hello> message sent
-  Bot.Hears('hello', (ctx)=> ctx.reply("This is hello message"))
+  bot.Hears('hello', (ctx)=> ctx.reply("This is hello message"))
 
   //when photo sent
-  Bot.Photo((ctx)=> ctx.reply("This is photo"))
+  bot.Photo((ctx)=> ctx.reply("This is photo"))
 }
 ```
 
@@ -107,14 +107,14 @@ BotFather will give you a token, something like `123456789:AbCdfGhIJKlmNoQQRsTUV
  * pass your bot token
  * connecting the bot to Telesun Library
 */
-Bot.Telesun(<<botToken>>);
+const bot = new Bot.Telesun(<<botToken>>);
 
 function doPost(){
 
  /**
   * when user send /startreg command
   */
-  Bot.Command('startreg',(ctx)=>{
+  bot.Command('startreg',(ctx)=>{
 
     //ask user to send thier username
     ctx.reply("Please type Your username ?")
@@ -139,7 +139,7 @@ function doPost(){
   ......//❌ don't remove previos codes
 
   //if stage is already username
-  Bot.Stage('username', (ctx)=>{
+  bot.Stage('username', (ctx)=>{
       //accessing message text as username
       let _Username = ctx.message().text
 
@@ -170,7 +170,7 @@ function doPost(){
   ......//❌ don't remove previos codes
 
    //if stage is already password
-  Bot.Stage('password', (ctx)=>{
+  bot.Stage('password', (ctx)=>{
 
        //accessing username from temporary session
       let _Username = Bot.TSession.getValue('username')
@@ -207,10 +207,10 @@ Then, we need to `set webhook` <br>
  */
 function settingWebhook() {
   const token = "5862849341:AAHvKz2HGq5y9NBD4B4YAsEI0X9qE";
-  Bot.Telesun(token);
+  const bot = new Bot.Telesun(token);
 
   //use your webhook url as url object parameter
-  Bot.setWebHook({ url: "https://..." });
+  bot.setWebHook({ url: "https://..." });
 }
 ```
 
