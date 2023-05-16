@@ -21,7 +21,7 @@ function getUpdates(botToken, timeout) {
 
     }
   };
-  return JSON.parse(UrlFetchApp.fetch(Constants.TELEGRAM_API_URL + botToken + "/", data));
+  return Api_(botToken, data)
 }
 
 /**
@@ -57,7 +57,8 @@ function setWebHook(botToken, { url: url, certificate: certificate,
 
     }
   };
-  return JSON.parse(UrlFetchApp.fetch(Constants.TELEGRAM_API_URL + botToken + "/", data));
+
+  return Api_(botToken, data)
 }
 
 /**
@@ -76,7 +77,7 @@ function deleteWebhook(botToken, drop_pending_updates) {
       drop_pending_updates: drop_pending_updates
     }
   };
-  return JSON.parse(UrlFetchApp.fetch(Constants.TELEGRAM_API_URL + botToken + "/", data));
+  return Api_(botToken, data)
 }
 
 /**
@@ -105,5 +106,5 @@ function getWebhookInfo(botToken,
       allowed_updates: JSON.stringify(Constants.ALLOWED_UPDATES),
     }
   };
-  return JSON.parse(UrlFetchApp.fetch(Constants.TELEGRAM_API_URL + botToken + "/", data));
+  return Api_(botToken, data)
 }

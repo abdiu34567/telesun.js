@@ -1,7 +1,7 @@
 const TEST_SHEETDB = {
 
   sheetConnect() {
-    const sheetId = '1ii7iFU1UGr6VDiOZZFzSNv0peT3C-lOEcV9khdy61c';
+    const sheetId = '1ii7iFU1UGr6VDiOZZFzSNv0peT3C-lOEcV9khdy61cs';
     const sheetName = 'test_sheet'
     const sheet = sheetConnect(sheetId, sheetName);
     if (sheet) Logger.log(Test_Constants().TEST_TITLES.sheetConnect)
@@ -147,22 +147,18 @@ const TEST_SHEETDB = {
   saveOne() {
     const sheet = SheetDB.saveOne("Saving...", 2, 2)
     if (sheet) { Logger.log(Test_Constants().TEST_TITLES.saveOne) }
-    debugger;
   },
   saveMany() {
     const sheet = SheetDB.saveMany([["on1", "on2", "on3"]], 1,1,1,3)
     if (sheet) { Logger.log(Test_Constants().TEST_TITLES.saveMany) }
-    debugger;
   },
   getValue() {
     const sheet = SheetDB.getValue(2, 2)
     if (sheet) { Logger.log(Test_Constants().TEST_TITLES.getValue) }
-    debugger;
   },
   getValues() {
     const sheet = SheetDB.getValues(1, 1, 2, 3)
     if (sheet) { Logger.log(Test_Constants().TEST_TITLES.getValues) }
-    debugger;
   },
 }
 

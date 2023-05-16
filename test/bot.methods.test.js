@@ -1,14 +1,15 @@
 const TEST_BOT_METHODS = {
+  telesun: undefined,
 
   createConnection() {
-    Context.api = Test_Constants().TEST_TITLES.telesun
+    this.telesun = new Telesun("6108982890:AAELd8yLBHmD3EIw_6op5EXgEpcNLEfhFtg")
     Logger.log(Test_Constants().TEST_TITLES.telesun)
   },
 
   methodUse() {
     Context.api = Test_Constants().channel_post;
     this.createConnection()
-    Telesun.Use((ctx, next) => {
+    this.telesun.Use((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodUse);
       ctx.setStage("hello")//to test method stage
       next()//important, unless the next method would not executed
@@ -17,9 +18,7 @@ const TEST_BOT_METHODS = {
 
   methodStage() {
     //connection is already made
-    let CONTEXT;
-    Telesun.Stage("hello", (ctx, next) => {
-      CONTEXT = ctx;
+    this.telesun.Stage("hello", (ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodStage)
       next()
     })
@@ -27,9 +26,7 @@ const TEST_BOT_METHODS = {
 
   methodStage_Array() {
     //connection is already made
-    let CONTEXT;
-    Telesun.Stage(["hello",'hey'], (ctx, next) => {
-      CONTEXT = ctx;
+    this.telesun.Stage(["hello", 'hey'], (ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodStage_Array)
       next()
     })
@@ -38,7 +35,7 @@ const TEST_BOT_METHODS = {
   methodMessage() {
     //connection is already made
     Context.api = Test_Constants().message;
-    Telesun.Message((ctx, next) => {
+    this.telesun.Message((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodMessage)
       next()
     })
@@ -47,7 +44,7 @@ const TEST_BOT_METHODS = {
   methodEdited_message() {
     //connection is already made
     Context.api = Test_Constants().edited_message;
-    Telesun.Edited_message((ctx, next) => {
+    this.telesun.Edited_message((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodEdited_message)
       next()
     })
@@ -56,7 +53,7 @@ const TEST_BOT_METHODS = {
   methodChannel_post() {
     //connection is already made
     Context.api = Test_Constants().channel_post;
-    Telesun.Channel_post((ctx, next) => {
+    this.telesun.Channel_post((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodChannel_post)
       next()
     })
@@ -65,7 +62,7 @@ const TEST_BOT_METHODS = {
   methodEdited_channel_post() {
     //connection is already made
     Context.api = Test_Constants().edited_channel_post;
-    Telesun.Edited_channel_post((ctx, next) => {
+    this.telesun.Edited_channel_post((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodEdited_channel_post)
       next()
     })
@@ -74,7 +71,7 @@ const TEST_BOT_METHODS = {
   methodChosen_inline_result() {
     //connection is already made
     Context.api = Test_Constants().chosen_inline_result;
-    Telesun.Chosen_inline_result((ctx, next) => {
+    this.telesun.Chosen_inline_result((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodChosen_inline_result)
       next()
     })
@@ -83,7 +80,7 @@ const TEST_BOT_METHODS = {
   methodShipping_query() {
     //connection is already made
     Context.api = Test_Constants().shipping_query;
-    Telesun.Shipping_query((ctx, next) => {
+    this.telesun.Shipping_query((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodShipping_query)
       next()
     })
@@ -92,7 +89,7 @@ const TEST_BOT_METHODS = {
   methodPre_checkout_query() {
     //connection is already made
     Context.api = Test_Constants().pre_checkout_query;
-    Telesun.Pre_checkout_query((ctx, next) => {
+    this.telesun.Pre_checkout_query((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodPre_checkout_query)
       next()
     })
@@ -101,7 +98,7 @@ const TEST_BOT_METHODS = {
   methodPoll() {
     //connection is already made
     Context.api = Test_Constants().poll;
-    Telesun.Poll((ctx, next) => {
+    this.telesun.Poll((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodPoll)
       next()
     })
@@ -110,7 +107,7 @@ const TEST_BOT_METHODS = {
   methodPoll_answer() {
     //connection is already made
     Context.api = Test_Constants().poll_answer;
-    Telesun.Poll_answer((ctx, next) => {
+    this.telesun.Poll_answer((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodPoll_answer)
       next()
     })
@@ -119,7 +116,7 @@ const TEST_BOT_METHODS = {
   methodMy_chat_member() {
     //connection is already made
     Context.api = Test_Constants().my_chat_member;
-    Telesun.My_chat_member((ctx, next) => {
+    this.telesun.My_chat_member((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodMy_chat_member)
       next()
     })
@@ -128,7 +125,7 @@ const TEST_BOT_METHODS = {
   methodChat_member() {
     //connection is already made
     Context.api = Test_Constants().chat_member;
-    Telesun.Chat_member((ctx, next) => {
+    this.telesun.Chat_member((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodChat_member)
       next()
     })
@@ -137,7 +134,7 @@ const TEST_BOT_METHODS = {
   methodChat_join_request() {
     //connection is already made
     Context.api = Test_Constants().chat_join_request;
-    Telesun.Chat_join_request((ctx, next) => {
+    this.telesun.Chat_join_request((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodChat_join_request)
       next()
     })
@@ -146,7 +143,7 @@ const TEST_BOT_METHODS = {
   methodStart() {
     //connection is already made
     Context.api = Test_Constants().start;
-    Telesun.Start((ctx, next) => {
+    this.telesun.Start((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodStart)
       next()
     })
@@ -155,7 +152,7 @@ const TEST_BOT_METHODS = {
   methodHelp() {
     //connection is already made
     Context.api = Test_Constants().help;
-    Telesun.Help((ctx, next) => {
+    this.telesun.Help((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodHelp)
       next()
     })
@@ -163,7 +160,7 @@ const TEST_BOT_METHODS = {
   methodCbquery() {
     //connection is already made
     Context.api = Test_Constants().cbquery;
-    Telesun.Cbquery((ctx, next) => {
+    this.telesun.Cbquery((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodCbquery)
       next()
     })
@@ -171,7 +168,7 @@ const TEST_BOT_METHODS = {
   methodAction() {
     //connection is already made
     Context.api = Test_Constants().cbquery;
-    Telesun.Action('myinline', (ctx, next) => {
+    this.telesun.Action('myinline', (ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodAction)
       next()
     })
@@ -179,7 +176,7 @@ const TEST_BOT_METHODS = {
   methodAction_Array() {
     //connection is already made
     Context.api = Test_Constants().cbquery;
-    Telesun.Action(['myinline', 'hey'], (ctx, next) => {
+    this.telesun.Action(['myinline', 'hey'], (ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodAction_Array)
       next()
     })
@@ -187,7 +184,7 @@ const TEST_BOT_METHODS = {
   methodAction_regEx() {
     //connection is already made
     Context.api = Test_Constants().cbquery;
-    Telesun.Action(/myinline/, (ctx, next) => {
+    this.telesun.Action(/myinline/, (ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodAction_regEx)
       next()
     })
@@ -195,7 +192,7 @@ const TEST_BOT_METHODS = {
   methodHears() {
     //connection is already made
     Context.api = Test_Constants().message;
-    Telesun.Hears('new message haha', (ctx, next) => {
+    this.telesun.Hears('new message haha', (ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodHears)
       next()
     })
@@ -203,7 +200,7 @@ const TEST_BOT_METHODS = {
   methodHears_Array() {
     //connection is already made
     Context.api = Test_Constants().message;
-    Telesun.Hears(['hello', 'new message haha'], (ctx, next) => {
+    this.telesun.Hears(['hello', 'new message haha'], (ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodHears_Array)
       next()
     })
@@ -211,7 +208,7 @@ const TEST_BOT_METHODS = {
   methodHears_regEx() {
     //connection is already made
     Context.api = Test_Constants().message;
-    Telesun.Hears(/new/, (ctx, next) => {
+    this.telesun.Hears(/new/, (ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodHears_regEx)
       next()
     })
@@ -219,7 +216,7 @@ const TEST_BOT_METHODS = {
   methodContact() {
     //connection is already made
     Context.api = Test_Constants().contact;
-    Telesun.Contact((ctx, next) => {
+    this.telesun.Contact((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodContact)
       next()
     })
@@ -227,7 +224,7 @@ const TEST_BOT_METHODS = {
   methodInline_query() {
     //connection is already made
     Context.api = Test_Constants().inline_query;
-    Telesun.Inline_query((ctx, next) => {
+    this.telesun.Inline_query((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodInline_query)
       next()
     })
@@ -235,7 +232,7 @@ const TEST_BOT_METHODS = {
   methodPhoto() {
     //connection is already made
     Context.api = Test_Constants().photo;
-    Telesun.Photo((ctx, next) => {
+    this.telesun.Photo((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodPhoto)
       next()
     })
@@ -243,7 +240,7 @@ const TEST_BOT_METHODS = {
   methodVoice() {
     //connection is already made
     Context.api = Test_Constants().voice;
-    Telesun.Voice((ctx, next) => {
+    this.telesun.Voice((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodVoice)
       next()
     })
@@ -251,7 +248,7 @@ const TEST_BOT_METHODS = {
   methodDocument() {
     //connection is already made
     Context.api = Test_Constants().document;
-    Telesun.Document((ctx, next) => {
+    this.telesun.Document((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodDocument)
       next()
     })
@@ -259,7 +256,7 @@ const TEST_BOT_METHODS = {
   methodAudio() {
     //connection is already made
     Context.api = Test_Constants().audio;
-    Telesun.Audio((ctx, next) => {
+    this.telesun.Audio((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodAudio)
       next()
     })
@@ -267,7 +264,7 @@ const TEST_BOT_METHODS = {
   methodText() {
     //connection is already made
     Context.api = Test_Constants().message;
-    Telesun.Text((ctx, next) => {
+    this.telesun.Text((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodText)
       next()
     })
@@ -275,7 +272,7 @@ const TEST_BOT_METHODS = {
   methodStiker() {
     //connection is already made
     Context.api = Test_Constants().stiker;
-    Telesun.Stiker((ctx, next) => {
+    this.telesun.Stiker((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodStiker)
       next()
     })
@@ -283,7 +280,7 @@ const TEST_BOT_METHODS = {
   methodCommands() {
     //connection is already made
     Context.api = Test_Constants().start;
-    Telesun.Commands((ctx, next) => {
+    this.telesun.Commands((ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodCommands)
       next()
     })
@@ -291,7 +288,7 @@ const TEST_BOT_METHODS = {
   methodCommand() {
     //connection is already made
     Context.api = Test_Constants().start;
-    Telesun.Command('start', (ctx, next) => {
+    this.telesun.Command('start', (ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodCommand)
       next()
     })
@@ -299,7 +296,7 @@ const TEST_BOT_METHODS = {
   methodCommand_Array() {
     //connection is already made
     Context.api = Test_Constants().start;
-    Telesun.Command(['help', 'start'], (ctx, next) => {
+    this.telesun.Command(['help', 'start'], (ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodCommand_Array)
       next()
     })
@@ -307,7 +304,7 @@ const TEST_BOT_METHODS = {
   methodCommand_regEx() {
     //connection is already made
     Context.api = Test_Constants().start;
-    Telesun.Command(/start/, (ctx, next) => {
+    this.telesun.Command(/start/, (ctx, next) => {
       Logger.log(Test_Constants().TEST_TITLES.methodCommand_regEx)
       next()
     })

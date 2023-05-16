@@ -71,7 +71,7 @@ function sheetConnect(sheetId, sheetName) {
 
 function GetLatestUpdate_(botToken) {
   const updates = getUpdates(botToken);//returns JSON
-
+  
   if (!updates) {
     return null;
   }
@@ -84,3 +84,9 @@ function GetLatestUpdate_(botToken) {
   return newRequestUpdate;
 }
 
+function Api_(botToken, data) {
+  let Url;
+  if (Constants.TELEGRAM_API_URL === 'https://api.telegram.org/bot') { Url = Constants.TELEGRAM_API_URL + botToken }
+  else { Url = Constants.TELEGRAM_API_URL; }
+  return JSON.parse(UrlFetchApp.fetch(Url + "/", data));
+}
