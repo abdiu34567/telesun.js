@@ -207,10 +207,9 @@ Then, we need to `set webhook` <br>
  */
 function settingWebhook() {
   const token = "5862849341:AAHvKz2HGq5y9NBD4B4YAsEI0X9qE";
-  const bot = new Bot.Telesun(token);
 
   //use your webhook url as url object parameter
-  bot.setWebHook({ url: "https://..." });
+  Bot.setWebHook(token, { url: "https://..." });
 }
 ```
 
