@@ -66,7 +66,7 @@ For additional bot examples see [examples](https://github.com/abdiu34567/telesun
 
 ### Resources
 
-- **[Telegram Group](https://t.me/App_Script_Js)**
+- **[Telegram Group](https://t.me/telesunjs)**
 - **[GitHub Discussions](https://github.com/abdiu34567/telesn.js/discussions)**
 - **[Documentation](https://github.com/abdiu34567/telesun.js/wiki)**
 
