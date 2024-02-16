@@ -33,7 +33,7 @@ Telesun is a library that makes it simple for you to develop your own Telegram b
 
 ## [Setting Up &amp; Getting Started With Apps Script](https://github.com/abdiu34567/telesun.js/wiki/Getting-Started)
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=3XsWZIAZd6g&list=PLVEXPKFl5sm2G7fH9ufzP2G88vS7R9zeu&index=2" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3XsWZIAZd6g" frameborder="0" allowfullscreen></iframe>
 
 ---
 
