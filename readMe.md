@@ -150,8 +150,8 @@ BotFather will give you a token, something like `123456789:AbCdfGhIJKlmNoQQRsTUV
 Welcome to this exciting tutorial where we'll embark on the journey of creating a `Gif Inline Query` bot. This isn't just any bot; it's your gateway to integrating the dynamic and fun world of GIFs right into any chat. Picture this: users type, scroll, and BAM! - an endless stream of GIFs at their fingertips. And guess what? We're tapping into the vast universe of [GIPHY API](https://developers.giphy.com/docs/api/endpoint/) to power our search for those perfect GIFs.
 
 <div style="display: flex;">
-    <img src="asset/cars.png" alt="Image 1" style="width: 50%;">
-    <img src="asset/bmw.png" alt="Image 2" style="width: 50%; margin-left: 10px;">
+    <img src="asset/cars.png" alt="Image 1" style="width: 45%;">
+    <img src="asset/bmw.png" alt="Image 2" style="width: 45%; margin-left: 10px;">
 </div>
 
 <br>
