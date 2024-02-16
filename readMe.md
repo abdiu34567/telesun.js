@@ -35,15 +35,11 @@ Telesun is a library that makes it simple for you to develop your own Telegram b
 
 [![Getting Started With Apps Script](https://img.youtube.com/vi/3XsWZIAZd6g/maxresdefault.jpg)](https://www.youtube.com/watch?v=3XsWZIAZd6g)
 
-<br>
-
 ---
 
 ## CREATE TELEGRAM BOT USING BOT FATHER
 
 [![CREATE TELEGRAM BOT USING BOT FATHER](https://img.youtube.com/vi/wu-x8Q3-6a4/maxresdefault.jpg)](https://youtu.be/wu-x8Q3-6a4)
-
-<br>
 
 ---
 
@@ -51,11 +47,7 @@ Telesun is a library that makes it simple for you to develop your own Telegram b
 
 [![ADD TELESUN LIBRARY](https://img.youtube.com/vi/RUf4DWm8ihM/maxresdefault.jpg)](https://youtu.be/RUf4DWm8ihM)
 
-<br>
-
 ---
-
-<br>
 
 ### Example
 
@@ -123,8 +115,6 @@ function demonstrateAdvancedFeatures() {
 
 For additional bot examples see [examples](https://github.com/abdiu34567/telesun.js/wiki/Example-Bots) folder
 
-<br>
-
 ### Resources
 
 - **[Telegram Group](https://t.me/telesunjs)**
@@ -135,15 +125,11 @@ For additional bot examples see [examples](https://github.com/abdiu34567/telesun
 
 ## Getting started
 
-<br>
-
 ### 💊 Telegram token
 
 To use the Telegram Bot API, you first have to get a bot account by chatting with [BotFather](https://t.me/BotFather).
 
 BotFather will give you a token, something like `123456789:AbCdfGhIJKlmNoQQRsTUVwxyZ`.
-
-<br>
 
 ### 🚀 Launch Your First Gif Inline Query Bot
 
@@ -153,8 +139,6 @@ Welcome to this exciting tutorial where we'll embark on the journey of creating 
     <img src="asset/cars.png" alt="Image 1" style="width: 45%;">
     <img src="asset/bmw.png" alt="Image 2" style="width: 45%; margin-left: 10px;">
 </div>
-
-<br>
 
 Features to Get Excited About:
 
@@ -172,16 +156,12 @@ Get Started
 > - **Import Telesun Libraries:** [Learn How](https://youtu.be/RUf4DWm8ihM)
 > - **Craft Your Bot:** [Begin Here](https://youtu.be/wu-x8Q3-6a4)
 
-<br>
-
 Activate Inline Queries with Bot Father
 
 > 1. Type `/mybots` to Bot Father.
 > 2. Choose your bot.
 > 3. Navigate to `Bot Settings` > `Inline Mode`.
 > 4. Enable it.
-
-<br>
 
 #### Step 1: create your first function
 
@@ -317,8 +297,6 @@ function doPost(e) {
 
 Our GIF inline query bot is now primed for launch. The upcoming section will guide you through `deploying` your project to the world.
 
-<br>
-
 ### 📡 Deploying Your Gif Inline Query Bot
 
 Ready to bring your bot to life? Just follow these simple steps:
@@ -341,8 +319,6 @@ function SetWebhook() {
 ```
 
 🌠 That's it! Dive in and enjoy interacting with your bot. 🎉
-
-<br>
 
 ## License
 
