@@ -31,9 +31,27 @@ Telesun is a library that makes it simple for you to develop your own Telegram b
 
 ---
 
-## [Setting Up &amp; Getting Started With Apps Script](https://github.com/abdiu34567/telesun.js/wiki/Getting-Started)
+## Setting Up &amp; Getting Started With Apps Script
 
-[![Watch the video](https://img.youtube.com/vi/3XsWZIAZd6g/maxresdefault.jpg)](https://www.youtube.com/watch?v=3XsWZIAZd6g)
+[![Getting Started With Apps Script](https://img.youtube.com/vi/3XsWZIAZd6g/maxresdefault.jpg)](https://www.youtube.com/watch?v=3XsWZIAZd6g)
+
+<br>
+
+---
+
+## CREATE TELEGRAM BOT USING BOT FATHER
+
+[![CREATE TELEGRAM BOT USING BOT FATHER](https://img.youtube.com/vi/wu-x8Q3-6a4/maxresdefault.jpg)](https://youtu.be/wu-x8Q3-6a4)
+
+<br>
+
+---
+
+## ADD TELESUN LIBRARY
+
+[![ADD TELESUN LIBRARY](https://img.youtube.com/vi/RUf4DWm8ihM/maxresdefault.jpg)](https://youtu.be/RUf4DWm8ihM)
+
+<br>
 
 ---
 
@@ -41,26 +59,65 @@ Telesun is a library that makes it simple for you to develop your own Telegram b
 
 ### Example
 
-once you `import library`, then you can create the following function and `go send any message to your bot` and **run** `WelcomeToTelesun` function
+```js
+function initializeTelesunBot() {
+  // Initialize your bot with the provided token.
+  const telesun = new Telesun.connectBot("<your-bot-token>");
+
+  // Default handler for any incoming messages.
+  telesun.use((ctx) => ctx.reply("Welcome to our service!"));
+
+  // Handler for the `/start` command.
+  telesun.start((ctx) => {
+    ctx.reply("Welcome! Ready to explore?");
+  });
+
+  // Specific handler for text messages containing "hello".
+  telesun.hears("hello", (ctx) =>
+    ctx.reply("Hello there! How can I assist you today?")
+  );
+
+  // Handler for incoming photos.
+  telesun.photo((ctx) => ctx.replyWithPhoto({ photo: "<photo-url|photo-id>" }));
+
+  // Inline query handler.
+  telesun.on("inline_query", (ctx) => {
+    ctx.answerInlineQuery({
+      results: [], // Specify the results array
+      inline_query_id: ctx.inlineQuery.id, // Correctly reference inline_query_id
+    });
+  });
+}
+```
 
 ```js
-// send message to your bot, then create the following function and run the function
+function demonstrateAdvancedFeatures() {
+  // Advanced setup with spreadsheet connection and memory services.
+  const telesun = new Telesun.connectBot("<your-bot-token>")
+    .connectToSpreadSheet("<your-spreadsheet-id>")
+    .temporaryMemory(CacheService)
+    .permanentMemory(PropertiesService);
 
-function WelcomeToTelesun() {
-  //pass your bot token
-  const bot = new Bot.Telesun(<<botToken>>);
+  telesun.on("message", (ctx) => {
+    // Handling message updates.
+    const update = ctx.update.message; // Correct method to access the message update.
 
-  //will executed always
-  bot.Use((ctx) => ctx.reply("Hello World!"));
+    // Clearing a specified sheet.
+    ctx.sheet("Sheet1").clear();
 
-  //executed when <</start>> command sent to bot
-  bot.Start((ctx)=> ctx.reply("This is start Command"))
+    // Preparing for the next interaction stage.
+    ctx.setStage("message");
 
-  //when <hello> message sent
-  bot.Hears('hello', (ctx)=> ctx.reply("This is hello message"))
+    // Sending an email notification.
+    ctx.sendEmail(
+      "email@example.com", // Use a placeholder or generic email for examples.
+      "Telesun V2-beta Released",
+      "We're excited to announce the release of Telesun V2-beta. Join us in enhancing and refining the documentation."
+    );
 
-  //when photo sent
-  bot.Photo((ctx)=> ctx.reply("This is photo"))
+    // Setting a temporary session value (with a default lifespan of 10 minutes).
+    ctx.setTSessionValue("key", "value");
+  });
 }
 ```
 
@@ -88,136 +145,202 @@ BotFather will give you a token, something like `123456789:AbCdfGhIJKlmNoQQRsTUV
 
 <br>
 
-### 👩‍💻 Create Your First Registration bot
+### 🚀 Launch Your First Gif Inline Query Bot
 
-➖ The bot will register `username` and `password` by [long polling](https://github.com/abdiu34567/telesun.js/wiki/Long-Polling),`<br>`
-➖ then finally we deploy the bot within just 2 clicks as `webhook` on google cloud
+Welcome to this exciting tutorial where we'll embark on the journey of creating a `Gif Inline Query` bot. This isn't just any bot; it's your gateway to integrating the dynamic and fun world of GIFs right into any chat. Picture this: users type, scroll, and BAM! - an endless stream of GIFs at their fingertips. And guess what? We're tapping into the vast universe of [GIPHY API](https://developers.giphy.com/docs/api/endpoint/) to power our search for those perfect GIFs.
 
-> - [Create apps script project](https://github.com/abdiu34567/telesun.js/wiki/Getting-Started)
-> - [Import library](https://github.com/abdiu34567/telesun.js/wiki/Import-Telesun)
-
-```js
-
-/**
- * create function called doPost()
- * copy and paste the following code to your doPost()
- * go and type << /startreg >> command on your bot
- * go back to apps script and run dopost()
- * then check your bot
- *
- */
-
-/**
- * pass your bot token
- * connecting the bot to Telesun Library
-*/
-const bot = new Bot.Telesun(<<botToken>>);
-
-function doPost(){
-
- /**
-  * when user send /startreg command
-  */
-  bot.Command('startreg',(ctx)=>{
-
-    //ask user to send thier username
-    ctx.reply("Please type Your username ?")
-
-    //save stage that, next the bot is waiting for username
-    ctx.setStage("username")
-  })
-
-}
-
-```
-
-```js
-/**
- * Add the following function to the doPost(), but don't delete the previous code
- * go to bot and send your username
- * go to apps script and run doPost() again
- * then check your bot
- */
-function doPost(){
-
-  ......//❌ don't remove previos codes
-
-  //if stage is already username
-  bot.Stage('username', (ctx)=>{
-      //accessing message text as username
-      let _Username = ctx.message().text
-
-      //saving to temporary session which lasts 10 minutes by default
-      Bot.TSession.set('username', _Username)
-
-      //ask user to send thier password
-      ctx.reply("Please type Your password ?")
-
-      //save stage as waiting for password
-      ctx.setStage('password')
-  })
-
-}
-```
-
-```js
-/**
- * Add the following function to the doPost(), but don't delete the previous code
- * go to bot and send your password
- * go to apps script and run doPost() again
- * then check your bot
- */
-function doPost(){
-
-  ...... //❌ don't remove previos codes
-
-  ......//❌ don't remove previos codes
-
-   //if stage is already password
-  bot.Stage('password', (ctx)=>{
-
-       //accessing username from temporary session
-      let _Username = Bot.TSession.getValue('username')
-
-      //send Message as user already finished the registration
-      ctx.reply(`User Registered\n\n`+
-     `UserName: ${_Username}`+
-     `Password: ${ctx.message().text}`)
-    }
-  })
-
-
-}
-
-
-```
+<div style="display: flex;">
+    <img src="asset/cars.png" alt="Image 1" style="width: 50%;">
+    <img src="asset/bmw.png" alt="Image 2" style="width: 50%; margin-left: 10px;">
+</div>
 
 <br>
 
-### 📡 Deploying Registration Bot
+Features to Get Excited About:
 
-In Order to deploy your bot, first, check :
+- **Instant Gratification:** Just by mentioning the bot's username in the text area, you'll unleash a world of trending GIFs, loading automatically to greet the user.
+- **Search on the Fly:** As users start typing their queries, our bot springs into action, fetching GIFs that match their search terms in real time.
+- **Infinite Scrolling Magic:** As users delve deeper, scrolling through the GIFs, more and more GIFs magically appear, ensuring the fun never ends.
 
-- your main file is `code.gs`
-- your main function is `doPost(e)`
+💪 Ready to dive in? I sure am. Let's get this show on the road and create a bot that brings smiles, laughs, and a whole lot of GIFs to any conversation.
 
-Then, we need to `set webhook` `<br>`
+### Setup Guide
 
-> you can get your `webhook url` after u have followed [Deployment](https://github.com/abdiu34567/telesun.js/wiki/Deployments) steps
+Get Started
+
+> - **Create an App Script Project:** [Watch Tutorial](https://www.youtube.com/watch?v=3XsWZIAZd6g)
+> - **Import Telesun Libraries:** [Learn How](https://youtu.be/RUf4DWm8ihM)
+> - **Craft Your Bot:** [Begin Here](https://youtu.be/wu-x8Q3-6a4)
+
+<br>
+
+Activate Inline Queries with Bot Father
+
+> 1. Type `/mybots` to Bot Father.
+> 2. Choose your bot.
+> 3. Navigate to `Bot Settings` > `Inline Mode`.
+> 4. Enable it.
+
+<br>
+
+#### Step 1: create your first function
+
+create a function, name it anything you like, but for production purposes, the function name must be `doPost`.
 
 ```js
-/**
- * Create this function and run once, then you can delete it
- */
-function settingWebhook() {
-  const token = "5862849341:AAHvKz2HGq5y9NBD4B4YAsEI0X9qE";
+function doPost() {
+  // Bot initialization with your token.
+  const telesun = new Telesun.connectBot("<your-bot-token>");
 
-  //use your webhook url as url object parameter
-  Bot.setWebHook(token, { url: "https://..." });
+  // handles inline_query updates.
+  telesun
+    .on("inline_query", (ctx) => {
+      // Your code here.
+    })
+    .longPolling(); // Maintains open connection for new updates.
 }
 ```
 
-🌟💪 `Finally Check Your Bot`
+#### Step 2: Integrate GIPHY API
+
+Now, let's secure our API key from [GIPHY API](https://developers.giphy.com/dashboard/) to access `trending` and `search` endpoints. Below is how we fetch GIFs:
+
+```js
+// Fetch GIFs from Giphy, tailored by your query.
+function fetchGifs(
+  apiKey,
+  query,
+  offset = 0,
+  limit = 20,
+  rating = "g",
+  lang = "en"
+) {
+  let baseUrl = "https://api.giphy.com/v1/gifs"; // Base endpoint.
+  const queryParams = `api_key=${apiKey}&limit=${limit}&offset=${offset}&rating=${rating}&lang=${lang}`;
+
+  // Adjust endpoint based on query presence.
+  baseUrl += query
+    ? `/search?q=${encodeURIComponent(query)}&${queryParams}`
+    : `/trending?${queryParams}`;
+
+  const response = UrlFetchApp.fetch(baseUrl); // Fetch the data.
+  const json = JSON.parse(response.getContentText()); // Parse the JSON.
+  return json.data; // Return the GIFs.
+}
+```
+
+#### Step 3: Sending Inline Query Results
+
+To respond to inline queries, our bot employs the `answerInlineQuery` method. This essential method requires parameters such as an `array of results` and the `inline_query_id`.
+
+Each `result` object must include crucial details like `type`, `id`, `gif_url`, and `thumbnail_url`.
+
+```js
+// Function to format GIFs for Telegram inline query response
+function formatGifsForInlineQuery(gifs) {
+  return gifs.map((gif) => ({
+    type: "gif",
+    id: gif.id,
+    gif_url: gif.images.fixed_height.url,
+    thumbnail_url: gif.images.fixed_height_small_still.url,
+  }));
+}
+```
+
+#### Step 4: Answering the Inline Query
+
+```js
+function doPost() {
+  // Initialize the bot with your token.
+  const telesun = new Telesun.connectBot("<your-bot-token>");
+
+  // Handle inline_query updates.
+  telesun
+    .on("inline_query", (ctx) => {
+      const inline_query = ctx.inlineQueryUpdate();
+      const query = inline_query.query;
+      const offset = parseInt(inline_query.offset, 10) || 0; // Parse the offset, defaulting to 0 if absent.
+      const apiKey = "<your-giphy-api-key>";
+      const limit = 20; // Determine the number of results to fetch.
+
+      // Fetch GIFs based on the user's query and the current offset.
+      const gifs = fetchGifs(apiKey, query, offset, limit);
+      const results = formatGifsForInlineQuery(gifs);
+
+      // Reply to the inline query with the fetched results and set the next offset.
+      const nextOffset = offset + limit;
+
+      ctx.answerInlineQuery({
+        results,
+        inline_query_id: inline_query.id,
+        next_offset: nextOffset.toString(),
+      });
+    })
+    .longPolling(); // Maintain the connection for incoming updates.
+}
+```
+
+#### Step 5: Making Our Code Production-Ready
+
+Integrate the parameter `e` into both `doPost(e)` and `handleWebhook(e)` to elevate our code for production.
+
+```js
+function doPost(e) {
+  // Initialize the bot with your token.
+  const telesun = new Telesun.connectBot("<your-bot-token>");
+
+  // Handle inline_query updates.
+  telesun
+    .on("inline_query", (ctx) => {
+      const inline_query = ctx.inlineQueryUpdate();
+      const query = inline_query.query;
+      const offset = parseInt(inline_query.offset, 10) || 0; // Parse the offset, defaulting to 0 if absent.
+      const apiKey = "<your-giphy-api-key>";
+      const limit = 20; // Determine the number of results to fetch.
+
+      // Fetch GIFs based on the user's query and the current offset.
+      const gifs = fetchGifs(apiKey, query, offset, limit);
+      const results = formatGifsForInlineQuery(gifs);
+
+      // Reply to the inline query with the fetched results and set the next offset.
+      const nextOffset = offset + limit;
+
+      ctx.answerInlineQuery({
+        results,
+        inline_query_id: inline_query.id,
+        next_offset: nextOffset.toString(),
+      });
+    })
+    .handleWebhook(e);
+}
+```
+
+Our GIF inline query bot is now primed for launch. The upcoming section will guide you through `deploying` your project to the world.
+
+<br>
+
+### 📡 Deploying Your Gif Inline Query Bot
+
+Ready to bring your bot to life? Just follow these simple steps:
+
+> - Ensure your primary script is named `code.gs`.
+> - Verify that `doPost(e)` is set as your main function.
+
+Next, deploy your code to obtain the `Web App URL`. Not sure how? Watch this quick guide:
+
+> [![GET WEB APP URL](https://img.youtube.com/vi/55Lb_COLR5U/maxresdefault.jpg)](https://youtu.be/55Lb_COLR5U)
+
+After deploying your code and securing your `Web App URL`, execute the following:
+
+```js
+function SetWebhook() {
+  new Telesun.connectBot("<your-bot-token>").setWebhook({
+    url: "<your-web-app-url>",
+  });
+}
+```
+
+🌠 That's it! Dive in and enjoy interacting with your bot. 🎉
 
 <br>
 
