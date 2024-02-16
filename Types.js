@@ -35,61 +35,77 @@
 
 /**
  * @typedef {Object} Telesun
- * @property {function(string): Telesun} connectToSpreadSheet Connects to a Google Spreadsheet using its ID. The string parameter is the `spreadsheet ID`.
- * @property {function(Object): Telesun} temporaryMemory Configures temporary memory for the bot, including cache and session.
- * @property {function(Object): Telesun} permanentMemory Configures permanent memory for the bot, including cache and session.
- * @property {function(Update): Telesun} handleUpdate Handles incoming updates from Telegram.
- * @property {function(function(ctx, next): void)): Telesun} use Registers a middleware function to be used by the bot.
+ * @property {function(string): Telesun} connectToSpreadSheet - Connects to a Google Spreadsheet using its ID. The string parameter is the `spreadsheet ID`.
+ * @property {function(Object): Telesun} temporaryMemory - Configures temporary memory for the bot, including cache and session.
+ * @property {function(Object): Telesun} permanentMemory - Configures permanent memory for the bot, including cache and session.
+ * @property {function(Update): Telesun} handleUpdate - Handles incoming updates from Telegram.
+ * @property {function(function(ctx, next): void): Telesun} use - Registers a middleware function to be used by the bot.
  *
- * @property {function(UpdateType, function(ctx, next): void): Telesun} on Registers a middleware for a specific update type. The first parameter is one of [`message`, `edited_message`, `channel_post`, `edited_channel_post`, `inline_query`, `chosen_inline_result`, `callback_query`, `shipping_query`, `pre_checkout_query`, `poll`, `poll_answer`, `my_chat_member`, `chat_member`, `chat_join_request`, `message_reaction`, `message_reaction_count`, `chat_boost`, `removed_chat_boost`].
+ * @property {function(UpdateType, function(ctx, next): void): Telesun} on - Registers a middleware for a specific update type. The first parameter is one of [`message`, `edited_message`, `channel_post`, `edited_channel_post`, `inline_query`, `chosen_inline_result`, `callback_query`, `shipping_query`, `pre_checkout_query`, `poll`, `poll_answer`, `my_chat_member`, `chat_member`, `chat_join_request`, `message_reaction`, `message_reaction_count`, `chat_boost`, `removed_chat_boost`].
  *
- * @property {function(string|string[]|RegExp, function(ctx, next): void)): Telesun} action Registers a middleware for a specific action.
- * @property {function(string|string[]|RegExp, function(ctx, next): void)): Telesun} stage Registers a middleware for a specific stage.
- * @property {function(function(ctx, next): void)): Telesun} start Registers a start command middleware.
- * @property {function(function(ctx, next): void)): Telesun} help Registers a help command middleware.
- * @property {function(string|string[]|RegExp, function(ctx, next): void)): Telesun} hears Registers a middleware that triggers on matching text.
- * @property {function(function(ctx, next): void)): Telesun} contact Registers a middleware for contact updates.
- * @property {function(function(ctx, next): void)): Telesun} photo Registers a middleware for photo updates.
- * @property {function(function(ctx, next): void)): Telesun} video Registers a middleware for video updates.
- * @property {function(function(ctx, next): void)): Telesun} voice Registers a middleware for voice message updates.
- * @property {function(function(ctx, next): void)): Telesun} document Registers a middleware for document updates.
- * @property {function(function(ctx, next): void)): Telesun} audio Registers a middleware for audio updates.
- * @property {function(function(ctx, next): void)): Telesun} text Registers a middleware for text message updates.
- * @property {function(function(ctx, next): void)): Telesun} sticker Registers a middleware for sticker updates.
- * @property {function(function(ctx, next): void)): Telesun} commands Registers a middleware for any command.
- * @property {function(string|string[]|RegExp, function(ctx, next): void)): Telesun} command Registers a middleware for a specific command.
- *
+ * @property {function(string|string[]|RegExp, function(ctx, next): void): Telesun} action - Registers a middleware for a specific action.
+ * @property {function(string|string[]|RegExp, function(ctx, next): void): Telesun} stage - Registers a middleware for a specific stage.
+ * @property {function(function(ctx, next): void): Telesun} start - Registers a start command middleware.
+ * @property {function(function(ctx, next): void): Telesun} help - Registers a help command middleware.
+ * @property {function(string|string[]|RegExp, function(ctx, next): void): Telesun} hears - Registers a middleware that triggers on matching text.
+ * @property {function(function(ctx, next): void): Telesun} contact - Registers a middleware for contact updates.
+ * @property {function(function(ctx, next): void): Telesun} photo - Registers a middleware for photo updates.
+ * @property {function(function(ctx, next): void): Telesun} video - Registers a middleware for video updates.
+ * @property {function(function(ctx, next): void): Telesun} voice - Registers a middleware for voice message updates.
+ * @property {function(function(ctx, next): void): Telesun} document - Registers a middleware for document updates.
+ * @property {function(function(ctx, next): void): Telesun} audio - Registers a middleware for audio updates.
+ * @property {function(function(ctx, next): void): Telesun} text - Registers a middleware for text message updates.
+ * @property {function(function(ctx, next): void): Telesun} sticker - Registers a middleware for sticker updates.
+ * @property {function(function(ctx, next): void): Telesun} commands - Registers a middleware for any command.
+ * @property {function(string|string[]|RegExp, function(ctx, next): void): Telesun} command - Registers a middleware for a specific command.
  * @property {function(Object, UpdateConfig): void} handleWebhook Handles webhook updates.
- *
- * @property {function({
- *   sleep:1000,
- *   timeout:60
- * }): void} longPolling Initiates long polling.
- *
- * @property {function({
- *   limit: 100,
- *   timeout: 60
- * }): void} polling Initiates simple polling.
- *
- * @property {function(Object, {
- *     certificate:InputFile,
- *     ip_address:string,
- *     max_connections:number,
- *     drop_pending_updates:string[],
- *     secret_token:string,
- *     server:Server
- * }): void} devHook Sets up a development webhook.
- *
- * @property {function({
- *     url:string
- *     certificate:InputFile,
- *     ip_address:string,
- *     max_connections:number,
- *     drop_pending_updates:string[],
- *     secret_token:string,
- * }): Object} setWebhook Configures the webhook for the bot.
- *
- * @property {function({ drop_pending_updates:boolean }): Object} deleteWebhook Deletes the configured webhook.
+ * @property {function(LongPollingOptions): void} longPolling Initiates long polling.
+ * @property {function(PollingOptions): void} polling Initiates simple polling.
+ * @property {function(Object, DevHookOptions): void} devHook Sets up a development webhook.
+ * @property {function(SetWebhookOptions): Object} setWebhook Configures the webhook for the bot.
+ * @property {function(DeleteWebhookOptions): Object} deleteWebhook Deletes the configured webhook.
+ */
+
+/**
+ * Options for initiating long polling.
+ * @typedef {Object} LongPollingOptions
+ * @property {number} [sleep=1000] The delay between polling requests in milliseconds.
+ * @property {number} [timeout=60] Timeout in seconds for long polling.
+ */
+
+/**
+ * Options for initiating simple polling.
+ * @typedef {Object} PollingOptions
+ * @property {number} [limit=100] The maximum number of updates to receive.
+ * @property {number} [timeout=60] Timeout in seconds for polling.
+ */
+
+/**
+ * Options for setting up a development webhook.
+ * @typedef {Object} DevHookOptions
+ * @property {InputFile} [certificate] Your public key certificate file.
+ * @property {string} [ip_address] The IP address of the server.
+ * @property {number} [max_connections] Maximum allowed number of simultaneous HTTPS connections to the webhook.
+ * @property {string[]} [drop_pending_updates] List of types of updates to drop.
+ * @property {string} [secret_token] A secret token to authenticate the webhook.
+ * @property {Server} [server] The server configuration for the webhook.
+ */
+
+/**
+ * Options for configuring the webhook.
+ * @typedef {Object} SetWebhookOptions
+ * @property {string} url The HTTPS URL to send updates to.
+ * @property {InputFile} [certificate] Your public key certificate file.
+ * @property {string} [ip_address] The IP address of the server.
+ * @property {number} [max_connections] Maximum allowed number of simultaneous HTTPS connections to the webhook.
+ * @property {string[]} [drop_pending_updates] List of types of updates to drop.
+ * @property {string} [secret_token] A secret token to authenticate the webhook.
+ */
+
+/**
+ * Options for deleting the configured webhook.
+ * @typedef {Object} DeleteWebhookOptions
+ * @property {boolean} drop_pending_updates Whether to drop pending updates.
  */
 
 /**
@@ -114,25 +130,969 @@
 
 /**
  * @typedef {Object} Update
- * @property{Message} [message] - New incoming message of any kind - text, photo, sticker, etc.
- * @property{Message} [edited_message] - Message edit notification for known messages.
- * @property{Message} [channel_post] - New incoming channel post of any kind - text, photo, sticker, etc.
- * @property{Message} [edited_channel_post] - Channel post edit notification for known posts.
- * @property{MessageReactionUpdated}[message_reaction] - User changed a message reaction; requires bot as admin.
- * @property{MessageReactionCountUpdated}[message_reaction_count] - Grouped anonymous message reaction changes.
- * @property{InlineQuery}[inline_query] - New incoming inline query
- * @property{ChosenInlineResult}[chosen_inline_result] - User's choice from an inline query sent to chat.
- * @property{CallbackQuery}[callback_query] - New incoming callback query.
- * @property{ShippingQuery}[shipping_query] - New incoming shipping query. Only for invoices with flexible price.
- * @property{PreCheckoutQuery}[pre_checkout_query] - New incoming pre-checkout query. Contains full information about checkout.
- * @property{Poll}[poll] - Notification of new poll state; for stopped polls and those sent by the bot.
- * @property{PollAnswer}[poll_answer] - User changed their vote in a non-anonymous poll sent by the bot.
- * @property{ChatMemberUpdated}[my_chat_member] - Bot's chat member status updated in a chat.
- * @property{ChatMemberUpdated}[chat_member] - Chat member's status updated; requires bot admin.
- * @property{ChatJoinRequest}[chat_join_request] - Chat join request sent; requires bot's "can_invite_users" right.
- * @property{ChatBoostUpdated}[chat_boost] - Chat boost added or changed; requires bot admin.
- * @property{ChatBoostRemoved}[removed_chat_boost] - Chat boost removed; requires bot admin.
+ * @property {Message} [message] - New incoming message of any kind - text, photo, sticker, etc.
+ * @property {Message} [edited_message] - Message edit notification for known messages.
+ * @property {Message} [channel_post] - New incoming channel post of any kind - text, photo, sticker, etc.
+ * @property {Message} [edited_channel_post] - Channel post edit notification for known posts.
+ * @property {MessageReactionUpdated} [message_reaction] - User changed a message reaction; requires bot as admin.
+ * @property {MessageReactionCountUpdated} [message_reaction_count] - Grouped anonymous message reaction changes.
+ * @property {InlineQuery} [inline_query] - New incoming inline query update.
+ * @property {ChosenInlineResult} [chosen_inline_result] - User's choice from an inline query sent to chat.
+ * @property {CallbackQuery} [callback_query] - New incoming callback query.
+ * @property {ShippingQuery} [shipping_query] - New incoming shipping query. Only for invoices with flexible price.
+ * @property {PreCheckoutQuery} [pre_checkout_query] - New incoming pre-checkout query. Contains full information about checkout.
+ * @property {Poll} [poll] - Notification of new poll state; for stopped polls and those sent by the bot.
+ * @property {PollAnswer} [poll_answer] - User changed their vote in a non-anonymous poll sent by the bot.
+ * @property {ChatMemberUpdated} [my_chat_member] - Bot's chat member status updated in a chat.
+ * @property {ChatMemberUpdated} [chat_member] - Chat member's status updated; requires bot admin.
+ * @property {ChatJoinRequest} [chat_join_request] - Chat join request sent; requires bot's "can_invite_users" right.
+ * @property {ChatBoostUpdated} [chat_boost] - Chat boost added or changed; requires bot admin.
+ * @property {ChatBoostRemoved} [removed_chat_boost] - Chat boost removed; requires bot admin.
  *
+ */
+
+/**
+ * Options for forwarding a single message from one chat to another.
+ * @typedef {Object} ForwardMessageOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {(number|string)} from_chat_id Unique identifier for the chat where the original message was sent or username of the target channel (in the format @channelusername).
+ * @property {number} message_id Unique message identifier to forward.
+ * @property {boolean} [disable_notification] Sends the message silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the forwarded message from forwarding and saving.
+ */
+
+/**
+ * Options for forwarding multiple messages from one chat to another.
+ * @typedef {Object} ForwardMessagesOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {(number|string)} from_chat_id Unique identifier for the chat where the original messages were sent or username of the target channel (in the format @channelusername).
+ * @property {number[]} message_ids Array of unique message identifiers to forward.
+ * @property {boolean} [disable_notification] Sends the messages silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the forwarded messages from forwarding and saving.
+ */
+
+/**
+ * Options for copying a single message from one chat to another, potentially with a new caption.
+ * @typedef {Object} CopyMessageOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {(number|string)} from_chat_id Unique identifier for the chat where the original message was sent or username of the target channel (in the format @channelusername).
+ * @property {number} message_id Unique message identifier to copy.
+ * @property {string} [caption] New caption for the message.
+ * @property {Format} [parse_mode] Formatting options for the caption (Markdown or HTML).
+ * @property {MessageEntity[]} [caption_entities] List of special entities that appear in the new caption, which can be specified instead of parse_mode.
+ * @property {boolean} [disable_notification] Sends the message silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the copied message from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options for the message.
+ */
+
+/**
+ * Options for copying multiple messages from one chat to another without changing the caption.
+ * @typedef {Object} CopyMessagesOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {(number|string)} from_chat_id Unique identifier for the chat where the original messages were sent or username of the target channel (in the format @channelusername).
+ * @property {number[]} message_ids Array of unique message identifiers to copy.
+ * @property {boolean} [disable_notification] Sends the messages silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the copied messages from forwarding and saving.
+ * @property {boolean} [remove_caption] Indicates whether to remove the captions of the copied messages.
+ */
+
+/**
+ * Options for sending a photo.
+ * @typedef {Object} SendPhotoOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {(InputFile|string)} photo Photo to send.
+ * @property {string} [caption] Photo caption (may also be used when resending photos by file_id).
+ * @property {Format} [parse_mode] Format of the caption text: Markdown or HTML.
+ * @property {MessageEntity[]} [caption_entities] List of special entities that appear in the caption, which can be specified instead of parse_mode.
+ * @property {boolean} [has_spoiler] Marks the caption as containing a spoiler.
+ * @property {boolean} [disable_notification] Sends the photo silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent photo from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove the reply keyboard, or to force a reply from the user.
+ */
+
+/**
+ * Options for sending an audio file.
+ * @typedef {Object} SendAudioOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel.
+ * @property {number} [message_thread_id] Unique identifier for the target message thread.
+ * @property {(InputFile|string)} audio Audio file to send.
+ * @property {string} [caption] Audio caption, 0-1024 characters after entities parsing.
+ * @property {Format} [parse_mode] Format of the caption text: Markdown or HTML.
+ * @property {MessageEntity[]} [caption_entities] List of special entities that appear in the caption, which can be specified instead of parse_mode.
+ * @property {number} [duration] Duration of the audio in seconds.
+ * @property {string} [performer] Performer of the audio.
+ * @property {string} [title] Title of the audio.
+ * @property {(InputFile|string)} [thumbnail] Thumbnail of the file to send.
+ * @property {boolean} [disable_notification] Sends the audio silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent audio from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove the reply keyboard, or to force a reply from the user.
+ */
+
+/**
+ * Options for sending a document.
+ * @typedef {Object} SendDocumentOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel.
+ * @property {number} [message_thread_id] Unique identifier for the target message thread.
+ * @property {(InputFile|string)} document File to send.
+ * @property {(InputFile|string)} [thumbnail] Thumbnail of the file to send.
+ * @property {string} [caption] Document caption (may also be used when resending documents by file_id), 0-1024 characters after entities parsing.
+ * @property {Format} [parse_mode] Format of the caption text: Markdown or HTML.
+ * @property {MessageEntity[]} [caption_entities] List of special entities that appear in the caption, which can be specified instead of parse_mode.
+ * @property {boolean} [disable_content_type_detection] Disables automatic server-side content type detection for files uploaded using multipart/form-data.
+ * @property {boolean} [disable_notification] Sends the document silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent document from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove the reply keyboard, or to force a reply from the user.
+ */
+
+/**
+ * Options for sending a video.
+ * @typedef {Object} SendVideoOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel.
+ * @property {number} [message_thread_id] Unique identifier for the target message thread.
+ * @property {(InputFile|string)} video Video to send.
+ * @property {number} [duration] Duration of sent video in seconds.
+ * @property {number} [width] Video width.
+ * @property {number} [height] Video height.
+ * @property {(InputFile|string)} [thumbnail] Thumbnail of the file to send.
+ * @property {string} [caption] Video caption (may also be used when resending videos by file_id), 0-1024 characters after entities parsing.
+ * @property {Format} [parse_mode] Format of the caption text: Markdown or HTML.
+ * @property {MessageEntity[]} [caption_entities] List of special entities that appear in the caption, which can be specified instead of parse_mode.
+ * @property {boolean} [has_spoiler] Marks the caption as containing a spoiler.
+ * @property {boolean} [supports_streaming] If the video is suitable for streaming.
+ * @property {boolean} [disable_notification] Sends the video silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent video from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove the reply keyboard, or to force a reply from the user.
+ */
+
+/**
+ * Options for sending an animation.
+ * @typedef {Object} SendAnimationOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {(InputFile|string)} animation Animation to send.
+ * @property {number} [duration] Duration of sent animation in seconds.
+ * @property {number} [width] Animation width.
+ * @property {number} [height] Animation height.
+ * @property {(InputFile|string)} [thumbnail] Thumbnail of the file to send.
+ * @property {string} [caption] Caption for the animation, 0-1024 characters after entities parsing.
+ * @property {Format} [parse_mode] Format of the caption text: Markdown or HTML.
+ * @property {MessageEntity[]} [caption_entities] List of special entities that appear in the caption, which can be specified instead of parse_mode.
+ * @property {boolean} [has_spoiler] Marks the caption as containing a spoiler.
+ * @property {boolean} [disable_notification] Sends the message silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent message from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove the reply keyboard, or to force a reply from the user.
+ */
+
+/**
+ * Options for sending a voice message.
+ * @typedef {Object} SendVoiceOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {(InputFile|string)} voice Audio file to send as a voice message.
+ * @property {string} [caption] Caption for the voice message, 0-1024 characters after entities parsing.
+ * @property {Format} [parse_mode] Format of the caption text: Markdown or HTML.
+ * @property {MessageEntity[]} [caption_entities] List of special entities that appear in the caption, which can be specified instead of parse_mode.
+ * @property {number} [duration] Duration of the voice message in seconds.
+ * @property {boolean} [disable_notification] Sends the message silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent message from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove the reply keyboard, or to force a reply from the user.
+ */
+
+/**
+ * Options for sending a video note.
+ * @typedef {Object} SendVideoNoteOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {(InputFile|string)} video_note Video note to send.
+ * @property {number} [duration] Duration of the video note in seconds.
+ * @property {number} [length] Video width and height, since video notes are square-shaped.
+ * @property {(InputFile|string)} [thumbnail] Thumbnail of the file to send.
+ * @property {boolean} [disable_notification] Sends the message silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent message from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove the reply keyboard, or to force a reply from the user.
+ */
+
+/**
+ * Options for sending a media group.
+ * @typedef {Object} SendMediaGroupOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {(InputMediaAudio[]|InputMediaDocument[]|InputMediaPhoto[]|InputMediaVideo[])} media A JSON-serialized array describing photos, videos, documents, or audios to be sent, making up a media group.
+ * @property {boolean} [disable_notification] Sends the messages silently. Users will receive notifications with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent messages from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ */
+
+/**
+ * Options for sending a location message.
+ * @typedef {Object} SendLocationOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {number} latitude Latitude of the location.
+ * @property {number} longitude Longitude of the location.
+ * @property {number} [horizontal_accuracy] The radius of uncertainty for the location, measured in meters; 0-1500.
+ * @property {number} [live_period] Time in seconds for which the location will be live, ranging from 60 to 86400.
+ * @property {number} [heading] For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.
+ * @property {number} [proximity_alert_radius] For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.
+ * @property {boolean} [disable_notification] Sends the message silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent message from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove the reply keyboard, or to force a reply from the user.
+ */
+
+/**
+ * Options for sending a venue message.
+ * @typedef {Object} SendVenueOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {number} latitude Latitude of the venue.
+ * @property {number} longitude Longitude of the venue.
+ * @property {string} title Name of the venue.
+ * @property {string} address Address of the venue.
+ * @property {string} [foursquare_id] Foursquare identifier of the venue.
+ * @property {string} [foursquare_type] Foursquare type of the venue. (For example, “arts_entertainment/default”, “arts_entertainment/aquarium” or “food/icecream”.)
+ * @property {string} [google_place_id] Google Places identifier of the venue.
+ * @property {string} [google_place_type] Google Places type of the venue. (See [Google Places API](https://developers.google.com/places/web-service/supported_types) for supported types.)
+ * @property {boolean} [disable_notification] Sends the message silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent message from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove the reply keyboard, or to force a reply from the user.
+ */
+
+/**
+ * Options for sending a contact message.
+ * @typedef {Object} SendContactOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {string} phone_number Contact's phone number.
+ * @property {string} first_name Contact's first name.
+ * @property {string} [last_name] Contact's last name.
+ * @property {string} [vcard] Additional data about the contact in the form of a vCard, 0-2048 bytes.
+ * @property {boolean} [disable_notification] Sends the message silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent message from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove the reply keyboard, or to force a reply from the user.
+ */
+
+/**
+ * Options for sending a poll.
+ * @typedef {Object} SendPollOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {string} question Poll question, 1-300 characters.
+ * @property {string[]} options List of answer options, 2-10 strings 1-100 characters each.
+ * @property {boolean} [is_anonymous] True, if the poll needs to be anonymous.
+ * @property {string} [type] Poll type, “quiz” or “regular”, defaults to “regular”.
+ * @property {boolean} [allows_multiple_answers] True, if the poll allows multiple answers, ignored for quizzes.
+ * @property {number} [correct_option_id] 0-based identifier of the correct answer option, required for quizzes.
+ * @property {string} [explanation] Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters with the possibility to include entities.
+ * @property {Format} [explanation_parse_mode] Mode for parsing entities in the explanation. See formatting options for more details.
+ * @property {MessageEntity[]} [explanation_entities] List of special entities that appear in the explanation, which can be specified instead of parse_mode.
+ * @property {number} [open_period] Amount of time in seconds the poll will be active after creation, 5-600. Can't be used together with close_date.
+ * @property {number} [close_date] Point in time (Unix timestamp) when the poll will be automatically closed. Can't be used together with open_period.
+ * @property {boolean} [is_closed] Pass True, if the poll needs to be immediately closed. This can be useful for poll preview.
+ * @property {boolean} [disable_notification] Sends the message silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent message from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove the reply keyboard, or to force a reply from the user.
+ */
+
+/**
+ * Options for sending a dice message.
+ * @typedef {Object} SendDiceOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {string} [emoji] Emoji on which the dice throw animation is based.
+ * @property {boolean} [disable_notification] Sends the message silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent message from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options for the message.
+ */
+
+/**
+ * Options for sending chat action.
+ * @typedef {Object} SendChatActionOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {string} action Type of action to broadcast.
+ */
+
+/**
+ * Options for setting message reaction.
+ * @typedef {Object} SetMessageReactionOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} message_id Identifier of the message to add the reaction to.
+ * @property {ReactionType[]} [reaction] Types of reactions to set on the message.
+ * @property {boolean} [is_big] Whether the reaction should be displayed in a larger format.
+ */
+
+/**
+ * Options for getting a user's profile photos.
+ * @typedef {Object} GetUserProfilePhotosOptions
+ * @property {number} user_id Unique identifier of the target user.
+ * @property {number} [offset] Sequential number of the first photo to be returned.
+ * @property {number} [limit] Limits the number of photos to be retrieved.
+ */
+
+/**
+ * Options for getting file information.
+ * @typedef {Object} GetFileOptions
+ * @property {string} file_id File identifier to get info about.
+ */
+
+/**
+ * Options for banning a chat member.
+ * @typedef {Object} BanChatMemberOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} user_id Unique identifier of the target user to be banned.
+ * @property {number} [until_date] Date when the ban will be lifted. Unix time.
+ * @property {boolean} [revoke_messages] Pass True to delete all messages from the chat for the user that is being removed.
+ */
+
+/**
+ * Options for unbanning a previously banned user in a supergroup or channel.
+ * @typedef {Object} UnbanChatMemberOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} user_id Unique identifier of the target user.
+ * @property {boolean} [only_if_banned] Do the unban action only if the user is currently banned.
+ */
+
+/**
+ * Options for restricting a user in a supergroup.
+ * @typedef {Object} RestrictChatMemberOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} user_id Unique identifier of the target user to restrict.
+ * @property {ChatPermissions} permissions Permissions to be set for the restricted user.
+ * @property {boolean} [use_independent_chat_permissions] Use independent permissions for the chat.
+ * @property {number} [until_date] Date when restrictions will be lifted for the user, unix time.
+ */
+
+/**
+ * Options for promoting or demoting a user in a supergroup or channel.
+ * @typedef {Object} PromoteChatMemberOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} user_id Unique identifier of the target user to promote or demote.
+ * @property {boolean} [is_anonymous] The user's presence in chat is hidden.
+ * @property {boolean} [can_manage_chat] The user can access the chat event log, chat statistics, message statistics in channels, see channel members, manage voice chats.
+ * @property {boolean} [can_delete_messages] The user can delete messages of other users.
+ * @property {boolean} [can_manage_video_chats] The user can manage video chats.
+ * @property {boolean} [can_restrict_members] The user can restrict, ban or unban chat members.
+ * @property {boolean} [can_promote_members] The user can add new administrators with a subset of their own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by the user).
+ * @property {boolean} [can_change_info] The user can change the chat title, photo, and other settings.
+ * @property {boolean} [can_invite_users] The user can invite new users to the chat.
+ * @property {boolean} [can_post_messages] The user can post in the channel.
+ * @property {boolean} [can_edit_messages] The user can edit messages of others and can pin messages.
+ * @property {boolean} [can_pin_messages] The user can pin messages.
+ *
+
+/**
+ * Options for setting a custom title for an administrator in a supergroup.
+ * @typedef {Object} SetChatAdministratorCustomTitleOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} user_id Unique identifier of the target user to set a custom title.
+ * @property {string} custom_title New custom title for the administrator; 0-16 characters, emoji are not allowed.
+ */
+
+/**
+ * Options for banning a channel chat in a supergroup or channel.
+ * @typedef {Object} BanChatSenderChatOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} sender_chat_id Unique identifier of the target sender chat to ban.
+ */
+
+/**
+ * Options for unbanning a previously banned channel chat.
+ * @typedef {Object} UnbanChatSenderChatOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} sender_chat_id Unique identifier of the target sender chat to unban.
+ */
+
+/**
+ * Options for setting default chat permissions for all members.
+ * @typedef {Object} SetChatPermissionsOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {ChatPermissions} permissions New default chat permissions to set.
+ * @property {boolean} [use_independent_chat_permissions] Specifies whether the chat supports independent default chat permissions for channels and supergroups.
+ */
+
+/**
+ * Options for generating a new primary invite link for a chat.
+ * @typedef {Object} ExportChatInviteLinkOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ */
+
+/**
+ * Options for creating an additional invite link for a chat.
+ * @typedef {Object} CreateChatInviteLinkOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {string} [name] Invite link name.
+ * @property {number} [expire_date] Date when the link will expire.
+ * @property {number} [member_limit] Maximum number of users that can be invited.
+ * @property {boolean} [creates_join_request] True, if the link should create a join request instead of immediately joining the chat.
+ */
+
+/**
+ * Options for editing a non-primary invite link created by the bot.
+ * @typedef {Object} EditChatInviteLinkOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {string} invite_link The invite link to edit.
+ * @property {string} [name] New name for the invite link.
+ * @property {number} [expire_date] New expiration date for the invite link.
+ * @property {number} [member_limit] New maximum number of users that can be invited with the link.
+ * @property {boolean} [creates_join_request] True, if the link should now create a join request instead of immediately joining the chat.
+ */
+
+/**
+ * Options for revoking an invite link created by the bot.
+ * @typedef {Object} RevokeChatInviteLinkOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {string} invite_link The invite link to revoke.
+ */
+
+/**
+ * Options for managing a chat join request.
+ * @typedef {Object} ChatJoinRequestOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} user_id Unique identifier of the target user.
+ */
+
+/**
+ * Options for setting a new chat photo.
+ * @typedef {Object} SetChatPhotoOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {InputFile} photo New chat photo.
+ */
+
+/**
+ * Basic options for operations on a chat.
+ * @typedef {Object} deleteChatPhotoOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ */
+
+/**
+ * Options for changing the title of a chat.
+ * @typedef {Object} SetChatTitleOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {string} title New chat title.
+ */
+
+/**
+ * Options for changing the description of a chat.
+ * @typedef {Object} SetChatDescriptionOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {string} [description] New chat description.
+ */
+
+/**
+ * Options for pinning a message in a chat.
+ * @typedef {Object} PinChatMessageOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} message_id Identifier of a message to pin.
+ * @property {boolean} [disable_notification] If true, the message will be pinned silently. This means users will not receive a notification.
+ */
+
+/**
+ * Options for unpinning a chat message.
+ * @typedef {Object} UnpinChatMessageOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_id] Identifier of a message to unpin. If not specified, the most recent pinned message (by sending date) will be unpinned.
+ */
+
+/**
+ * Options requiring only a chat ID.
+ * @typedef {Object} ChatIdOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ */
+
+/**
+ * Options for getting information about a chat member.
+ * @typedef {Object} GetChatMemberOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} user_id Unique identifier of the target user.
+ */
+
+/**
+ * Options for getting information about a member of a chat.
+ * @typedef {Object} GetChatMemberOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} user_id Unique identifier of the target user.
+ */
+
+/**
+ * Options for setting a new group sticker set for a supergroup.
+ * @typedef {Object} SetChatStickerSetOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {string} sticker_set_name Name of the sticker set to be set as the group sticker set.
+ */
+
+/**
+ * Options for creating a topic in a forum supergroup chat.
+ * @typedef {Object} CreateForumTopicOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {string} name Name of the forum topic.
+ * @property {number} [icon_color] Color of the forum topic icon.
+ * @property {string} [icon_custom_emoji_id] Custom emoji identifier to be used as the icon of the forum topic.
+ */
+
+/**
+ * Options for editing the name and icon of a forum topic.
+ * @typedef {Object} EditForumTopicOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} message_thread_id Unique identifier for the target message thread.
+ * @property {string} [name] New name for the forum topic.
+ * @property {string} [icon_custom_emoji_id] Custom emoji identifier to be used as the new icon of the forum topic.
+ */
+
+/**
+ * Options for closing or reopening a topic in a forum supergroup chat.
+ * @typedef {Object} ForumTopicManagementOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} message_thread_id Unique identifier for the target message thread.
+ */
+
+/**
+ * Options for editing the name of the 'General' topic in a forum supergroup chat.
+ * @typedef {Object} EditGeneralForumTopicOptions
+ * @property {(number|string)} chat_id The unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {string} name New name for the 'General' topic.
+ */
+
+/**
+ * Options for sending answers to callback queries sent from inline keyboards.
+ * @typedef {Object} AnswerCallbackQueryOptions
+ * @property {string} callback_query_id Unique identifier for the query to be answered.
+ * @property {string} [text] Text of the notification. If not specified, nothing will be shown to the user.
+ * @property {boolean} [show_alert] If true, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to false.
+ * @property {string} [url] URL that will be opened by the user's client.
+ * @property {number} [cache_time] The maximum amount of time in seconds that the result of the callback query may be cached client-side.
+ */
+
+/**
+ * Options for getting the list of boosts added to a chat by a user.
+ * @typedef {Object} GetUserChatBoostsOptions
+ * @property {(number|string)} chat_id The unique identifier for the target chat or username of the target channel.
+ * @property {number} user_id Unique identifier of the user whose boosts are being requested.
+ */
+
+/**
+ * Options for changing the list of the bot's commands.
+ * @typedef {Object} SetMyCommandsOptions
+ * @property {BotCommand[]} commands An array of bot commands to be set.
+ * @property {BotCommandScope} [scope] A JSON-serialized object defining the scope of commands. If not specified, defaults to all private chats.
+ * @property {string} [language_code] A two-letter ISO 639-1 language code. If not specified, commands will be applied to all languages.
+ */
+
+/**
+ * Options for deleting the bot's commands for a given scope and language.
+ * @typedef {Object} DeleteMyCommandsOptions
+ * @property {BotCommandScope} [scope] A JSON-serialized object defining the scope of commands to be deleted. If not specified, commands will be deleted in all private chats.
+ * @property {string} [language_code] A two-letter ISO 639-1 language code. If not specified, commands will be deleted for all languages.
+ */
+
+/**
+ * Options for getting the list of the bot's commands.
+ * @typedef {Object} GetMyCommandsOptions
+ * @property {BotCommandScope} [scope] The scope of commands to retrieve. If not specified, defaults to all commands.
+ * @property {string} [language_code] A language code to specify which language's commands to retrieve. If not specified, defaults to all languages.
+ */
+
+/**
+ * Options for setting the bot's name.
+ * @typedef {Object} SetMyNameOptions
+ * @property {string} name The new name to set for the bot.
+ * @property {string} [language_code] A language code. If specified, sets the name for that specific language.
+ */
+
+/**
+ * Options for getting the bot's name.
+ * @typedef {Object} GetMyNameOptions
+ * @property {string} [language_code] A language code to specify which language's name to retrieve. If not specified, gets the default name.
+ */
+
+/**
+ * Options for getting the bot's description.
+ * @typedef {Object} GetMyDescriptionOptions
+ * @property {string} [language_code] A language code to specify which language's description to retrieve. If not specified, gets the default description.
+ */
+
+/**
+ * Options for setting the bot's description.
+ * @typedef {Object} SetMyDescriptionOptions
+ * @property {string} [description] The new description to set for the bot.
+ * @property {string} [language_code] A language code. If specified, sets the description for that specific language.
+ */
+
+/**
+ * Options for getting the bot's short description.
+ * @typedef {Object} GetMyShortDescriptionOptions
+ * @property {string} [language_code] A language code to specify which language's short description to retrieve. If not specified, gets the default short description.
+ */
+
+/**
+ * Options for setting the chat menu button.
+ * @typedef {Object} SetChatMenuButtonOptions
+ * @property {number} [chat_id] Unique identifier for the target chat or username of the target channel (in the format @channelusername). Defaults to the bot's chat.
+ * @property {MenuButton} [menu_button] The menu button to be set. If not specified, the button is removed.
+ */
+
+/**
+ * Options for getting the chat menu button.
+ * @typedef {Object} GetChatMenuButtonOptions
+ * @property {number} [chat_id] Unique identifier for the target chat or username of the target channel (in the format @channelusername). Defaults to the bot's chat.
+ */
+
+/**
+ * Options for setting the bot's default administrator rights.
+ * @typedef {Object} SetMyDefaultAdministratorRightsOptions
+ * @property {ChatAdministratorRights} [rights] The default administrator rights to be set.
+ * @property {boolean} [for_channels] Specifies whether the rights are for channels. Defaults to false (for groups).
+ */
+
+/**
+ * Options for getting the bot's default administrator rights.
+ * @typedef {Object} GetMyDefaultAdministratorRightsOptions
+ * @property {boolean} [for_channels] Specifies whether to get the rights for channels. Defaults to false (for groups).
+ */
+
+/**
+ * Options for editing the text of messages.
+ * @typedef {Object} EditMessageTextOptions
+ * @property {(number|string)} [chat_id] Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_id] Identifier of the message to edit.
+ * @property {string} [inline_message_id] Identifier of the inline message to edit.
+ * @property {string} text New text of the message.
+ * @property {Format} [parse_mode] Format of the text: Markdown or HTML.
+ * @property {MessageEntity[]} [entities] List of special entities that appear in the message text, which can be specified instead of parse_mode.
+ * @property {LinkPreviewOptions} [link_preview_options] Options for how links in the message should be previewed.
+ * @property {InlineKeyboardMarkup} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard.
+ */
+
+/**
+ * Options for editing the caption of a message.
+ * @typedef {Object} EditMessageCaptionOptions
+ * @property {(number|string)} [chat_id] Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_id] Identifier of the message to edit.
+ * @property {string} [inline_message_id] Identifier of the inline message.
+ * @property {string} [caption] New caption of the message.
+ * @property {Format} [parse_mode] Format of the caption text: Markdown or HTML.
+ * @property {MessageEntity[]} [caption_entities] List of special entities that appear in the caption, which can be specified instead of parse_mode.
+ * @property {InlineKeyboardMarkup} [reply_markup] A JSON-serialized object for an inline keyboard.
+ */
+
+/**
+ * Options for editing the media content of messages.
+ * @typedef {Object} EditMessageMediaOptions
+ * @property {(number|string)} [chat_id] Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_id] Identifier of the message to edit.
+ * @property {string} [inline_message_id] Identifier of the inline message.
+ * @property {InputMedia} media New media content of the message.
+ * @property {InlineKeyboardMarkup} [reply_markup] A JSON-serialized object for an inline keyboard.
+ */
+
+/**
+ * Options for editing the live location of a message.
+ * @typedef {Object} EditMessageLiveLocationOptions
+ * @property {(number|string)} [chat_id] Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_id] Identifier of the message to edit.
+ * @property {string} [inline_message_id] Identifier of the inline message.
+ * @property {number} latitude Latitude of new location.
+ * @property {number} longitude Longitude of new location.
+ * @property {number} [horizontal_accuracy] The radius of uncertainty for the location, measured in meters; 0-1500.
+ * @property {number} [heading] Direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.
+ * @property {number} [proximity_alert_radius] Maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.
+ * @property {InlineKeyboardMarkup} [reply_markup] A JSON-serialized object for an inline keyboard.
+ */
+
+/**
+ * Options for stopping a live location message.
+ * @typedef {Object} StopMessageLiveLocationOptions
+ * @property {(number|string)} [chat_id] Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_id] Identifier of the message to stop showing the live location.
+ * @property {string} [inline_message_id] Identifier of the inline message to stop showing the live location.
+ * @property {InlineKeyboardMarkup} [reply_markup] A JSON-serialized object for an inline keyboard.
+ */
+
+/**
+ * Options for stopping a live location message.
+ * @typedef {Object} StopMessageLiveLocationOptions
+ * @property {(number|string)} [chat_id] Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_id] Identifier of the message with live location to stop.
+ * @property {string} [inline_message_id] Identifier of the inline message with live location to stop.
+ * @property {InlineKeyboardMarkup} [reply_markup] A JSON-serialized object for a new inline keyboard.
+ */
+
+/**
+ * Options for editing the reply markup of messages.
+ * @typedef {Object} EditMessageReplyMarkupOptions
+ * @property {(number|string)} [chat_id] Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_id] Identifier of the message to edit.
+ * @property {string} [inline_message_id] Identifier of the inline message to edit.
+ * @property {InlineKeyboardMarkup} [reply_markup] A JSON-serialized object for a new inline keyboard.
+ */
+
+/**
+ * Options for stopping a poll.
+ * @typedef {Object} StopPollOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} message_id Identifier of the original message with the poll.
+ * @property {InlineKeyboardMarkup} [reply_markup] A JSON-serialized object for a new inline keyboard.
+ */
+
+/**
+ * Options for deleting a message.
+ * @typedef {Object} DeleteMessageOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} message_id Identifier of the message to delete.
+ */
+
+/**
+ * Options for deleting multiple messages.
+ * @typedef {Object} DeleteMessagesOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number[]} message_ids Array of message identifiers to delete.
+ */
+
+/**
+ * Options for sending a sticker.
+ * @typedef {Object} SendStickerOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format @channelusername).
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {(InputFile|string)} sticker Sticker to send. Can be a file_id as String to send a sticker that exists on the Telegram servers, or a file from the filesystem.
+ * @property {string} [emoji] Emoji associated with the sticker.
+ * @property {boolean} [disable_notification] Sends the sticker silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent sticker from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard, or to force a reply from the user.
+ */
+
+/**
+ * Options for getting a sticker set.
+ * @typedef {Object} GetStickerSetOptions
+ * @property {string} name Name of the sticker set.
+ */
+
+/**
+ * Options for getting custom emoji stickers.
+ * @typedef {Object} GetCustomEmojiStickersOptions
+ * @property {string[]} custom_emoji_ids List of custom emoji identifiers to get stickers for.
+ */
+
+/**
+ * Options for uploading a sticker file.
+ * @typedef {Object} UploadStickerFileOptions
+ * @property {number} user_id User identifier of the sticker file owner.
+ * @property {InputFile} sticker Sticker file to upload.
+ * @property {string} sticker_format Format of the sticker file (e.g., "webp").
+ */
+
+/**
+ * Options for creating a new sticker set.
+ * @typedef {Object} CreateNewStickerSetOptions
+ * @property {number} user_id User identifier of the sticker set owner.
+ * @property {string} name Unique name of the sticker set.
+ * @property {string} title Sticker set title, 1-64 characters.
+ * @property {InputSticker[]} stickers Array of stickers to be added to the set.
+ * @property {string} sticker_format Format of the stickers in the set (e.g., "webp").
+ * @property {string} [sticker_type] Type of the stickers in the set.
+ * @property {boolean} [needs_repainting] True if the sticker set needs repainting.
+ */
+
+/**
+ * Options for adding a new sticker to a set.
+ * @typedef {Object} AddStickerToSetOptions
+ * @property {number} user_id Unique identifier of the target user.
+ * @property {string} name Name of the sticker set to which the sticker will be added.
+ * @property {InputSticker} sticker The sticker to be added to the set.
+ */
+
+/**
+ * Options for setting the position of a sticker in the set.
+ * @typedef {Object} SetStickerPositionInSetOptions
+ * @property {string} sticker File identifier of the sticker.
+ * @property {number} position New sticker position in the set, zero-based.
+ */
+
+/**
+ * Options for deleting a sticker from a set.
+ * @typedef {Object} DeleteStickerFromSetOptions
+ * @property {string} sticker File identifier of the sticker to be deleted.
+ */
+
+/**
+ * Options for setting the emoji list for a sticker.
+ * @typedef {Object} SetStickerEmojiListOptions
+ * @property {string} sticker File identifier of the sticker.
+ * @property {string[]} emoji_list A list of emojis associated with the sticker.
+ */
+
+/**
+ * Options for setting keywords for a sticker.
+ * @typedef {Object} SetStickerKeywordsOptions
+ * @property {string} sticker File identifier of the sticker.
+ * @property {string[]} [keywords] A list of keywords associated with the sticker.
+ */
+
+/**
+ * Options for setting the mask position of a sticker.
+ * @typedef {Object} SetStickerMaskPositionOptions
+ * @property {string} sticker File identifier of the sticker.
+ * @property {MaskPosition} [mask_position] The mask position to be set for the sticker.
+ */
+
+/**
+ * Options for setting the title of a sticker set.
+ * @typedef {Object} SetStickerSetTitleOptions
+ * @property {string} name The name of the sticker set.
+ * @property {string} title The new title of the sticker set.
+ */
+
+/**
+ * Options for setting the thumbnail of a sticker set.
+ * @typedef {Object} SetStickerSetThumbnailOptions
+ * @property {string} name The name of the sticker set.
+ * @property {number} user_id The user ID of the sticker set owner.
+ * @property {(InputFile|string)} [thumbnail] The new thumbnail of the sticker set. Can be a file ID or an actual file.
+ */
+
+/**
+ * Options for setting the thumbnail of a custom emoji sticker set.
+ * @typedef {Object} SetCustomEmojiStickerSetThumbnailOptions
+ * @property {string} name The name of the custom emoji sticker set.
+ * @property {string} [custom_emoji_id] The ID of the custom emoji to be used as the new thumbnail.
+ */
+
+/**
+ * Options for deleting a sticker set.
+ * @typedef {Object} DeleteStickerSetOptions
+ * @property {string} name The name of the sticker set to be deleted.
+ */
+
+/**
+ * Options for answering an inline query.
+ * @typedef {Object} AnswerInlineQueryOptions
+ * @property {string} inline_query_id Unique identifier for the answered query.
+ * @property {InlineQueryResult[]} results A JSON-serialized array of results for the inline query.
+ * @property {number} [cache_time] The maximum amount of time in seconds that the result of the inline query may be cached on the server.
+ * @property {boolean} [is_personal] Pass true if results may be cached on the server side only for the user that sent the query.
+ * @property {string} [next_offset] Pass the offset that a client should send in the next query with the same text to receive more results.
+ * @property {InlineQueryResultsButton} [button] An optional button that will be shown to the user in the results.
+ */
+
+/**
+ * Options for answering a Web App query.
+ * @typedef {Object} AnswerWebAppQueryOptions
+ * @property {string} web_app_query_id Unique identifier for the query to be answered.
+ * @property {InlineQueryResult} result The result for the query.
+ */
+
+/**
+ * Options for sending an invoice.
+ * @typedef {Object} SendInvoiceOptions
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel.
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for channels).
+ * @property {string} title Product name.
+ * @property {string} description Product description.
+ * @property {string} payload Bot-defined invoice payload.
+ * @property {string} provider_token Payments provider token.
+ * @property {string} currency Three-letter ISO 4217 currency code.
+ * @property {LabeledPrice[]} prices Price breakdown, a list of components.
+ * @property {number} [max_tip_amount] The maximum accepted tip amount in the smallest units of the currency.
+ * @property {number[]} [suggested_tip_amounts] Array of suggested tip amounts in the smallest units of the currency.
+ * @property {string} [start_parameter] Unique deep-linking parameter for the payment checkout.
+ * @property {string} [provider_data] JSON-encoded data about the invoice, which will be shared with the payment provider.
+ * @property {string} [photo_url] URL of the product photo for the invoice.
+ * @property {number} [photo_size] Size of the product photo.
+ * @property {number} [photo_width] Width of the product photo.
+ * @property {number} [photo_height] Height of the product photo.
+ * @property {boolean} [need_name] Whether you need the user's full name.
+ * @property {boolean} [need_phone_number] Whether you need the user's phone number.
+ * @property {boolean} [need_email] Whether you need the user's email.
+ * @property {boolean} [need_shipping_address] Whether you need the user's shipping address.
+ * @property {boolean} [send_phone_number_to_provider] Whether the user's phone number should be sent to provider.
+ * @property {boolean} [send_email_to_provider] Whether the user's email should be sent to provider.
+ * @property {boolean} [is_flexible] Whether the final price depends on the shipping method.
+ * @property {boolean} [disable_notification] Sends the invoice silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent invoice from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove the reply keyboard, or to force a reply from the user.
+ */
+
+/**
+ * Options for creating an invoice link.
+ * @typedef {Object} CreateInvoiceLinkOptions
+ * @property {string} title Product name.
+ * @property {string} description Product description.
+ * @property {string} payload Bot-defined invoice payload.
+ * @property {string} provider_token Payments provider token.
+ * @property {string} currency Three-letter ISO 4217 currency code.
+ * @property {LabeledPrice[]} prices Price breakdown, a list of components.
+ * @property {number} [max_tip_amount] The maximum accepted tip amount in the smallest units of the currency.
+ * @property {number[]} [suggested_tip_amounts] Array of suggested tip amounts in the smallest units of the currency.
+ * @property {string} [provider_data] JSON-encoded data about the invoice, which will be shared with the payment provider.
+ * @property {string} [photo_url] URL of the product photo for the invoice.
+ * @property {number} [photo_size] Size of the product photo.
+ * @property {number} [photo_width] Width of the product photo.
+ * @property {number} [photo_height] Height of the product photo.
+ * @property {boolean} [need_name] Whether you need the user's full name.
+ * @property {boolean} [need_phone_number] Whether you need the user's phone number.
+ * @property {boolean} [need_email] Whether you need the user's email.
+ * @property {boolean} [need_shipping_address] Whether you need the user's shipping address.
+ * @property {boolean} [send_phone_number_to_provider] Whether the user's phone number should be sent to provider.
+ * @property {boolean} [send_email_to_provider] Whether the user's email should be sent to provider.
+ * @property {boolean} [is_flexible] Whether the final price depends on the shipping method.
+ */
+
+/**
+ * Options for sending a game.
+ * @typedef {Object} SendGameOptions
+ * @property {number} chat_id Unique identifier for the target chat.
+ * @property {string} game_short_name Short name of the game to be sent.
+ * @property {number} [message_thread_id] Unique identifier for the target message thread (only for messages in threads).
+ * @property {boolean} [disable_notification] Sends the game message silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent game from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {InlineKeyboardMarkup} [reply_markup] A JSON-serialized object for an inline keyboard. If empty, one 'Play game_title' button will be shown. If not empty, the first button must launch the game.
+ */
+
+/**
+ * Options for setting a user's score in a game.
+ * @typedef {Object} SetGameScoreOptions
+ * @property {number} user_id User identifier.
+ * @property {number} score New score to set.
+ * @property {boolean} [force] Pass True, if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters.
+ * @property {boolean} [disable_edit_message] Pass True, if the game message should not be automatically edited to include the current scoreboard.
+ * @property {number} [chat_id] Required if inline_message_id is not specified. Unique identifier for the target chat.
+ * @property {number} [message_id] Required if inline_message_id is not specified. Identifier of the sent message.
+ * @property {string} [inline_message_id] Required if chat_id and message_id are not specified. Identifier of the inline message.
+ */
+
+/**
+ * Options for retrieving high scores for a game.
+ * @typedef {Object} GetGameHighScoresOptions
+ * @property {number} user_id User identifier.
+ * @property {number} [chat_id] Required if inline_message_id is not specified. Unique identifier for the target chat.
+ * @property {number} [message_id] Required if inline_message_id is not specified. Identifier of the sent message.
+ * @property {string} [inline_message_id] Required if chat_id and message_id are not specified. Identifier of the inline message.
+ */
+
+/**
+ * Options for informing a user of errors with their Telegram Passport data.
+ * @typedef {Object} SetPassportDataErrorsOptions
+ * @property {number} user_id User identifier.
+ * @property {PassportElementError[]} errors An array of objects representing errors in the Telegram Passport elements that the user needs to correct.
  */
 
 /**
@@ -157,938 +1117,135 @@
  * @property {function(): ChatBoostUpdated} chatBoostUpdate - Chat boost added or changed; requires bot admin.
  * @property {function(): ChatBoostRemoved} removedChatBoostUpdate - Chat boost removed; requires bot admin.
  * @property {function(): string} updateType - get update type.
- * @property {function(): Chat} chat - get chat info.
- * @property {function(): From} from - get user info chatting with bot.
- * @property {function(): Message} message - get message content.
- * @property {function(): string} chatId - gets chat id.
- * @property {function(): string} userId - gets user id.
- * @property {function(): number} messageId - gets message id.
- * @property {function(): User} getMe
- * @property {function(): boolean} logOut
- * @property {function(): boolean} close
- * @property {function(): WebhookInfo} getWebhookInfo
+ * @property {function(): Chat} chat - chat.
+ * @property {function(): From} from - user or bot.
+ * @property {function(): Message} message - message.
+ * @property {function(): string} chatId - Unique identifier of chat.
+ * @property {function(): string} userId - Unique identifier of user.
+ * @property {function(): number} messageId - Unique identifier of message.
+ * @property {function(): User} getMe - for testing your bot's authentication token
+ * @property {function(): boolean} logOut - Use this method to log out from the cloud Bot API server before launching the bot locally
+ * @property {function(): boolean} close - Use this method to close the bot instance before moving it from one local server to another.
+ * @property {function(): WebhookInfo} getWebhookInfo - the current status of a webhook.
+ *
  * @property {SheetMethod} sheet - Method to access sheet operations by sheet name.
  *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   text: string,
- *   parse_mode?: Format,
- *   entities?: MessageEntity[],
- *   link_preview_options?: LinkPreviewOptions,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} sendMessage Sends a message to a chat. The parameters include chat ID, message text, formatting options, and more.
- *
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   from_chat_id: (number|string),
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   message_id: number
- * }): Message} forwardMessage
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   from_chat_id: (number|string),
- *   message_ids: number[],
- *   disable_notification?: boolean,
- *   protect_content?: boolean
- * }): MessageId[]} forwardMessages - Forwards multiple messages.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   from_chat_id: (number|string),
- *   message_id: number,
- *   caption?: string,
- *   parse_mode?: Format,
- *   caption_entities?: MessageEntity[],
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): MessageId} copyMessage - Copies a message.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   from_chat_id: (number|string),
- *   message_ids: number[],
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   remove_caption?: boolean
- * }): MessageId[]} copyMessages - Copies messages of any kind.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   photo: (InputFile|string),
- *   caption?: string,
- *   parse_mode?: Format,
- *   caption_entities?: MessageEntity[],
- *   has_spoiler?: boolean,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} sendPhoto - Sends photos.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   audio: (InputFile|string),
- *   caption?: string,
- *   parse_mode?: Format,
- *   caption_entities?: MessageEntity[],
- *   duration?: number,
- *   performer?: string,
- *   title?: string,
- *   thumbnail?: (InputFile|string),
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} sendAudio - Sends an audio file.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   document: (InputFile|string),
- *   thumbnail?: (InputFile|string),
- *   caption?: string,
- *   parse_mode?: Format,
- *   caption_entities?: MessageEntity[],
- *   disable_content_type_detection?: boolean,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} sendDocument - Sends a general file.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   video: (InputFile|string),
- *   duration?: number,
- *   width?: number,
- *   height?: number,
- *   thumbnail?: (InputFile|string),
- *   caption?: string,
- *   parse_mode?: Format,
- *   caption_entities?: MessageEntity[],
- *   has_spoiler?: boolean,
- *   supports_streaming?: boolean,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} sendVideo - Sends a video file.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   animation: (InputFile|string),
- *   duration?: number,
- *   width?: number,
- *   height?: number,
- *   thumbnail?: (InputFile|string),
- *   caption?: string,
- *   parse_mode?: Format,
- *   caption_entities?: MessageEntity[],
- *   has_spoiler?: boolean,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} sendAnimation - Sends an animation file.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   voice: (InputFile|string),
- *   caption?: string,
- *   parse_mode?: Format,
- *   caption_entities?: MessageEntity[],
- *   duration?: number,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} sendVoice - Sends an audio file as a voice message.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   video_note: (InputFile|string),
- *   duration?: number, length?: number,
- *   thumbnail?: (InputFile|string),
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} sendVideoNote - Sends a video message.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   media: (InputMediaAudio|InputMediaDocument|InputMediaPhoto|InputMediaVideo)[],
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters
- * }): Message[]} sendMediaGroup - Sends a group of photos, videos, documents or audios as an album.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   latitude: number,
- *   longitude: number,
- *   horizontal_accuracy?: number,
- *   live_period?: number,
- *   heading?: number,
- *   proximity_alert_radius?: number,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} sendLocation - Sends point on the map.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   latitude: number,
- *   longitude: number,
- *   title: string,
- *   address: string,
- *   foursquare_id?: string,
- *   foursquare_type?: string,
- *   google_place_id?: string,
- *   google_place_type?: string,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} sendVenue - Sends information about a venue.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   phone_number: string,
- *   first_name: string,
- *   last_name?: string,
- *   vcard?: string,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} sendContact - Sends phone contacts.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   question: string,
- *   options: string[],
- *   is_anonymous?: boolean,
- *   type?: string,
- *   allows_multiple_answers?: boolean,
- *   correct_option_id?: number,
- *   explanation?: string,
- *   explanation_parse_mode?: Format,
- *   explanation_entities?: MessageEntity[],
- *   open_period?: number,
- *   close_date?: number,
- *   is_closed?: boolean,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters, reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} sendPoll - Sends a native poll.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   emoji?: string,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} sendDice - Sends an animated emoji that will display a random value.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   action: string
- * }): boolean} sendChatAction - Tells the user that something is happening on the bot's side.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_id: number,
- *   reaction?: ReactionType[],
- *   is_big?: boolean
- * }): boolean} setMessageReaction - Changes the chosen reactions on a message.
- *
- * @property {function({
- *   user_id: number,
- *   offset?: number,
- *   limit?: number
- * }): UserProfilePhotos} getUserProfilePhotos - Gets a list of profile pictures for a user.
- *
- * @property {function({
- *   file_id: string
- * }): File} getFile - Gets basic information about a file.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   user_id: number,
- *   until_date?: number,
- *   revoke_messages?: boolean
- * }): boolean} banChatMember - Bans a user in a group, supergroup, or channel.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   user_id: number,
- *   only_if_banned?: boolean
- * }): boolean} unbanChatMember - Unbans a previously banned user in a supergroup or channel.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   user_id: number,
- *   permissions: ChatPermissions,
- *   use_independent_chat_permissions?: boolean,
- *   until_date?: number
- * }): boolean} restrictChatMember - Restricts a user in a supergroup.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   user_id: number,
- *   is_anonymous?: boolean,
- *   can_manage_chat?: boolean,
- *   can_delete_messages?: boolean,
- *   can_manage_video_chats?: boolean,
- *   can_restrict_members?: boolean,
- *   can_promote_members?: boolean,
- *   can_change_info?: boolean,
- *   can_invite_users?: boolean,
- *   can_post_messages?: boolean,
- *   can_edit_messages?: boolean,
- *   can_pin_messages?: boolean,
- *   can_post_stories?: boolean,
- *   can_edit_stories?: boolean,
- *   can_delete_stories?: boolean,
- *   can_manage_topics?: boolean
- * }): boolean} promoteChatMember - Promotes or demotes a user in a supergroup or channel.
- *
- *
- * @property {function({
- *   chat_id: (number|string),
- *   user_id: number,
- *   custom_title: string
- * }): boolean} setChatAdministratorCustomTitle - Sets a custom title for an administrator in a supergroup.
- *
- *
- * @property {function({
- *   chat_id: (number|string),
- *   sender_chat_id: number
- * }): boolean} banChatSenderChat - Bans a channel chat in a supergroup or channel.
- *
- *
- * @property {function({
- *   chat_id: (number|string),
- *   sender_chat_id: number
- * }): boolean} unbanChatSenderChat - Unbans a previously banned channel chat.
- *
- *
- * @property {function({
- *   chat_id: (number|string),
- *   permissions: ChatPermissions,
- *   use_independent_chat_permissions?: boolean
- * }): boolean} setChatPermissions - Sets default chat permissions for all members.
- *
- *
- * @property {function({
- *   chat_id: (number|string)
- * }): string} exportChatInviteLink - Generates a new primary invite link for a chat.
- *
- *
- * @property {function({
- *   chat_id: (number|string),
- *   name?: string,
- *   expire_date?: number,
- *   member_limit?: number,
- *   creates_join_request?: boolean
- * }): ChatInviteLink} createChatInviteLink - Creates an additional invite link for a chat.
- *
- *
- * @property {function({
- *   chat_id: (number|string),
- *   invite_link: string,
- *   name?: string,
- *   expire_date?: number,
- *   member_limit?: number,
- *   creates_join_request?: boolean
- * }): ChatInviteLink} editChatInviteLink - Edits a non-primary invite link created by the bot.
- *
- *
- * @property {function({
- *   chat_id: (number|string),
- *   invite_link: string
- * }): ChatInviteLink} revokeChatInviteLink - Revokes an invite link created by the bot.
- *
- *
- * @property {function({
- *   chat_id: (number|string),
- *   user_id: number
- * }): object} approveChatJoinRequest - Approves a chat join request.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   user_id: number
- * }): object} declineChatJoinRequest - Declines a chat join request.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   photo: InputFile
- * }): object} setChatPhoto - Sets a new chat photo.
- *
- * @property {function({
- *  chat_id: (number|string)
- * }): object} deleteChatPhoto - Deletes the chat photo.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   title: string
- * }): Object} setChatTitle - Changes the title of a chat.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   description?: string
- * }): Object} setChatDescription - Changes the description of a chat.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_id: number,
- *   disable_notification?: boolean
- * }): Object} pinChatMessage - Pins a message in a chat.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_id?: number
- * }): Object} unpinChatMessage - Removes a message from the list of pinned messages in a chat.
- *
- * @property {function({
- *   chat_id: (number|string)
- * }): Object} unpinAllChatMessages - Clears the list of pinned messages in a chat.
- *
- * @property {function({
- *   chat_id: (number|string)
- * }): Object} leaveChat - Bot leaves a group, supergroup, or channel.
- *
- * @property {function({
- *   chat_id: (number|string)
- * }): Chat} getChat - Gets information about the chat.
- *
- * @property {function({
- *   chat_id: (number|string)
- * }): ChatMember[]} getChatAdministrators - Gets a list of administrators in a chat.
- *
- * @property {function({
- *   chat_id: (number|string)
- * }): number} getChatMemberCount - Gets the number of members in a chat.
- *
- * @property {function({
- *   chat_id: (number|string)
- *   user_id: number
- * }): ChatMember} getChatMember - Gets information about a member of a chat.
- *
- * @property {function({
- *   chat_id: (number|string)
- *   sticker_set_name: string
- * }): boolean} setChatStickerSet - Sets a new group sticker set for a supergroup.
- *
- * @property {function({
- *   chat_id: (number|string)
- * }): boolean} deleteChatStickerSet - Deletes a group sticker set from a supergroup.
- *
+ * @property {function(SendMessageOptions): Message} sendMessage - send text messages.
+ * @property {function(ForwardMessageOptions): Message} forwardMessage - forward messages of any kind.
+ * @property {function(ForwardMessagesOptions): MessageId[]} forwardMessages - forward multiple messages of any kind.
+ * @property {function(CopyMessageOptions): MessageId} copyMessage - copy messages of any kind.
+ * @property {function(CopyMessagesOptions): MessageId[]} copyMessages - Copies messages of any kind.
+ * @property {function(SendPhotoOptions): Message} sendPhoto - Sends photos.
+ * @property {function(SendAudioOptions): Message} sendAudio - Sends an audio file.
+ * @property {function(SendDocumentOptions): Message} sendDocument - Sends a general file.
+ * @property {function(SendVideoOptions): Message} sendVideo - Sends a video file.
+ * @property {function(SendAnimationOptions): Message} sendAnimation - Sends an animation file.
+ * @property {function(SendVoiceOptions): Message} sendVoice - Sends an audio file as a voice message.
+ * @property {function(SendVideoNoteOptions): Message} sendVideoNote - Sends a video message.
+ * @property {function(SendMediaGroupOptions): Message[]} sendMediaGroup - Sends a group of photos, videos, documents or audios as an album.
+ * @property {function(SendLocationOptions): Message} sendLocation - Sends point on the map.
+ * @property {function(SendVenueOptions): Message} sendVenue - Sends information about a venue.
+ * @property {function(SendContactOptions): Message} sendContact - Sends phone contacts.
+ * @property {function(SendPollOptions): Message} sendPoll - Sends a native poll.
+ * @property {function(SendDiceOptions): Message} sendDice - Sends an animated emoji that will display a random value.
+ * @property {function(SendChatActionOptions): boolean} sendChatAction - Tells the user that something is happening on the bot's side.
+ * @property {function(SetMessageReactionOptions): boolean} setMessageReaction - Changes the chosen reactions on a message.
+ * @property {function(GetUserProfilePhotosOptions): UserProfilePhotos} getUserProfilePhotos - Gets a list of profile pictures for a user.
+ * @property {function(GetFileOptions): File} getFile - Gets basic information about a file.
+ * @property {function(BanChatMemberOptions): boolean} banChatMember - Bans a user in a group, supergroup, or channel.
+ * @property {function(UnbanChatMemberOptions): boolean} unbanChatMember - Unbans a previously banned user in a supergroup or channel.
+ * @property {function(RestrictChatMemberOptions): boolean} restrictChatMember - Restricts a user in a supergroup.
+ * @property {function(PromoteChatMemberOptions): boolean} promoteChatMember - Promotes or demotes a user in a supergroup or channel.
+ * @property {function(SetChatAdministratorCustomTitleOptions): boolean} setChatAdministratorCustomTitle - Sets a custom title for an administrator in a supergroup.
+ * @property {function(BanChatSenderChatOptions): boolean} banChatSenderChat - Bans a channel chat in a supergroup or channel.
+ * @property {function(UnbanChatSenderChatOptions): boolean} unbanChatSenderChat - Unbans a previously banned channel chat.
+ * @property {function(SetChatPermissionsOptions): boolean} setChatPermissions - Sets default chat permissions for all members.
+ * @property {function(ExportChatInviteLinkOptions): string} exportChatInviteLink - Generates a new primary invite link for a chat.
+ * @property {function(CreateChatInviteLinkOptions): ChatInviteLink} createChatInviteLink - Creates an additional invite link for a chat.
+ * @property {function(EditChatInviteLinkOptions): ChatInviteLink} editChatInviteLink - Edits a non-primary invite link created by the bot.
+ * @property {function(RevokeChatInviteLinkOptions): ChatInviteLink} revokeChatInviteLink - Revokes an invite link created by the bot.
+ * @property {function(ChatJoinRequestOptions): object} approveChatJoinRequest - Approves a chat join request.
+ * @property {function(ChatJoinRequestOptions): object} declineChatJoinRequest - Declines a chat join request.
+ * @property {function(SetChatPhotoOptions): object} setChatPhoto - Sets a new chat photo.
+ * @property {function(deleteChatPhotoOptions): object} deleteChatPhoto - Deletes the chat photo.
+ * @property {function(SetChatTitleOptions): Object} setChatTitle - Changes the title of a chat.
+ * @property {function(SetChatDescriptionOptions): Object} setChatDescription - Changes the description of a chat.
+ * @property {function(PinChatMessageOptions): Object} pinChatMessage - Pins a message in a chat.
+ * @property {function(UnpinChatMessageOptions): Object} unpinChatMessage - Removes a message from the list of pinned messages in a chat.
+ * @property {function(ChatIdOptions): Object} unpinAllChatMessages - Clears the list of pinned messages in a chat.
+ * @property {function(ChatIdOptions): Object} leaveChat - Bot leaves a group, supergroup, or channel.
+ * @property {function(ChatIdOptions): Chat} getChat - Gets information about the chat.
+ * @property {function(ChatIdOptions): ChatMember[]} getChatAdministrators - Gets a list of administrators in a chat.
+ * @property {function(ChatIdOptions): number} getChatMemberCount - Gets the number of members in a chat.
+ * @property {function(GetChatMemberOptions): ChatMember} getChatMember - Gets information about a member of a chat.
+ * @property {function(SetChatStickerSetOptions): boolean} setChatStickerSet - Sets a new group sticker set for a supergroup.
+ * @property {function(ChatIdOptions): boolean} deleteChatStickerSet - Deletes a group sticker set from a supergroup.
  * @property {function(): Sticker[]} getForumTopicIconStickers - Gets custom emoji stickers for forum topic icons.
- *
- * @property {function({
- *   chat_id: (number|string)
- *   name: string
- *   icon_color?: number
- *   icon_custom_emoji_id?: string
- * }): ForumTopic} createForumTopic - Creates a topic in a forum supergroup chat.
- *
- * @property {function({
- *   chat_id: (number|string)
- *   message_thread_id: number
- *   name?: string
- *   icon_custom_emoji_id?: string
- * }): boolean} editForumTopic - Edits name and icon of a forum topic.
- *
- * @property {function({
- *   chat_id: (number|string)
- *   message_thread_id: number
- * }): boolean} closeForumTopic - Closes an open topic in a forum supergroup chat.
- *
- * @property {function({
- *   chat_id: (number|string)
- *   message_thread_id: number
- * }): boolean} reopenForumTopic - Reopens a closed topic in a forum supergroup chat.
- *
- * @property {function({
- *   chat_id: (number|string)
- *   message_thread_id: number
- * }): boolean} deleteForumTopic - Deletes a forum topic along with all its messages in a forum supergroup chat.
- *
- * @property {function({
- *   chat_id: (number|string)
- *   message_thread_id: number
- * }): boolean} unpinAllForumTopicMessages - Clears the list of pinned messages in a forum topic.
- *
- * @property {function({
- *   chat_id: (number|string)
- *   name: string
- * }): boolean} editGeneralForumTopic - Edits the name of the 'General' topic in a forum supergroup chat.
- *
- * @property {function({
- *   chat_id: (number|string)
- * }): Object} closeGeneralForumTopic - Closes an open 'General' topic in a forum supergroup chat.
- *
- * @property {function({
- *   chat_id: (number|string)
- * }): Object} reopenGeneralForumTopic - Reopens a closed 'General' topic in a forum supergroup chat.
- *
- * @property {function({
- *   chat_id: (number|string)
- * }): Object} hideGeneralForumTopic - Hides the 'General' topic in a forum supergroup chat.
- *
- * @property {function({
- *   chat_id: (number|string)
- * }): Object} unhideGeneralForumTopic - Unhides the 'General' topic in a forum supergroup chat.
- *
- * @property {function({
- *   chat_id: (number|string)
- * }): boolean} unpinAllGeneralForumTopicMessages - Clears the list of pinned messages in a General forum topic.
- *
- * @property {function({
- *   callback_query_id: string
- *   text?: string
- *   show_alert?: boolean
- *   url?: string
- *   cache_time?: number
- * }): boolean} answerCallbackQuery - Sends answers to callback queries sent from inline keyboards.
- *
- * @property {function({
- *   chat_id: (number|string)
- *   user_id: number
- * }): UserChatBoosts} getUserChatBoosts - Gets the list of boosts added to a chat by a user.
- *
- * @property {function({
- *   commands: BotCommand[]
- *   scope?: BotCommandScope
- *   language_code?: string
- * }): boolean} setMyCommands - Changes the list of the bot's commands.
- *
- * @property {function({
- *   scope?: BotCommandScope
- *   language_code?: string
- * }): void} deleteMyCommands - Deletes the bot's commands for a given scope and language.
- *
- * @property {function({
- *   scope?: BotCommandScope
- *   language_code?: string
- * }): Array<BotCommand>} getMyCommands - Gets the current list of the bot's commands.
- *
- * @property {function({
- *   name: string
- *   language_code?: string
- * }): void} setMyName - Changes the bot's name.
- *
- * @property {function({
- *   language_code?: string
- * }): BotName} getMyName - Gets the current bot name.
- *
- * @property {function({
- *   description?: string
- *   language_code?: string
- * }): boolean} setMyDescription - Changes the bot's description.
- *
- * @property {function({
- *   language_code?: string
- * }): BotDescription} getMyDescription - Gets the current bot description.
- *
- * @property {function({
- *   short_description?: string
- *   language_code?: string
- * }): boolean} setMyShortDescription - Changes the bot's short description.
- *
- * @property {function({
- *   language_code?: string
- * }): BotShortDescription} getMyShortDescription - Gets the current bot short description.
- *
- * @property {function({
- *   chat_id?: number
- *   menu_button?: MenuButton
- * }): boolean} setChatMenuButton - Changes the bot's menu button.
- *
- * @property {function({
- *   chat_id?: number
- * }): MenuButton} getChatMenuButton - Gets the current bot's menu button.
- *
- * @property {function({
- *   rights?: ChatAdministratorRights
- *   for_channels?: boolean
- * }): boolean} setMyDefaultAdministratorRights - Changes the default administrator rights.
- *
- * @property {function({
- *  for_channels?: boolean
- * }): ChatAdministratorRights} getMyDefaultAdministratorRights - Gets the current default administrator rights.
- *
- * @property {function({
- *   chat_id?: (number|string)
- *   message_id?: number
- *   inline_message_id?: string
- *   text: string
- *   parse_mode?: Format
- *   entities?: MessageEntity[]
- *   link_preview_options?: LinkPreviewOptions
- *   reply_markup?: InlineKeyboardMarkup
- * }): Message} editMessageText - Edits text and game messages.
- *
- * @property {function({
- *   chat_id?: (number|string)
- *   message_id?: number
- *   inline_message_id?: string
- *   caption?: string
- *   parse_mode?: Format
- *   caption_entities?: MessageEntity[]
- *   reply_markup?: InlineKeyboardMarkup
- * }): Message} editMessageCaption - Edits captions of messages.
- *
- *
- * @property {function({
- *   chat_id?: (number|string)
- *   message_id?: number
- *   inline_message_id?: string
- *   media: InputMedia
- *   reply_markup?: InlineKeyboardMarkup
- * }): Message} editMessageMedia - Edits animation, audio, document, photo or video messages.
- *
- * @property {function({
- *   chat_id?: (number|string),
- *   message_id?: number,
- *   inline_message_id?: string,
- *   latitude: number,
- *   longitude: number,
- *   horizontal_accuracy?: number,
- *   heading?: number,
- *   proximity_alert_radius?: number,
- *   reply_markup?: InlineKeyboardMarkup
- * }): Message} editMessageLiveLocation - Edits live location messages.
- *
- *
- * @property {function({
- *   chat_id?: (number|string),
- *   message_id?: number,
- *   inline_message_id?: string,
- *   reply_markup?: InlineKeyboardMarkup
- * }): (Message|boolean)} stopMessageLiveLocation - Stops updating a live location message.
- *
- * @property {function({
- *   chat_id?: (number|string),
- *   message_id?: number,
- *   inline_message_id?: string,
- *   reply_markup?: InlineKeyboardMarkup
- * }): (Message|boolean)} editMessageReplyMarkup - Edits only the reply markup of messages.
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_id: number,
- *   reply_markup?: InlineKeyboardMarkup
- * }): Poll} stopPoll - Stops a poll.
- *
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_id: number
- * }): boolean} deleteMessage - Deletes a message.
- *
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_ids: number[]
- * }): object} deleteMessages - Deletes multiple messages.
- *
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   sticker: (InputFile|string),
- *   emoji?: string,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} sendSticker - Sends a sticker.
- *
- *
- * @property {function({
- *   name: string
- * }): StickerSet} getStickerSet - Gets a sticker set.
- *
- *
- * @property {function({
- *   custom_emoji_ids: string[]
- * }): Sticker[]} getCustomEmojiStickers - Gets information about custom emoji stickers.
- *
- *
- * @property {function({
- *   user_id: number,
- *   sticker: InputFile,
- *   sticker_format: string
- * }): File} uploadStickerFile - Uploads a sticker file.
- *
- *
- * @property {function({
- *   user_id: number,
- *   name: string,
- *   title: string,
- *   stickers: InputSticker[],
- *   sticker_format: string,
- *   sticker_type?: string,
- *   needs_repainting?: boolean
- * }): boolean} createNewStickerSet - Creates a new sticker set.
- *
- *
- * @property {function({
- *   user_id: number,
- *   name: string,
- *   sticker: InputSticker
- * }): boolean} addStickerToSet - Adds a new sticker to a set.
- *
- *
- * @property {function({
- *   sticker: string,
- *   position: number
- * }): boolean} setStickerPositionInSet
- *
- *
- * @property {function({
- *   sticker: string
- * }): boolean} deleteStickerFromSet
- *
- *
- * @property {function({
- *   sticker: string,
- *   emoji_list: string[]
- * }): boolean} setStickerEmojiList
- *
- *
- * @property {function({
- *   sticker: string,
- *   keywords?: string[]
- * }): boolean} setStickerKeywords
- *
- *
- * @property {function({
- *   sticker: string,
- *   mask_position?: MaskPosition
- * }): boolean} setStickerMaskPosition
- *
- *
- * @property {function({
- *   name: string,
- *   title: string
- * }): boolean} setStickerSetTitle
- *
- *
- * @property {function({
- *   name: string,
- *   user_id: number,
- *   thumbnail?: (InputFile|string)
- * }): boolean} setStickerSetThumbnail
- *
- *
- * @property {function({
- *   name: string,
- *   custom_emoji_id?: string
- * }): boolean} setCustomEmojiStickerSetThumbnail
- *
- *
- * @property {function({
- *   name: string
- * }): boolean} deleteStickerSet
- *
- *
- * @property {function({
- *   inline_query_id: string,
- *   results: InlineQueryResult[],
- *   cache_time?: number,
- *   is_personal?: boolean,
- *   next_offset?: string,
- *   button?: InlineQueryResultsButton
- * }): boolean} answerInlineQuery
- *
- *
- * @property {function({
- *   web_app_query_id: string,
- *   result: InlineQueryResult
- * }): boolean} answerWebAppQuery
- *
- *
- * @property {function({
- *   chat_id: (number|string),
- *   message_thread_id?: number,
- *   title: string,
- *   description: string,
- *   payload: string,
- *   provider_token: string,
- *   currency: string,
- *   prices: LabeledPrice[],
- *   max_tip_amount?: number,
- *   suggested_tip_amounts?: number[],
- *   start_parameter?: string,
- *   provider_data?: string,
- *   photo_url?: string,
- *   photo_size?: number,
- *   photo_width?: number,
- *   photo_height?: number,
- *   need_name?: boolean,
- *   need_phone_number?: boolean,
- *   need_email?: boolean,
- *   need_shipping_address?: boolean,
- *   send_phone_number_to_provider?: boolean,
- *   send_email_to_provider?: boolean,
- *   is_flexible?: boolean,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} sendInvoice
- *
- *
- * @property {function({
- *   title: string,
- *   description: string,
- *   payload: string,
- *   provider_token: string,
- *   currency: string,
- *   prices: LabeledPrice[],
- *   max_tip_amount?: number,
- *   suggested_tip_amounts?: number[],
- *   provider_data?: string,
- *   photo_url?: string,
- *   photo_size?: number,
- *   photo_width?: number,
- *   photo_height?: number,
- *   need_name?: boolean,
- *   need_phone_number?: boolean,
- *   need_email?: boolean,
- *   need_shipping_address?: boolean,
- *   send_phone_number_to_provider?: boolean,
- *   send_email_to_provider?: boolean,
- *   is_flexible?: boolean
- * }): string} createInvoiceLink
- *
- *
- * @property {function({
- *   chat_id: number,
- *   game_short_name: string,
- *   message_thread_id?: number,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: InlineKeyboardMarkup
- * }): Message} sendGame
- *
- *
- * @property {function({
- *   user_id: number,
- *   score: number,
- *   force?: boolean,
- *   disable_edit_message?: boolean,
- *   chat_id?: number,
- *   message_id?: number,
- *   inline_message_id?: string
- * }): (Message | boolean)} setGameScore
- *
- *
- * @property {function({
- *   user_id: number,
- *   chat_id?: number,
- *   message_id?: number,
- *   inline_message_id?: string
- * }): GameHighScore[]} getGameHighScores
- *
- *
- * @property {function({
- *   user_id: number,
- *   errors: PassportElementError[]
- * }): boolean} setPassportDataErrors - Informs user of errors in Telegram Passport elements.
- *
- *
- * @property {function({
- *   text: string,
- *   parse_mode?: Format,
- *   entities?: MessageEntity[],
- *   link_preview_options?: LinkPreviewOptions,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} reply
- *
- *
- * @property {function({
- *   text: string,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} replyWithHtml
- *
- *
- * @property {function({
- *   text: string,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} replyWithMarkdown
- *
- *
- * @property {function({
- *   photo: (InputFile|string),
- *   caption?: string,
- *   parse_mode?: Format,
- *   caption_entities?: MessageEntity[],
- *   has_spoiler?: boolean,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters,
- *   reply_markup?: (InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)
- * }): Message} replyWithPhoto
- *
- *
- * @property {function({
- *   action: string,
- *   disable_notification?: boolean,
- *   protect_content?: boolean,
- *   reply_parameters?: ReplyParameters
- * }): boolean} replyWithChatAction
- *
- *
- * @property {function({
- *   text: string,
- *   parse_mode?: Format,
- *   entities?: MessageEntity[],
- *   link_preview_options?: LinkPreviewOptions,
- *   reply_markup?: InlineKeyboardMarkup
- * }): Message} replyWithEditedMessage
+ * @property {function(CreateForumTopicOptions): ForumTopic} createForumTopic - Creates a topic in a forum supergroup chat.
+ * @property {function(EditForumTopicOptions): boolean} editForumTopic - Edits name and icon of a forum topic.
+ * @property {function(ForumTopicManagementOptions): boolean} closeForumTopic - Closes an open topic in a forum supergroup chat.
+ * @property {function(ForumTopicManagementOptions): boolean} reopenForumTopic - Reopens a closed topic in a forum supergroup chat.
+ * @property {function(ForumTopicManagementOptions): boolean} deleteForumTopic - Deletes a forum topic along with all its messages in a forum supergroup chat.
+ * @property {function(ForumTopicManagementOptions): boolean} unpinAllForumTopicMessages - Clears the list of pinned messages in a forum topic.
+ * @property {function(EditGeneralForumTopicOptions): boolean} editGeneralForumTopic - Edits the name of the 'General' topic in a forum supergroup chat.
+ * @property {function(ChatIdOptions): Object} closeGeneralForumTopic - Closes an open 'General' topic in a forum supergroup chat.
+ * @property {function(ChatIdOptions): Object} reopenGeneralForumTopic - Reopens a closed 'General' topic in a forum supergroup chat.
+ * @property {function(ChatIdOptions): Object} hideGeneralForumTopic - Hides the 'General' topic in a forum supergroup chat.
+ * @property {function(ChatIdOptions): Object} unhideGeneralForumTopic - Unhides the 'General' topic in a forum supergroup chat.
+ * @property {function(ChatIdOptions): boolean} unpinAllGeneralForumTopicMessages - Clears the list of pinned messages in a General forum topic.
+ * @property {function(AnswerCallbackQueryOptions): boolean} answerCallbackQuery - Sends answers to callback queries sent from inline keyboards.
+ * @property {function(GetUserChatBoostsOptions): UserChatBoosts} getUserChatBoosts - Gets the list of boosts added to a chat by a user.
+ * @property {function(SetMyCommandsOptions): boolean} setMyCommands - Changes the list of the bot's commands.
+ * @property {function(DeleteMyCommandsOptions): void} deleteMyCommands - Deletes the bot's commands for a given scope and language.
+ * @property {function(GetMyCommandsOptions): Array<BotCommand>} getMyCommands - Gets the current list of the bot's commands.
+ * @property {function(SetMyNameOptions): void} setMyName - Changes the bot's name.
+ * @property {function(GetMyNameOptions): BotName} getMyName - Gets the current bot name.
+ * @property {function(SetMyDescriptionOptions): boolean} setMyDescription - Changes the bot's description.
+ * @property {function(GetMyDescriptionOptions): BotDescription} getMyDescription - Gets the current bot description.
+ * @property {function(SetMyDescriptionOptions): boolean} setMyShortDescription - Changes the bot's short description.
+ * @property {function(GetMyShortDescriptionOptions): BotShortDescription} getMyShortDescription - Gets the current bot short description.
+ * @property {function(SetChatMenuButtonOptions): boolean} setChatMenuButton - Changes the bot's menu button.
+ * @property {function(GetChatMenuButtonOptions): MenuButton} getChatMenuButton - Gets the current bot's menu button.
+ * @property {function(SetMyDefaultAdministratorRightsOptions): boolean} setMyDefaultAdministratorRights - Changes the default administrator rights.
+ * @property {function(GetMyDefaultAdministratorRightsOptions): ChatAdministratorRights} getMyDefaultAdministratorRights - Gets the current default administrator rights.
+ * @property {function(EditMessageTextOptions): Message} editMessageText - Edits text and game messages.
+ * @property {function(EditMessageCaptionOptions): Message} editMessageCaption - Edits captions of messages.
+ * @property {function(EditMessageMediaOptions): Message} editMessageMedia - Edits animation, audio, document, photo or video messages.
+ * @property {function(EditMessageLiveLocationOptions): Message} editMessageLiveLocation - Edits live location messages.
+ * @property {function(StopMessageLiveLocationOptions): (Message|boolean)} stopMessageLiveLocation - Stops updating a live location message.
+ * @property {function(EditMessageReplyMarkupOptions): (Message|boolean)} editMessageReplyMarkup - Edits only the reply markup of messages.
+ * @property {function(StopPollOptions): Poll} stopPoll - Stops a poll.
+ * @property {function(DeleteMessageOptions): boolean} deleteMessage - Deletes a message.
+ * @property {function(DeleteMessagesOptions): object} deleteMessages - Deletes multiple messages.
+ * @property {function(SendStickerOptions): Message} sendSticker - Sends a sticker.
+ * @property {function(GetStickerSetOptions): StickerSet} getStickerSet - Gets a sticker set.
+ * @property {function(GetCustomEmojiStickersOptions): Sticker[]} getCustomEmojiStickers - Gets information about custom emoji stickers.
+ * @property {function(UploadStickerFileOptions): File} uploadStickerFile - Uploads a sticker file.
+ * @property {function(CreateNewStickerSetOptions): boolean} createNewStickerSet - Creates a new sticker set.
+ * @property {function(AddStickerToSetOptions): boolean} addStickerToSet - Adds a new sticker to a set.
+ * @property {function(SetStickerPositionInSetOptions): boolean} setStickerPositionInSet - move a sticker in a set.
+ * @property {function(DeleteStickerFromSetOptions): boolean} deleteStickerFromSet - delete a sticker from a set.
+ * @property {function(SetStickerEmojiListOptions): boolean} setStickerEmojiList - change the list of emoji assigned to a regular or custom emoji sticker.
+ * @property {function(SetStickerKeywordsOptions): boolean} setStickerKeywords - change search keywords assigned to a regular or custom emoji sticker.
+ * @property {function(SetStickerMaskPositionOptions): boolean} setStickerMaskPosition - change the mask position of a mask sticker.
+ * @property {function(SetStickerSetTitleOptions): boolean} setStickerSetTitle - set the title of a created sticker set.
+ * @property {function(SetStickerSetThumbnailOptions): boolean} setStickerSetThumbnail - set the thumbnail of a regular or mask sticker set.
+ * @property {function(SetCustomEmojiStickerSetThumbnailOptions): boolean} setCustomEmojiStickerSetThumbnail - set the thumbnail of a custom emoji sticker set.
+ * @property {function(DeleteStickerSetOptions): boolean} deleteStickerSet - delete a sticker set.
+ * @property {function(AnswerInlineQueryOptions): boolean} answerInlineQuery - send answers to an inline query.
+ * @property {function(AnswerWebAppQueryOptions): boolean} answerWebAppQuery - set the result of an interaction with a `Web App` and send a corresponding message on behalf of the user to the chat from which the query originated.
+ * @property {function(SendInvoiceOptions): Message} sendInvoice - send invoices.
+ * @property {function(CreateInvoiceLinkOptions): string} createInvoiceLink - create a link for an invoice.
+ * @property {function(SendGameOptions): Message} sendGame - send a game.
+ * @property {function(SetGameScoreOptions): (Message | boolean)} setGameScore - set the score of the specified user in a game message.
+ * @property {function(GetGameHighScoresOptions): GameHighScore[]} getGameHighScores - get data for high score tables.
+ * @property {function(SetPassportDataErrorsOptions): boolean} setPassportDataErrors - Informs user of errors in Telegram Passport elements.
+ * @property {function(ReplyOptions): Message} reply
+ * @property {function(ReplyWithFormattedTextOptions): Message} replyWithHtml
+ * @property {function(ReplyWithFormattedTextOptions): Message} replyWithMarkdown
+ * @property {function(ReplyWithPhotoOptions): Message} replyWithPhoto - reply photo to the current chat.
+ * @property {function(ReplyWithChatActionOptions): boolean} replyWithChatAction - reply chat action to the current chat.
+ * @property {function(ReplyWithEditedMessageOptions): Message} replyWithEditedMessage - reply edited message to the current chat.
  *
  *
  * @property {function(): Object} getTSession - Gets the temporary session object.
@@ -1125,8 +1282,77 @@
  *
  * @property {function(string, string, string, Object=): void} sendEmail - Sends an email with optional parameters.
  *
- *
- *
+ */
+
+/**
+ * Options for replying with a message.
+ * @typedef {Object} ReplyOptions
+ * @property {string} text Text of the message to be sent.
+ * @property {Format} [parse_mode] Format of the text: Markdown or HTML.
+ * @property {MessageEntity[]} [entities] List of special entities that appear in message text, which can be specified instead of parse_mode.
+ * @property {LinkPreviewOptions} [link_preview_options] Options for how links in the message should be previewed.
+ * @property {boolean} [disable_notification] Sends the message silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent message from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove the reply keyboard, or to force a reply from the user.
+ */
+
+/**
+ * Options for sending a message to a chat.
+ * @typedef {Object} SendMessageOptions
+ * @property {number|string} chat_id - The unique identifier for the target chat or username of the target channel. This can be a numeric ID or a string in the format of @channelusername.
+ * @property {number} [message_thread_id] - Unique identifier for the target message thread.
+ * @property {string} text - Text of the message to be sent.
+ * @property {Format} [parse_mode] - Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message.
+ * @property {MessageEntity[]} [entities] - List of special entities that appear in message text, which can be specified instead of parse_mode.
+ * @property {LinkPreviewOptions} [link_preview_options] - Options for how links in the message should be previewed.
+ * @property {boolean} [disable_notification] - Sends the message silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] - Protects the content of the sent message from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] - Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] - Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove the reply keyboard or to force a reply from the user.
+ */
+
+/**
+ * Options for replying with a message formatted in HTML or Markdown.
+ * @typedef {Object} ReplyWithFormattedTextOptions
+ * @property {string} text Text of the message to be sent, formatted in HTML or Markdown.
+ * @property {boolean} [disable_notification] Sends the message silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent message from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard, or to force a reply from the user.
+ */
+
+/**
+ * Options for replying with chat action.
+ * @typedef {Object} ReplyWithChatActionOptions
+ * @property {string} action Type of action to broadcast. Choose one, depending on what the user is about to receive.
+ * @property {boolean} [disable_notification] Sends the chat action silently. Users will see the action with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent action from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ */
+
+/**
+ * Options for editing and replying with a message.
+ * @typedef {Object} ReplyWithEditedMessageOptions
+ * @property {string} text Text of the message to be edited and sent.
+ * @property {Format} [parse_mode] Format of the text: Markdown or HTML.
+ * @property {MessageEntity[]} [entities] List of special entities that appear in message text, which can be specified instead of parse_mode.
+ * @property {LinkPreviewOptions} [link_preview_options] Options for how links in the message should be previewed.
+ * @property {InlineKeyboardMarkup} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard.
+ */
+
+/**
+ * Options for replying with a photo.
+ * @typedef {Object} ReplyWithPhotoOptions
+ * @property {(InputFile|string)} photo Unique file identifier of the photo to send or the photo itself.
+ * @property {string} [caption] Caption for the photo, 0-1024 characters after entities parsing.
+ * @property {Format} [parse_mode] Format of the caption text: Markdown or HTML.
+ * @property {MessageEntity[]} [caption_entities] List of special entities that appear in the caption, which can be specified instead of parse_mode.
+ * @property {boolean} [has_spoiler] Marks the caption as containing a spoiler.
+ * @property {boolean} [disable_notification] Sends the message silently. Users will receive a notification with no sound.
+ * @property {boolean} [protect_content] Protects the content of the sent message from forwarding and saving.
+ * @property {ReplyParameters} [reply_parameters] Additional parameters for replying to messages.
+ * @property {(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply)} [reply_markup] Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove the reply keyboard, or to force a reply from the user.
  */
 
 /**
@@ -1631,7 +1857,7 @@
  * @property {string} description
  * @property {Array.<PhotoSize>} photo
  * @property {string} [text]
- * @property {Array.<MessageEntity]} [text_entities]
+ * @property {Array.<MessageEntity>} [text_entities]
  * @property {Animation} [animation]
  */
 
