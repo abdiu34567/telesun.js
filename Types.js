@@ -34,6 +34,7 @@
  */
 
 /**
+ * main telesun class
  * @typedef {Object} telesun
  * @property {function(string): telesun} connectToSpreadSheet - Connects to a Google Spreadsheet using `spreadsheet ID`.
  * @property {function(Object): telesun} temporaryMemory - Configures temporary memory for the bot, including cache and session.
@@ -1384,245 +1385,268 @@
  */
 
 /**
+ * message that can be inaccessible to the bot.
  * @typedef {Message | InaccessibleMessage} MaybeInaccessibleMessage
  */
 
 /**
  * @typedef {Object} ReplyParameters
- * @property {number} message_id
- * @property {(number|string)} [chat_id]
- * @property {boolean} [allow_sending_without_reply]
- * @property {string} [quote]
- * @property {string} [quote_parse_mode]
- * @property {Array.<MessageEntity>} [quote_entities]
- * @property {number} [quote_position]
+ * @property {number} message_id - Identifier of the message.
+ * @property {(number|string)} [chat_id] - unique identifier for the chat or username of the channel.
+ * @property {boolean} [allow_sending_without_reply] - Pass True if the message should be sent even if the message to be replied to is not found.
+ * @property {string} [quote] - Quoted part of the message to be replied to
+ * @property {string} [quote_parse_mode] - Mode for parsing entities in the quote.
+ * @property {Array.<MessageEntity>} [quote_entities] - list of special entities that appear in the quote.
+ * @property {number} [quote_position] - Position of the quote in the original message in UTF-16 code units.
  */
 
 /**
+ * the origin of a message.
  * @typedef {MessageOriginUser|MessageOriginHiddenUser|MessageOriginChat|MessageOriginChannel} MessageOrigin
  */
 
 /**
+ * originally sent by a known user.
  * @typedef {Object} MessageOriginUser
- * @property {string} type
- * @property {number} date
- * @property {User} sender_user
+ * @property {string} type - Type of the message origin, always "user".
+ * @property {number} date - Date the message was sent originally in Unix time.
+ * @property {User} sender_user - User that sent the message originally.
  */
 
 /**
+ * originally sent by an unknown user.
  * @typedef {Object} MessageOriginHiddenUser
- * @property {string} type
- * @property {number} date
- * @property {string} sender_user_name
+ * @property {string} type - Type of the message origin, always "hidden_user".
+ * @property {number} date - Date the message was sent originally in Unix time.
+ * @property {string} sender_user_name - Name of the user that sent the message originally.
  */
 
 /**
+ * originally sent on behalf of a chat to a group chat.
  * @typedef {Object} MessageOriginChat
- * @property {string} type
- * @property {number} date
- * @property {Chat} sender_chat
- * @property {string} [author_signature]
+ * @property {string} type - Type of the message origin, always "chat".
+ * @property {number} date - Date the message was sent originally in Unix time.
+ * @property {Chat} sender_chat - Chat that sent the message originally.
+ * @property {string} [author_signature] - messages originally sent by an anonymous chat administrator.
  */
 
 /**
+ * originally sent to a channel chat.
  * @typedef {Object} MessageOriginChannel
- * @property {string} type
- * @property {number} date
- * @property {Chat} chat
- * @property {number} message_id
- * @property {string} [author_signature]
+ * @property {string} type - Type of the message origin, always "channel".
+ * @property {number} date - Date the message was sent originally in Unix time.
+ * @property {Chat} chat - Channel chat to which the message was originally sent.
+ * @property {number} message_id - Unique message identifier inside the chat.
+ * @property {string} [author_signature] - Signature of the original post author.
  */
 
 /**
+ * a boost added to a chat or changed.
  * @typedef {Object} ChatBoostUpdated
- * @property {Chat} chat
- * @property {ChatBoost} boost
+ * @property {Chat} chat - Chat which was boosted.
+ * @property {ChatBoost} boost - Information about the chat boost.
  */
 
 /**
+ * a boost removed from a chat.
  * @typedef {Object} ChatBoostRemoved
- * @property {Chat} chat
- * @property {string} boost_id
- * @property {number} remove_date
- * @property {ChatBoostSource} source
+ * @property {Chat} chat - Chat which was boosted
+ * @property {string} boost_id - Unique identifier of the boost
+ * @property {number} remove_date - Point in time (Unix timestamp) when the boost was removed
+ * @property {ChatBoostSource} source - Source of the removed boost
  */
 
 /**
+ * answer of a user in a non-anonymous poll.
  * @typedef {Object} PollAnswer
- * @property {string} poll_id
- * @property {Chat} [voter_chat]
- * @property {User} [user]
- * @property {Array.<number>} option_ids
+ * @property {string} poll_id - Unique poll identifier.
+ * @property {Chat} [voter_chat] - The chat that changed the answer to the poll, if the voter is anonymous.
+ * @property {User} [user] - The user that changed the answer to the poll, if the voter isn't anonymous.
+ * @property {Array.<number>} option_ids - 0-based identifiers of chosen answer options. May be empty if the vote was retracted.
  */
 
 /**
+ * changes in the status of a chat member.
  * @typedef {Object} ChatMemberUpdated
- * @property {Chat} chat
- * @property {User} from
- * @property {number} date
- * @property {ChatMember} old_chat_member
- * @property {ChatMember} new_chat_member
- * @property {ChatInviteLink} [invite_link]
- * @property {boolean} [via_chat_folder_invite_link]
+ * @property {Chat} chat - Chat the user belongs to.
+ * @property {User} from - Performer of the action, which resulted in the change.
+ * @property {number} date - Date the change was done in Unix time.
+ * @property {ChatMember} old_chat_member - Previous information about the chat member.
+ * @property {ChatMember} new_chat_member - New information about the chat member.
+ * @property {ChatInviteLink} [invite_link] - Chat invite link, which was used by the user to join the chat.
+ * @property {boolean} [via_chat_folder_invite_link] - True, if the user joined the chat via a chat folder invite link.
  */
 
 /**
+ * join request sent to a chat.
  * @typedef {Object} ChatJoinRequest
- * @property {Chat} chat
- * @property {User} from
- * @property {number} user_chat_id
- * @property {number} date
- * @property {string} [bio]
- * @property {ChatInviteLink} [invite_link]
+ * @property {Chat} chat - Chat to which the request was sent.
+ * @property {User} from - User that sent the join request.
+ * @property {number} user_chat_id - Identifier of a private chat with the user who sent the join request.
+ * @property {number} date - Date the request was sent in Unix time.
+ * @property {string} [bio] - Bio of the user.
+ * @property {ChatInviteLink} [invite_link] - Chat invite link that was used by the user to send the join request.
  */
 
 /**
+ * an incoming callback query from a callback button in an inline keyboard.
  * @typedef {Object} CallbackQuery
- * @property {string} id
- * @property {User} from
- * @property {MaybeInaccessibleMessage} [message]
- * @property {string} [inline_message_id]
- * @property {string} chat_instance
- * @property {string} [data]
- * @property {string} [game_short_name]
+ * @property {string} id - Unique identifier for this query
+ * @property {User} from - Sender
+ * @property {MaybeInaccessibleMessage} [message] - Message sent by the bot with the callback button that originated the query
+ * @property {string} [inline_message_id] - Identifier of the message sent via the bot in inline mode, that originated the query.
+ * @property {string} chat_instance - Global identifier, uniquely corresponding to the chat.
+ * @property {string} [data] - Data associated with the callback button.
+ * @property {string} [game_short_name] - Short name of a Game to be returned, serves as the unique identifier for the game.
  */
 
 /**
+ * contains information about an incoming shipping query.
  * @typedef {Object} ShippingQuery
- * @property {string} id
- * @property {User} from
- * @property {string} invoice_payload
- * @property {ShippingAddress} shipping_address
+ * @property {string} id - Unique query identifier.
+ * @property {User} from - User who sent the query.
+ * @property {string} invoice_payload - Bot specified invoice payload.
+ * @property {ShippingAddress} shipping_address - User specified shipping address.
  */
 
 /**
+ * contains information about an incoming pre-checkout query.
  * @typedef {Object} PreCheckoutQuery
- * @property {string} id
- * @property {User} from
- * @property {string} currency
- * @property {number} total_amount
- * @property {string} invoice_payload
- * @property {string} [shipping_option_id]
- * @property {OrderInfo} [order_info]
+ * @property {string} id - Unique query identifier.
+ * @property {User} from - User who sent the query.
+ * @property {string} currency - Three-letter ISO 4217 currency code.
+ * @property {number} total_amount - Total price in the smallest units of the currency (integer, not float/double).
+ * @property {string} invoice_payload - Bot specified invoice payload.
+ * @property {string} [shipping_option_id] - Identifier of the shipping option chosen by the user.
+ * @property {OrderInfo} [order_info] - Order information provided by the user.
  */
 
 /**
+ * a change of a reaction on a message performed by a user.
  * @typedef {Object} MessageReactionUpdated
- * @property {Chat} chat
- * @property {number} message_id
- * @property {User} [user]
- * @property {Chat} [actor_chat]
- * @property {number} date
- * @property {Array.<ReactionType>} old_reaction
- * @property {Array.<ReactionType>} new_reaction
+ * @property {Chat} chat - The chat containing the message the user reacted to.
+ * @property {number} message_id - Unique identifier of the message inside the chat.
+ * @property {User} [user] - The user that changed the reaction, if the user isn't anonymous.
+ * @property {Chat} [actor_chat] - The chat on behalf of which the reaction was changed, if the user is anonymous.
+ * @property {number} date - Date of the change in Unix time.
+ * @property {Array.<ReactionType>} old_reaction - Previous list of reaction types that were set by the user.
+ * @property {Array.<ReactionType>} new_reaction - New list of reaction types that have been set by the user.
  */
 
 /**
+ * reaction changes on a message with anonymous reactions.
  * @typedef {Object} MessageReactionCountUpdated
- * @property {Chat} chat
- * @property {number} message_id
- * @property {number} date
- * @property {Array.<ReactionCount>} reactions
+ * @property {Chat} chat - The chat containing the message.
+ * @property {number} message_id - Unique message identifier inside the chat.
+ * @property {number} date - Date of the change in Unix time.
+ * @property {Array.<ReactionCount>} reactions - List of reactions that are present on the message.
  */
 
 /**
+ * an incoming inline query.
  * @typedef {Object} InlineQuery
- * @property {string} id
- * @property {User} from
- * @property {string} query
- * @property {string} offset
- * @property {string} [chat_type]
- * @property {Location} [location]
+ * @property {string} id - Unique identifier for this query.
+ * @property {User} from - Sender.
+ * @property {string} query - Text of the query. up to 256 characters.
+ * @property {string} offset - Offset of the results to be returned, can be controlled by the bot.
+ * @property {string} [chat_type] - Type of the chat from which the inline query was sent.
+ * @property {Location} [location] - Sender location, only for bots that request user location.
  */
 
 /**
+ * a result of an inline query that was chosen by the user and sent to their chat partner.
  * @typedef {Object} ChosenInlineResult
- * @property {string} result_id
- * @property {User} from
- * @property {Location} [location]
- * @property {string} [inline_message_id]
- * @property {string} query
+ * @property {string} result_id - The unique identifier for the result that was chosen.
+ * @property {User} from - The user that chose the result.
+ * @property {Location} [location] - Sender location, only for bots that require user location.
+ * @property {string} [inline_message_id] - Identifier of the sent inline message.
+ * @property {string} query - The query that was used to obtain the result.
  */
 
 /**
+ * a message
  * @typedef {Object} Message
- * @property {number} message_id
- * @property {number} [message_thread_id]
- * @property {User} [from]
- * @property {Chat} [sender_chat]
- * @property {number} date
- * @property {Chat} chat
- * @property {MessageOrigin} [forward_origin]
- * @property {boolean} [is_topic_message]
- * @property {boolean} [is_automatic_forward]
- * @property {Message} [reply_to_message]
- * @property {ExternalReplyInfo} [external_reply]
- * @property {TextQuote} [quote]
- * @property {User} [via_bot]
- * @property {number} [edit_date]
- * @property {boolean} [has_protected_content]
- * @property {string} [media_group_id]
- * @property {string} [author_signature]
- * @property {string} [text]
- * @property {Array.<MessageEntity>} [entities]
- * @property {LinkPreviewOptions} [link_preview_options]
- * @property {Animation} [animation]
- * @property {Audio} [audio]
- * @property {Document} [document]
- * @property {Array.<PhotoSize>} [photo]
- * @property {Sticker} [sticker]
- * @property {Story} [story]
- * @property {Video} [video]
- * @property {VideoNote} [video_note]
- * @property {Voice} [voice]
- * @property {string} [caption]
- * @property {Array.<MessageEntity>} [caption_entities]
- * @property {boolean} [has_media_spoiler]
- * @property {Contact} [contact]
- * @property {Dice} [dice]
- * @property {Game} [game]
- * @property {Poll} [poll]
- * @property {Venue} [venue]
- * @property {Location} [location]
- * @property {Array.<User>} [new_chat_members]
- * @property {User} [left_chat_member]
- * @property {string} [new_chat_title]
- * @property {Array.<PhotoSize>} [new_chat_photo]
- * @property {boolean} [delete_chat_photo]
- * @property {boolean} [group_chat_created]
- * @property {boolean} [supergroup_chat_created]
- * @property {boolean} [channel_chat_created]
- * @property {MessageAutoDeleteTimerChanged} [message_auto_delete_timer_changed]
- * @property {number} [migrate_to_chat_id]
- * @property {number} [migrate_from_chat_id]
- * @property {MaybeInaccessibleMessage} [pinned_message]
- * @property {Invoice} [invoice]
- * @property {SuccessfulPayment} [successful_payment]
- * @property {UsersShared} [users_shared]
- * @property {ChatShared} [chat_shared]
- * @property {string} [connected_website]
- * @property {WriteAccessAllowed} [write_access_allowed]
- * @property {PassportData} [passport_data]
- * @property {ProximityAlertTriggered} [proximity_alert_triggered]
- * @property {ForumTopicCreated} [forum_topic_created]
- * @property {ForumTopicEdited} [forum_topic_edited]
- * @property {ForumTopicClosed} [forum_topic_closed]
- * @property {ForumTopicReopened} [forum_topic_reopened]
- * @property {GeneralForumTopicHidden} [general_forum_topic_hidden]
- * @property {GeneralForumTopicUnhidden} [general_forum_topic_unhidden]
- * @property {GiveawayCreated} [giveaway_created]
- * @property {Giveaway} [giveaway]
- * @property {GiveawayWinners} [giveaway_winners]
- * @property {GiveawayCompleted} [giveaway_completed]
- * @property {VideoChatScheduled} [video_chat_scheduled]
- * @property {VideoChatStarted} [video_chat_started]
- * @property {VideoChatEnded} [video_chat_ended]
- * @property {VideoChatParticipantsInvited} [video_chat_participants_invited]
- * @property {WebAppData} [web_app_data]
- * @property {InlineKeyboardMarkup} [reply_markup]
+ * @property {number} message_id - Unique message identifier inside this chat.
+ * @property {number} [message_thread_id] - Unique identifier of a message thread to which the message belongs; for supergroups only.
+ * @property {User} [from] - Sender of the message; empty for messages sent to channels. For backward compatibility.
+ * @property {Chat} [sender_chat] - Sender of the message, sent on behalf of a chat.
+ * @property {number} [sender_boost_count] - If the sender of the message boosted the chat.
+ * @property {number} date - Date the message was sent in Unix time.
+ * @property {Chat} chat - Chat the message belongs to.
+ * @property {MessageOrigin} [forward_origin] - Information about the original message for forwarded messages.
+ * @property {boolean} [is_topic_message] - True, if the message is sent to a forum topic.
+ * @property {boolean} [is_automatic_forward] - True, if the message was automatically forwarded to the connected discussion group.
+ * @property {Message} [reply_to_message] - For replies in the same chat and message thread, the original message.
+ * @property {ExternalReplyInfo} [external_reply] - Information about the message that is being replied to.
+ * @property {TextQuote} [quote] - For replies that quote part of the original message.
+ * @property {Story} [reply_to_story] - For replies to a story, the original story.
+ * @property {User} [via_bot] - Bot through which the message was sent.
+ * @property {number} [edit_date] - Date the message was last edited in Unix time.
+ * @property {boolean} [has_protected_content] - True, if the message can't be forwarded.
+ * @property {string} [media_group_id] - The unique identifier of a media message group this message belongs to.
+ * @property {string} [author_signature] - Signature of the post author for messages in channels.
+ * @property {string} [text] - For text messages, the actual UTF-8 text of the message.
+ * @property {Array.<MessageEntity>} [entities] - For text messages, special entities like usernames, URLs, bot commands, etc.
+ * @property {LinkPreviewOptions} [link_preview_options] - Options used for link preview generation for the message.
+ * @property {Animation} [animation] - Message is an animation, information about the animation.
+ * @property {Audio} [audio] - Message is an audio file, information about the file.
+ * @property {Document} [document] - Message is a general file, information about the file.
+ * @property {Array.<PhotoSize>} [photo] - Message is a photo, available sizes of the photo.
+ * @property {Sticker} [sticker] - Message is a sticker, information about the sticker.
+ * @property {Story} [story] - Message is a forwarded story.
+ * @property {Video} [video] - Message is a video, information about the video.
+ * @property {VideoNote} [video_note] - Message is a video note, information about the video message.
+ * @property {Voice} [voice] - Message is a voice message, information about the file.
+ * @property {string} [caption] - Caption for the animation, audio, document, photo, video or voice.
+ * @property {Array.<MessageEntity>} [caption_entities] - For messages with a caption, special entities like usernames, URLs, bot commands, etc.
+ * @property {boolean} [has_media_spoiler] - True, if the message media is covered by a spoiler animation.
+ * @property {Contact} [contact] - Message is a shared contact, information about the contact.
+ * @property {Dice} [dice] - Message is a dice with random value.
+ * @property {Game} [game] - Message is a game, information about the game.
+ * @property {Poll} [poll] - Message is a native poll, information about the poll.
+ * @property {Venue} [venue] - Message is a venue, information about the venue.
+ * @property {Location} [location] - Message is a shared location, information about the location.
+ * @property {Array.<User>} [new_chat_members] - New members that were added to the group or supergroup and information about them.
+ * @property {User} [left_chat_member] - A member was removed from the group, information about them
+ * @property {string} [new_chat_title] - A chat title was changed to this value.
+ * @property {Array.<PhotoSize>} [new_chat_photo] - A chat photo was change to this value.
+ * @property {boolean} [delete_chat_photo] - Service message: the chat photo was deleted.
+ * @property {boolean} [group_chat_created] - Service message: the group has been created.
+ * @property {boolean} [supergroup_chat_created] - Service message: the supergroup has been created.
+ * @property {boolean} [channel_chat_created] - Service message: the channel has been created.
+ * @property {MessageAutoDeleteTimerChanged} [message_auto_delete_timer_changed] - Service message: auto-delete timer settings changed in the chat.
+ * @property {number} [migrate_to_chat_id] - The group has been migrated to a supergroup with the specified identifier.
+ * @property {number} [migrate_from_chat_id] - The supergroup has been migrated from a group with the specified identifier.
+ * @property {MaybeInaccessibleMessage} [pinned_message] - Specified message was pinned.
+ * @property {Invoice} [invoice] - Message is an invoice for a payment, information about the invoice.
+ * @property {SuccessfulPayment} [successful_payment] - Message is a service message about a successful payment.
+ * @property {UsersShared} [users_shared] - Service message: users were shared with the bot.
+ * @property {ChatShared} [chat_shared] - Service message: a chat was shared with the bot.
+ * @property {string} [connected_website] - The domain name of the website on which the user has logged in.
+ * @property {WriteAccessAllowed} [write_access_allowed] - the user allowed the bot to write messages after adding it to the attachment.
+ * @property {PassportData} [passport_data] - Telegram Passport data
+ * @property {ProximityAlertTriggered} [proximity_alert_triggered] - A user in the chat triggered user's proximity alert while sharing Live Location.
+ * @property {ChatBoostAdded} [boost_added] - Service message: user boosted the chat.
+ * @property {ForumTopicCreated} [forum_topic_created] - Service message: forum topic created.
+ * @property {ForumTopicEdited} [forum_topic_edited] - Service message: forum topic edited.
+ * @property {ForumTopicClosed} [forum_topic_closed] - Service message: forum topic closed.
+ * @property {ForumTopicReopened} [forum_topic_reopened] - Service message: forum topic reopened.
+ * @property {GeneralForumTopicHidden} [general_forum_topic_hidden] - Service message: the 'General' forum topic hidden.
+ * @property {GeneralForumTopicUnhidden} [general_forum_topic_unhidden] - Service message: the 'General' forum topic unhidden.
+ * @property {GiveawayCreated} [giveaway_created] - Service message: a scheduled giveaway was created.
+ * @property {Giveaway} [giveaway] - The message is a scheduled giveaway message.
+ * @property {GiveawayWinners} [giveaway_winners] - A giveaway with public winners was completed.
+ * @property {GiveawayCompleted} [giveaway_completed] - Service message: a giveaway without public winners was completed.
+ * @property {VideoChatScheduled} [video_chat_scheduled] - Service message: video chat scheduled.
+ * @property {VideoChatStarted} [video_chat_started] - Service message: video chat started.
+ * @property {VideoChatEnded} [video_chat_ended] - Service message: video chat ended.
+ * @property {VideoChatParticipantsInvited} [video_chat_participants_invited] - Service message: new participants invited to a video chat.
+ * @property {WebAppData} [web_app_data] - Service message: data sent by a Web App.
+ * @property {InlineKeyboardMarkup} [reply_markup] - Inline keyboard attached to the message. login_url buttons are represented as ordinary url buttons.
  */
 
 /**
+ * Telegram user or bot.
  * @typedef {Object} User
  * @property {number} id - Unique identifier for this user or bot.
  * @property {boolean} is_bot - True if the user is a bot.
@@ -1638,247 +1662,267 @@
  */
 
 /**
+ * a chat.
  * @typedef {Object} Chat
- * @property {number} id
- * @property {string} type
- * @property {string} title
- * @property {string} [username]
- * @property {string} [first_name]
- * @property {string} [last_name]
- * @property {boolean} [is_forum]
- * @property {ChatPhoto} [photo]
- * @property {Array.<string>} [active_usernames]
- * @property {Array.<ReactionType>} [available_reactions]
- * @property {number} [accent_color_id]
- * @property {string} [background_custom_emoji_id]
- * @property {number} [profile_accent_color_id]
- * @property {string} [profile_background_custom_emoji_id]
- * @property {string} [emoji_status_custom_emoji_id]
- * @property {number} [emoji_status_expiration_date]
- * @property {string} [bio]
- * @property {boolean} [has_private_forwards]
- * @property {boolean} [has_restricted_voice_and_video_messages]
- * @property {boolean} [join_to_send_messages]
- * @property {boolean} [join_by_request]
- * @property {string} [description]
- * @property {string} [invite_link]
- * @property {Message} [pinned_message]
- * @property {ChatPermissions} [permissions]
- * @property {number} [slow_mode_delay]
- * @property {number} [message_auto_delete_time]
- * @property {boolean} [has_aggressive_anti_spam_enabled]
- * @property {boolean} [has_hidden_members]
- * @property {boolean} [has_protected_content]
- * @property {boolean} [has_visible_history]
- * @property {string} [sticker_set_name]
- * @property {boolean} [can_set_sticker_set]
- * @property {number} [linked_chat_id]
- * @property {ChatLocation} [location]
+ * @property {number} id - Unique identifier for this chat.
+ * @property {string} type - Type of chat, can be either "private", "group", "supergroup" or "channel".
+ * @property {string} title - Title, for supergroups, channels and group chats.
+ * @property {string} [username] - Username, for private chats, supergroups and channels if available.
+ * @property {string} [first_name] - First name of the other party in a private chat.
+ * @property {string} [last_name] - Last name of the other party in a private chat.
+ * @property {boolean} [is_forum] - True, if the supergroup chat is a forum.
+ * @property {ChatPhoto} [photo] - Chat photo. Returned only in getChat.
+ * @property {Array.<string>} [active_usernames] - f non-empty, the list of all active chat usernames.
+ * @property {Array.<ReactionType>} [available_reactions] - List of available reactions allowed in the chat.
+ * @property {number} [accent_color_id] - Identifier of the accent color for the chat name and backgrounds of the chat photo.
+ * @property {string} [background_custom_emoji_id] - Custom emoji identifier of emoji chosen by the chat for the reply header and link preview background.
+ * @property {number} [profile_accent_color_id] - Identifier of the accent color for the chat's profile background.
+ * @property {string} [profile_background_custom_emoji_id] - ustom emoji identifier of the emoji chosen by the chat for its profile background.
+ * @property {string} [emoji_status_custom_emoji_id] - Custom emoji identifier of the emoji status of the chat or the other party in a private chat.
+ * @property {number} [emoji_status_expiration_date] - Expiration date of the emoji status of the chat or the other party in a private chat.
+ * @property {string} [bio] - Bio of the other party in a private chat. Returned only in getChat.
+ * @property {boolean} [has_private_forwards] - True, if privacy settings of the other party in the private chat allows to use tg://user?id=<user_id> links only in chats with the user.
+ * @property {boolean} [has_restricted_voice_and_video_messages] - True, if the privacy settings of the other party restrict sending voice and video note messages in the private chat.
+ * @property {boolean} [join_to_send_messages] - True, if users need to join the supergroup before they can send messages.
+ * @property {boolean} [join_by_request] - True, if all users directly joining the supergroup need to be approved by supergroup administrators.
+ * @property {string} [description] - Description, for groups, supergroups and channel chats. Returned only in getChat.
+ * @property {string} [invite_link] - Primary invite link, for groups, supergroups and channel chats.
+ * @property {Message} [pinned_message] - The most recent pinned message.
+ * @property {ChatPermissions} [permissions] - Default chat member permissions, for groups and supergroups.
+ * @property {number} [slow_mode_delay] - For supergroups, the minimum allowed delay between consecutive messages sent by each unprivileged user.
+ * @property {number} [unrestrict_boost_count] - For supergroups, the minimum number of boosts that a non-administrator user needs to add in order to ignore slow mode and chat permissions.
+ * @property {number} [message_auto_delete_time] - The time after which all messages sent to the chat will be automatically deleted.
+ * @property {boolean} [has_aggressive_anti_spam_enabled] - True, if aggressive anti-spam checks are enabled in the supergroup.
+ * @property {boolean} [has_hidden_members] - True, if non-administrators can only get the list of bots and administrators in the chat.
+ * @property {boolean} [has_protected_content] - True, if messages from the chat can't be forwarded to other chats.
+ * @property {boolean} [has_visible_history] - True, if new chat members will have access to old messages.
+ * @property {string} [sticker_set_name] - For supergroups, name of group sticker set. Returned only in getChat.
+ * @property {boolean} [can_set_sticker_set] - True, if the bot can change the group sticker set. Returned only in getChat.
+ * @property {string} [custom_emoji_sticker_set_name] - For supergroups, the name of the group's custom emoji sticker set.
+ * @property {number} [linked_chat_id] - Unique identifier for the linked chat, i.e.
+ * @property {ChatLocation} [location] - For supergroups, the location to which the supergroup is connected. Returned only in getChat.
  */
 
 /**
+ * the origin of a message. It can be one of.
  * @typedef {Object} MessageOrigin
- * @property {string} type
- * @property {number} date
- * @property {User} sender_user
- * @property {string} sender_user_name
- * @property {Chat} sender_chat
- * @property {string} [author_signature]
- * @property {Chat} chat
- * @property {number} message_id
+ * @property {string} type - Type of the message origin, always "user".
+ * @property {number} date - Date the message was sent originally in Unix time.
+ * @property {User} sender_user - User that sent the message originally.
+ * @property {string} sender_user_name - Name of the user that sent the message originally.
+ * @property {Chat} sender_chat - Chat that sent the message originally.
+ * @property {string} [author_signature] - Signature of the original post author.
+ * @property {Chat} chat - Channel chat to which the message was originally sent.
+ * @property {number} message_id - Unique message identifier inside the chat.
  */
 
 /**
+ * contains information about a message that is being replied to, which may come from another chat or forum topic.
  * @typedef {Object} ExternalReplyInfo
- * @property {MessageOrigin} origin
- * @property {Chat} [chat]
- * @property {number} [message_id]
- * @property {LinkPreviewOptions} [link_preview_options]
- * @property {Animation} [animation]
- * @property {Audio} [audio]
- * @property {Document} [document]
- * @property {Array.<PhotoSize>} [photo]
- * @property {Sticker} [sticker]
- * @property {Story} [story]
- * @property {Video} [video]
- * @property {VideoNote} [video_note]
- * @property {Voice} [voice]
- * @property {boolean} [has_media_spoiler]
- * @property {Contact} [contact]
- * @property {Dice} [dice]
- * @property {Game} [game]
- * @property {Giveaway} [giveaway]
- * @property {GiveawayWinners} [giveaway_winners]
- * @property {Invoice} [invoice]
- * @property {Location} [location]
- * @property {Poll} [poll]
- * @property {Venue} [venue]
+ * @property {MessageOrigin} origin - Origin of the message replied to by the given message
+ * @property {Chat} [chat] - Chat the original message belongs to.
+ * @property {number} [message_id] - Unique message identifier inside the original chat.
+ * @property {LinkPreviewOptions} [link_preview_options] - Options used for link preview generation for the original message, if it is a text message.
+ * @property {Animation} [animation] - Message is an animation, information about the animation.
+ * @property {Audio} [audio] - Message is an audio file, information about the file.
+ * @property {Document} [document] - Message is a general file, information about the file.
+ * @property {Array.<PhotoSize>} [photo] - Message is a photo, available sizes of the photo.
+ * @property {Sticker} [sticker] - Message is a sticker, information about the sticker.
+ * @property {Story} [story] - Message is a forwarded story.
+ * @property {Video} [video] - Message is a video, information about the video.
+ * @property {VideoNote} [video_note] - Message is a video note, information about the video message.
+ * @property {Voice} [voice] - Message is a voice message, information about the file.
+ * @property {boolean} [has_media_spoiler] - True, if the message media is covered by a spoiler animation.
+ * @property {Contact} [contact] - Message is a shared contact, information about the contact.
+ * @property {Dice} [dice] - Message is a dice with random value.
+ * @property {Game} [game] - Message is a game, information about the game.
+ * @property {Giveaway} [giveaway] - Message is a scheduled giveaway, information about the giveaway.
+ * @property {GiveawayWinners} [giveaway_winners] - A giveaway with public winners was completed.
+ * @property {Invoice} [invoice] - Message is an invoice for a payment, information about the invoice.
+ * @property {Location} [location] - Message is a shared location, information about the location.
+ * @property {Poll} [poll] - Message is a native poll, information about the poll.
+ * @property {Venue} [venue] - Message is a venue, information about the venue.
  */
 
 /**
+ * contains information about the quoted part of a message that is replied to by the given message.
  * @typedef {Object} TextQuote
- * @property {string} text
- * @property {Array.<MessageEntity>} [entities]
- * @property {number} position
- * @property {boolean} [is_manual]
+ * @property {string} text - Text of the quoted part of a message that is replied to by the given message.
+ * @property {Array.<MessageEntity>} [entities] - Special entities that appear in the quote.
+ * @property {number} position - Approximate quote position in the original message in UTF-16 code units as specified by the sender.
+ * @property {boolean} [is_manual] - True, if the quote was chosen manually by the message sender.
  */
 
 /**
+ * one special entity in a text message.
  * @typedef {Object} MessageEntity
- * @property {string} type
- * @property {number} offset
- * @property {number} length
- * @property {string} [url]
- * @property {User} [user]
- * @property {string} [language]
- * @property {string} [custom_emoji_id]
+ * @property {string} type - Type of the entity.
+ * @property {number} offset - Offset in UTF-16 code units to the start of the entity.
+ * @property {number} length - Length of the entity in UTF-16 code units.
+ * @property {string} [url] - For "text_link" only, URL that will be opened after user taps on the text.
+ * @property {User} [user] - For "text_mention" only, the mentioned user.
+ * @property {string} [language] - For "pre" only, the programming language of the entity text.
+ * @property {string} [custom_emoji_id] - For "custom_emoji" only, unique identifier of the custom emoji. Use getCustomEmojiStickers to get full information about the .
  */
 
 /**
+ * the options used for link preview generation.
  * @typedef {Object} LinkPreviewOptions
- * @property {boolean} [is_disabled]
- * @property {string} [url]
- * @property {boolean} [prefer_small_media]
- * @property {boolean} [prefer_large_media]
- * @property {boolean} [show_above_text]
+ * @property {boolean} [is_disabled] - True, if the link preview is disabled.
+ * @property {string} [url] - URL to use for the link preview.
+ * @property {boolean} [prefer_small_media] - True, if the media in the link preview is supposed to be shrunk.
+ * @property {boolean} [prefer_large_media] - rue, if the media in the link preview is supposed to be enlarged.
+ * @property {boolean} [show_above_text] - True, if the link preview must be shown above the message text.
  */
 
 /**
+ * an animation file (GIF or H.264/MPEG-4 AVC video without sound).
  * @typedef {Object} Animation
- * @property {string} file_id
- * @property {string} file_unique_id
- * @property {number} width
- * @property {number} height
- * @property {number} duration
- * @property {PhotoSize} [thumbnail]
- * @property {string} [file_name]
- * @property {string} [mime_type]
- * @property {number} [file_size]
+ * @property {string} file_id - Identifier for this file, which can be used to download or reuse the file.
+ * @property {string} file_unique_id - Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
+ * @property {number} width - Video width as defined by sender.
+ * @property {number} height - Video height as defined by sender.
+ * @property {number} duration - Duration of the video in seconds as defined by sender.
+ * @property {PhotoSize} [thumbnail] - Animation thumbnail as defined by sender.
+ * @property {string} [file_name] - Original animation filename as defined by sender.
+ * @property {string} [mime_type] - MIME type of the file as defined by sender.
+ * @property {number} [file_size] - File size in bytes.
  */
 
 /**
+ * an audio file to be treated as music by the Telegram clients.
  * @typedef {Object} Audio
- * @property {string} file_id
- * @property {string} file_unique_id
- * @property {number} duration
- * @property {string} [performer]
- * @property {string} [title]
- * @property {string} [file_name]
- * @property {string} [mime_type]
- * @property {number} [file_size]
- * @property {PhotoSize} [thumbnail]
+ * @property {string} file_id - Identifier for this file, which can be used to download or reuse the file.
+ * @property {string} file_unique_id - Unique identifier for this file, which is supposed to be the same over time and for different bots.
+ * @property {number} duration - Duration of the audio in seconds as defined by sender.
+ * @property {string} [performer] - Performer of the audio as defined by sender or by audio tags.
+ * @property {string} [title] - Title of the audio as defined by sender or by audio tags.
+ * @property {string} [file_name] - Original filename as defined by sender.
+ * @property {string} [mime_type] - MIME type of the file as defined by sender.
+ * @property {number} [file_size] - File size in bytes.
+ * @property {PhotoSize} [thumbnail] - Thumbnail of the album cover to which the music file belongs
  */
 
 /**
+ * a general file (as opposed to photos, voice messages and audio files).
  * @typedef {Object} Document
- * @property {string} file_id
- * @property {string} file_unique_id
- * @property {PhotoSize} [thumbnail]
- * @property {string} [file_name]
- * @property {string} [mime_type]
- * @property {number} [file_size]
+ * @property {string} file_id - Identifier for this file, which can be used to download or reuse the file.
+ * @property {string} file_unique_id - Unique identifier for this file, which is supposed to be the same over time and for different bots.
+ * @property {PhotoSize} [thumbnail] - Document thumbnail as defined by sender.
+ * @property {string} [file_name] - Original filename as defined by sender.
+ * @property {string} [mime_type] - MIME type of the file as defined by sender.
+ * @property {number} [file_size] - File size in bytes.
  */
 
 /**
+ * one size of a photo or a file / sticker thumbnail.
  * @typedef {Object} PhotoSize
- * @property {string} file_id
- * @property {string} file_unique_id
- * @property {number} width
- * @property {number} height
- * @property {number} [file_size]
+ * @property {string} file_id - Identifier for this file, which can be used to download or reuse the file.
+ * @property {string} file_unique_id - Unique identifier for this file, which is supposed to be the same over time and for different bots.
+ * @property {number} width - Photo width.
+ * @property {number} height - Photo height.
+ * @property {number} [file_size] - File size in bytes.
  */
 
 /**
+ * a sticker.
  * @typedef {Object} Sticker
- * @property {string} file_id
- * @property {string} file_unique_id
- * @property {string} type
- * @property {number} width
- * @property {number} height
- * @property {boolean} is_animated
- * @property {boolean} is_video
- * @property {PhotoSize} [thumbnail]
- * @property {string} [emoji]
- * @property {string} [set_name]
- * @property {File} [premium_animation]
- * @property {MaskPosition} [mask_position]
- * @property {string} [custom_emoji_id]
- * @property {boolean} [needs_repainting]
- * @property {number} [file_size]
+ * @property {string} file_id - Identifier for this file, which can be used to download or reuse the file.
+ * @property {string} file_unique_id - Unique identifier for this file, which is supposed to be the same over time and for different bots.
+ * @property {string} type - Type of the sticker, currently one of "regular", "mask", "custom_emoji".
+ * @property {number} width - Sticker width.
+ * @property {number} height - Sticker height.
+ * @property {boolean} is_animated - True, if the sticker is animated.
+ * @property {boolean} is_video - True, if the sticker is a video sticker.
+ * @property {PhotoSize} [thumbnail] - Sticker thumbnail in the .WEBP or .JPG format.
+ * @property {string} [emoji] - Emoji associated with the sticker.
+ * @property {string} [set_name] - Name of the sticker set to which the sticker belongs.
+ * @property {File} [premium_animation] - For premium regular stickers, premium animation for the sticker.
+ * @property {MaskPosition} [mask_position] - For mask stickers, the position where the mask should be placed.
+ * @property {string} [custom_emoji_id] - For custom emoji stickers, unique identifier of the custom emoji.
+ * @property {boolean} [needs_repainting] - True, if the sticker must be repainted to a text color in messages.
+ * @property {number} [file_size] - File size in bytes.
  */
 
 /**
+ * a video file.
  * @typedef {Object} Video
- * @property {string} file_id
- * @property {string} file_unique_id
- * @property {number} width
- * @property {number} height
- * @property {number} duration
- * @property {PhotoSize} [thumbnail]
- * @property {string} [file_name]
- * @property {string} [mime_type]
- * @property {number} [file_size]
+ * @property {string} file_id - Identifier for this file, which can be used to download or reuse the file.
+ * @property {string} file_unique_id - Unique identifier for this file, which is supposed to be the same over time and for different bots.
+ * @property {number} width - Video width as defined by sender.
+ * @property {number} height - Video height as defined by sender.
+ * @property {number} duration - Duration of the video in seconds as defined by sender.
+ * @property {PhotoSize} [thumbnail] - Video thumbnail.
+ * @property {string} [file_name] - Original filename as defined by sender.
+ * @property {string} [mime_type] - MIME type of the file as defined by sender.
+ * @property {number} [file_size] - File size in bytes.
  */
 
 /**
+ * a video message (available in Telegram apps as of v.4.0).
  * @typedef {Object} VideoNote
- * @property {string} file_id
- * @property {string} file_unique_id
- * @property {number} length
- * @property {number} duration
- * @property {PhotoSize} [thumbnail]
- * @property {number} [file_size]
+ * @property {string} file_id - Identifier for this file, which can be used to download or reuse the file.
+ * @property {string} file_unique_id - Unique identifier for this file, which is supposed to be the same over time and for different bots.
+ * @property {number} length - Video width and height (diameter of the video message) as defined by sender.
+ * @property {number} duration - Duration of the video in seconds as defined by sender.
+ * @property {PhotoSize} [thumbnail] - Video thumbnail.
+ * @property {number} [file_size] - File size in bytes.
  */
 
 /**
+ * a voice note.
  * @typedef {Object} Voice
- * @property {string} file_id
- * @property {string} file_unique_id
- * @property {number} duration
- * @property {string} [mime_type]
- * @property {number} [file_size]
+ * @property {string} file_id - Identifier for this file, which can be used to download or reuse the file.
+ * @property {string} file_unique_id - Unique identifier for this file, which is supposed to be the same over time and for different bots.
+ * @property {number} duration - Duration of the audio in seconds as defined by sender.
+ * @property {string} [mime_type] - MIME type of the file as defined by sender.
+ * @property {number} [file_size] - File size in bytes.
  */
 
 /**
+ * a phone contact.
  * @typedef {Object} Contact
- * @property {string} phone_number
- * @property {string} first_name
- * @property {string} [last_name]
- * @property {number} [user_id]
- * @property {string} [vcard]
+ * @property {string} phone_number - Contact's phone number
+ * @property {string} first_name - Contact's first name
+ * @property {string} [last_name] - Contact's last name
+ * @property {number} [user_id] - Contact's user identifier in Telegram.
+ * @property {string} [vcard] - Additional data about the contact in the form of a vCard
  */
 
 /**
+ * an animated emoji that displays a random value.
  * @typedef {Object} Dice
- * @property {string} emoji
- * @property {number} value
+ * @property {string} emoji - Emoji on which the dice throw animation is based
+ * @property {number} value - Value of the dice, 1-6 for "🎲", "🎯" and "🎳" base emoji, 1-5 for "🏀" and "⚽" base emoji, 1-64 for "🎰" base emoji
  */
 
 /**
+ * a game.
  * @typedef {Object} Game
- * @property {string} title
- * @property {string} description
- * @property {Array.<PhotoSize>} photo
- * @property {string} [text]
- * @property {Array.<MessageEntity>} [text_entities]
- * @property {Animation} [animation]
+ * @property {string} title - Title of the game.
+ * @property {string} description - Description of the game.
+ * @property {Array.<PhotoSize>} photo - Photo that will be displayed in the game message in chats.
+ * @property {string} [text] - Brief description of the game or high scores included in the game message.
+ * @property {Array.<MessageEntity>} [text_entities] - Special entities that appear in text, such as usernames, URLs, bot commands, etc.
+ * @property {Animation} [animation] - Animation that will be displayed in the game message in chats. Upload via BotFather.
  */
 
 /**
+ * contains information about a poll.
  * @typedef {Object} Poll
- * @property {string} id
- * @property {string} question
- * @property {Array.<PollOption>} options
- * @property {number} total_voter_count
- * @property {boolean} is_closed
- * @property {boolean} is_anonymous
- * @property {string} type
- * @property {boolean} allows_multiple_answers
- * @property {number} [correct_option_id]
- * @property {string} [explanation]
- * @property {Array.<MessageEntity>} [explanation_entities]
- * @property {number} [open_period]
- * @property {number} [close_date]
+ * @property {string} id - Unique poll identifier.
+ * @property {string} question - Poll question, 1-300 characters.
+ * @property {Array.<PollOption>} options - List of poll options.
+ * @property {number} total_voter_count - Total number of users that voted in the poll.
+ * @property {boolean} is_closed - True, if the poll is closed.
+ * @property {boolean} is_anonymous - True, if the poll is anonymous.
+ * @property {string} type - Poll type, currently can be "regular" or "quiz".
+ * @property {boolean} allows_multiple_answers - rue, if the poll allows multiple answers.
+ * @property {number} [correct_option_id] - 0-based identifier of the correct answer option.
+ * @property {string} [explanation] - Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll.
+ * @property {Array.<MessageEntity>} [explanation_entities] - Special entities like usernames, URLs, bot commands, etc.
+ * @property {number} [open_period] - Amount of time in seconds the poll will be active after creation.
+ * @property {number} [close_date] - Point in time (Unix timestamp) when the poll will be automatically closed.
  */
 
 /**
