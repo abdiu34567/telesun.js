@@ -1099,28 +1099,27 @@
 /**
  * @typedef {Object} ctx
  * @property {function(): Update} update - incoming update.
- * @property {function(): Message} messageUpdate - New incoming message of any kind - text, photo, sticker, etc.
- * @property {function(): Message} editedMessageUpdate - Message edit notification for known messages.
- * @property {function(): Message} channelPostUpdate - New incoming channel post of any kind - text, photo, sticker, etc.
- * @property {function(): Message} editedChannelPostUpdate - Channel post edit notification for known posts.
- * @property {function(): MessageReactionUpdated} messageReactionUpdate - User changed a message reaction; requires bot as admin.
- * @property {function(): MessageReactionCountUpdated} messageReactionCountUpdate - Grouped anonymous message reaction changes.
+ * @property {function(): Message} message - New incoming message of any kind - text, photo, sticker, etc.
+ * @property {function(): Message} editedMessage - Message edit notification for known messages.
+ * @property {function(): Message} channelPost - New incoming channel post of any kind - text, photo, sticker, etc.
+ * @property {function(): Message} editedChannelPost - Channel post edit notification for known posts.
+ * @property {function(): MessageReactionUpdated} messageReaction - User changed a message reaction; requires bot as admin.
+ * @property {function(): MessageReactionCountUpdated} messageReactionCount - Grouped anonymous message reaction changes.
  * @property {function(): InlineQuery} inlineQueryUpdate - New incoming inline query
- * @property {function(): ChosenInlineResult} chosenInlineResultUpdate - User's choice from an inline query sent to chat.
- * @property {function(): CallbackQuery} callbackQueryUpdate - New incoming callback query
- * @property {function(): ShippingQuery} shippingQueryUpdate - New incoming shipping query. Only for invoices with flexible price
- * @property {function(): PreCheckoutQuery} preCheckoutQueryUpdate - New incoming pre-checkout query. Contains full information about checkout.
- * @property {function(): Poll} pollUpdate - Notification of new poll state; for stopped polls and those sent by the bot.
- * @property {function(): PollAnswer} pollAnswerUpdate - User changed their vote in a non-anonymous poll sent by the bot.
- * @property {function(): ChatMemberUpdated} myChatMemberUpdate - Bot's chat member status updated in a chat.
- * @property {function(): ChatMemberUpdated} chatMemberUpdate - Chat member's status updated; requires bot admin.
- * @property {function(): ChatJoinRequest} chatJoinRequestUpdate - Chat join request sent; requires bot's `can_invite_users` right.
- * @property {function(): ChatBoostUpdated} chatBoostUpdate - Chat boost added or changed; requires bot admin.
- * @property {function(): ChatBoostRemoved} removedChatBoostUpdate - Chat boost removed; requires bot admin.
+ * @property {function(): ChosenInlineResult} chosenInlineResult - User's choice from an inline query sent to chat.
+ * @property {function(): CallbackQuery} callbackQuery - New incoming callback query
+ * @property {function(): ShippingQuery} shippingQuery - New incoming shipping query. Only for invoices with flexible price
+ * @property {function(): PreCheckoutQuery} preCheckoutQuery - New incoming pre-checkout query. Contains full information about checkout.
+ * @property {function(): Poll} poll - Notification of new poll state; for stopped polls and those sent by the bot.
+ * @property {function(): PollAnswer} pollAnswer - User changed their vote in a non-anonymous poll sent by the bot.
+ * @property {function(): ChatMemberUpdated} myChatMember - Bot's chat member status updated in a chat.
+ * @property {function(): ChatMemberUpdated} chatMember - Chat member's status updated; requires bot admin.
+ * @property {function(): ChatJoinRequest} chatJoinRequest - Chat join request sent; requires bot's `can_invite_users` right.
+ * @property {function(): ChatBoostUpdated} chatBoost - Chat boost added or changed; requires bot admin.
+ * @property {function(): ChatBoostRemoved} removedChatBoost - Chat boost removed; requires bot admin.
  * @property {function(): string} updateType - get update type.
  * @property {function(): Chat} chat - chat.
  * @property {function(): From} from - user or bot.
- * @property {function(): Message} message - message.
  * @property {function(): string} chatId - Unique identifier of chat.
  * @property {function(): string} userId - Unique identifier of user.
  * @property {function(): number} messageId - Unique identifier of message.
