@@ -1105,7 +1105,7 @@
  * @property {function(): Message} editedChannelPost - Channel post edit notification for known posts.
  * @property {function(): MessageReactionUpdated} messageReaction - User changed a message reaction; requires bot as admin.
  * @property {function(): MessageReactionCountUpdated} messageReactionCount - Grouped anonymous message reaction changes.
- * @property {function(): InlineQuery} inlineQueryUpdate - New incoming inline query
+ * @property {function(): InlineQuery} inlineQuery - New incoming inline query
  * @property {function(): ChosenInlineResult} chosenInlineResult - User's choice from an inline query sent to chat.
  * @property {function(): CallbackQuery} callbackQuery - New incoming callback query
  * @property {function(): ShippingQuery} shippingQuery - New incoming shipping query. Only for invoices with flexible price
