@@ -323,17 +323,15 @@ var connectBot = class Telesun {
     const startTime = new Date().getTime();
     const maxDuration = 360000;
     const safetyMargin = 10000;
-
-    while (new Date().getTime() - startTime < maxDuration - safetyMargin) {
-      try {
-        // Now passing timeout to the polling method
+    try {
+      while (new Date().getTime() - startTime < maxDuration - safetyMargin) {
         this.polling({ limit: 100, timeout: timeout });
         if (sleep > 0) {
           Utilities.sleep(sleep); // Sleep based on configured duration
         }
-      } catch (error) {
-        console.error("Error during long polling:", error);
       }
+    } catch (error) {
+      throw new TelesunError("lONG_POLLING_ERROR", error);
     }
 
     console.log("Long polling completed.");
