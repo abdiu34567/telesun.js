@@ -155,9 +155,9 @@
 /**
  * Options for forwarding a single message from one chat to another.
  * @typedef {Object} ForwardMessageOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
- * @property {(number|string)} from_chat_id Unique identifier for the chat where the original message was sent or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} from_chat_id Unique identifier for the chat where the original message was sent (or channel username in the format `@channelusername`)
  * @property {number} message_id Unique message identifier to forward.
  * @property {boolean} [disable_notification] Sends the message silently. Users will receive a notification with no sound.
  * @property {boolean} [protect_content] Protects the content of the forwarded message from forwarding and saving.
@@ -166,9 +166,9 @@
 /**
  * Options for forwarding multiple messages from one chat to another.
  * @typedef {Object} ForwardMessagesOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
- * @property {(number|string)} from_chat_id Unique identifier for the chat where the original messages were sent or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} from_chat_id Unique identifier for the chat where the original messages were sent (or channel username in the format `@channelusername`).
  * @property {number[]} message_ids Array of unique message identifiers to forward.
  * @property {boolean} [disable_notification] Sends the messages silently. Users will receive a notification with no sound.
  * @property {boolean} [protect_content] Protects the content of the forwarded messages from forwarding and saving.
@@ -177,9 +177,9 @@
 /**
  * Options for copying a single message from one chat to another, potentially with a new caption.
  * @typedef {Object} CopyMessageOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
- * @property {(number|string)} from_chat_id Unique identifier for the chat where the original message was sent or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} from_chat_id Unique identifier for the chat where the original message was sent (or channel username in the format `@channelusername`).
  * @property {number} message_id Unique message identifier to copy.
  * @property {string} [caption] New caption for the message.
  * @property {Format} [parse_mode] Formatting options for the caption, Markdown or HTML.
@@ -193,9 +193,9 @@
 /**
  * Options for copying multiple messages from one chat to another without changing the caption.
  * @typedef {Object} CopyMessagesOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
- * @property {(number|string)} from_chat_id Unique identifier for the chat where the original messages were sent or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} from_chat_id Unique identifier for the chat where the original messages were sent (or channel username in the format `@channelusername`).
  * @property {number[]} message_ids Array of unique message identifiers to copy.
  * @property {boolean} [disable_notification] Sends the messages silently. Users will receive a notification with no sound.
  * @property {boolean} [protect_content] Protects the content of the copied messages from forwarding and saving.
@@ -205,7 +205,7 @@
 /**
  * Options for sending a photo.
  * @typedef {Object} SendPhotoOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
  * @property {(InputFile|string)} photo Photo to send.
  * @property {string} [caption] Photo caption, may also be used when resending photos by file_id.
@@ -278,7 +278,7 @@
 /**
  * Options for sending an animation.
  * @typedef {Object} SendAnimationOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
  * @property {(InputFile|string)} animation Animation to send.
  * @property {number} [duration] Duration of sent animation in seconds.
@@ -298,7 +298,7 @@
 /**
  * Options for sending a voice message.
  * @typedef {Object} SendVoiceOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
  * @property {(InputFile|string)} voice Audio file to send as a voice message.
  * @property {string} [caption] Caption for the voice message, 0-1024 characters after entities parsing.
@@ -314,7 +314,7 @@
 /**
  * Options for sending a video note.
  * @typedef {Object} SendVideoNoteOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
  * @property {(InputFile|string)} video_note Video note to send.
  * @property {number} [duration] Duration of the video note in seconds.
@@ -329,7 +329,7 @@
 /**
  * Options for sending a media group.
  * @typedef {Object} SendMediaGroupOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
  * @property {(InputMediaAudio[]|InputMediaDocument[]|InputMediaPhoto[]|InputMediaVideo[])} media A JSON-serialized array describing photos, videos, documents, or audios to be sent, making up a media group.
  * @property {boolean} [disable_notification] Sends the messages silently. Users will receive notifications with no sound.
@@ -340,7 +340,7 @@
 /**
  * Options for sending a location message.
  * @typedef {Object} SendLocationOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
  * @property {number} latitude Latitude of the location.
  * @property {number} longitude Longitude of the location.
@@ -357,7 +357,7 @@
 /**
  * Options for sending a venue message.
  * @typedef {Object} SendVenueOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
  * @property {number} latitude Latitude of the venue.
  * @property {number} longitude Longitude of the venue.
@@ -376,7 +376,7 @@
 /**
  * Options for sending a contact message.
  * @typedef {Object} SendContactOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
  * @property {string} phone_number Contact's phone number.
  * @property {string} first_name Contact's first name.
@@ -391,7 +391,7 @@
 /**
  * Options for sending a poll.
  * @typedef {Object} SendPollOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
  * @property {string} question Poll question, 1-300 characters.
  * @property {string[]} options List of answer options, 2-10 strings 1-100 characters each.
@@ -414,7 +414,7 @@
 /**
  * Options for sending a dice message.
  * @typedef {Object} SendDiceOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
  * @property {string} [emoji] Emoji on which the dice throw animation is based.
  * @property {boolean} [disable_notification] Sends the message silently. Users will receive a notification with no sound.
@@ -426,7 +426,7 @@
 /**
  * Options for sending chat action.
  * @typedef {Object} SendChatActionOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
  * @property {string} action Type of action to broadcast.
  */
@@ -434,7 +434,7 @@
 /**
  * Options for setting message reaction.
  * @typedef {Object} SetMessageReactionOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} message_id Identifier of the message to add the reaction to.
  * @property {ReactionType[]} [reaction] Types of reactions to set on the message.
  * @property {boolean} [is_big] Whether the reaction should be displayed in a larger format.
@@ -457,7 +457,7 @@
 /**
  * Options for banning a chat member.
  * @typedef {Object} BanChatMemberOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} user_id Unique identifier of the target user to be banned.
  * @property {number} [until_date] Date when the ban will be lifted. Unix time.
  * @property {boolean} [revoke_messages] Pass True to delete all messages from the chat for the user that is being removed.
@@ -466,7 +466,7 @@
 /**
  * Options for unbanning a previously banned user in a supergroup or channel.
  * @typedef {Object} UnbanChatMemberOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} user_id Unique identifier of the target user.
  * @property {boolean} [only_if_banned] Do the unban action only if the user is currently banned.
  */
@@ -474,7 +474,7 @@
 /**
  * Options for restricting a user in a supergroup.
  * @typedef {Object} RestrictChatMemberOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} user_id Unique identifier of the target user to restrict.
  * @property {ChatPermissions} permissions Permissions to be set for the restricted user.
  * @property {boolean} [use_independent_chat_permissions] Use independent permissions for the chat.
@@ -484,7 +484,7 @@
 /**
  * Options for promoting or demoting a user in a supergroup or channel.
  * @typedef {Object} PromoteChatMemberOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} user_id Unique identifier of the target user to promote or demote.
  * @property {boolean} [is_anonymous] The user's presence in chat is hidden.
  * @property {boolean} [can_manage_chat] The user can access the chat event log, chat statistics, message statistics in channels, see channel members, manage voice chats.
@@ -502,7 +502,7 @@
 /**
  * Options for setting a custom title for an administrator in a supergroup.
  * @typedef {Object} SetChatAdministratorCustomTitleOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} user_id Unique identifier of the target user to set a custom title.
  * @property {string} custom_title New custom title for the administrator; 0-16 characters, emoji are not allowed.
  */
@@ -510,21 +510,21 @@
 /**
  * Options for banning a channel chat in a supergroup or channel.
  * @typedef {Object} BanChatSenderChatOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} sender_chat_id Unique identifier of the target sender chat to ban.
  */
 
 /**
  * Options for unbanning a previously banned channel chat.
  * @typedef {Object} UnbanChatSenderChatOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} sender_chat_id Unique identifier of the target sender chat to unban.
  */
 
 /**
  * Options for setting default chat permissions for all members.
  * @typedef {Object} SetChatPermissionsOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {ChatPermissions} permissions New default chat permissions to set.
  * @property {boolean} [use_independent_chat_permissions] Specifies whether the chat supports independent default chat permissions for channels and supergroups.
  */
@@ -532,13 +532,13 @@
 /**
  * Options for generating a new primary invite link for a chat.
  * @typedef {Object} ExportChatInviteLinkOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  */
 
 /**
  * Options for creating an additional invite link for a chat.
  * @typedef {Object} CreateChatInviteLinkOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {string} [name] Invite link name.
  * @property {number} [expire_date] Date when the link will expire.
  * @property {number} [member_limit] Maximum number of users that can be invited.
@@ -548,7 +548,7 @@
 /**
  * Options for editing a non-primary invite link created by the bot.
  * @typedef {Object} EditChatInviteLinkOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {string} invite_link The invite link to edit.
  * @property {string} [name] New name for the invite link.
  * @property {number} [expire_date] New expiration date for the invite link.
@@ -559,48 +559,48 @@
 /**
  * Options for revoking an invite link created by the bot.
  * @typedef {Object} RevokeChatInviteLinkOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {string} invite_link The invite link to revoke.
  */
 
 /**
  * Options for managing a chat join request.
  * @typedef {Object} ChatJoinRequestOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} user_id Unique identifier of the target user.
  */
 
 /**
  * Options for setting a new chat photo.
  * @typedef {Object} SetChatPhotoOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {InputFile} photo New chat photo.
  */
 
 /**
  * Basic options for operations on a chat.
  * @typedef {Object} deleteChatPhotoOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  */
 
 /**
  * Options for changing the title of a chat.
  * @typedef {Object} SetChatTitleOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {string} title New chat title.
  */
 
 /**
  * Options for changing the description of a chat.
  * @typedef {Object} SetChatDescriptionOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {string} [description] New chat description.
  */
 
 /**
  * Options for pinning a message in a chat.
  * @typedef {Object} PinChatMessageOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} message_id Identifier of a message to pin.
  * @property {boolean} [disable_notification] If true, the message will be pinned silently. This means users will not receive a notification.
  */
@@ -608,41 +608,41 @@
 /**
  * Options for unpinning a chat message.
  * @typedef {Object} UnpinChatMessageOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_id] Identifier of a message to unpin. If not specified, the most recent pinned message, by sending date) will be unpinned.
  */
 
 /**
  * Options requiring only a chat ID.
  * @typedef {Object} ChatIdOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  */
 
 /**
  * Options for getting information about a chat member.
  * @typedef {Object} GetChatMemberOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} user_id Unique identifier of the target user.
  */
 
 /**
  * Options for getting information about a member of a chat.
  * @typedef {Object} GetChatMemberOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} user_id Unique identifier of the target user.
  */
 
 /**
  * Options for setting a new group sticker set for a supergroup.
  * @typedef {Object} SetChatStickerSetOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {string} sticker_set_name Name of the sticker set to be set as the group sticker set.
  */
 
 /**
  * Options for creating a topic in a forum supergroup chat.
  * @typedef {Object} CreateForumTopicOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {string} name Name of the forum topic.
  * @property {number} [icon_color] Color of the forum topic icon.
  * @property {string} [icon_custom_emoji_id] Custom emoji identifier to be used as the icon of the forum topic.
@@ -651,7 +651,7 @@
 /**
  * Options for editing the name and icon of a forum topic.
  * @typedef {Object} EditForumTopicOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} message_thread_id Unique identifier for the target message thread.
  * @property {string} [name] New name for the forum topic.
  * @property {string} [icon_custom_emoji_id] Custom emoji identifier to be used as the new icon of the forum topic.
@@ -660,14 +660,14 @@
 /**
  * Options for closing or reopening a topic in a forum supergroup chat.
  * @typedef {Object} ForumTopicManagementOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} message_thread_id Unique identifier for the target message thread.
  */
 
 /**
  * Options for editing the name of the 'General' topic in a forum supergroup chat.
  * @typedef {Object} EditGeneralForumTopicOptions
- * @property {(number|string)} chat_id The unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {string} name New name for the 'General' topic.
  */
 
@@ -745,14 +745,14 @@
 /**
  * Options for setting the chat menu button.
  * @typedef {Object} SetChatMenuButtonOptions
- * @property {number} [chat_id] Unique identifier for the target chat or username of the target channel, in the format @channelusername. Defaults to the bot's chat.
+ * @property {number} [chat_id] Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {MenuButton} [menu_button] The menu button to be set. If not specified, the button is removed.
  */
 
 /**
  * Options for getting the chat menu button.
  * @typedef {Object} GetChatMenuButtonOptions
- * @property {number} [chat_id] Unique identifier for the target chat or username of the target channel, in the format @channelusername. Defaults to the bot's chat.
+ * @property {number} [chat_id] Unique identifier for the target chat or username (in the format `@channelusername`).
  */
 
 /**
@@ -771,7 +771,7 @@
 /**
  * Options for editing the text of messages.
  * @typedef {Object} EditMessageTextOptions
- * @property {(number|string)} [chat_id] Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} [chat_id] Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_id] Identifier of the message to edit.
  * @property {string} [inline_message_id] Identifier of the inline message to edit.
  * @property {string} text New text of the message.
@@ -784,7 +784,7 @@
 /**
  * Options for editing the caption of a message.
  * @typedef {Object} EditMessageCaptionOptions
- * @property {(number|string)} [chat_id] Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} [chat_id] Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_id] Identifier of the message to edit.
  * @property {string} [inline_message_id] Identifier of the inline message.
  * @property {string} [caption] New caption of the message.
@@ -796,7 +796,7 @@
 /**
  * Options for editing the media content of messages.
  * @typedef {Object} EditMessageMediaOptions
- * @property {(number|string)} [chat_id] Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} [chat_id] Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_id] Identifier of the message to edit.
  * @property {string} [inline_message_id] Identifier of the inline message.
  * @property {InputMedia} media New media content of the message.
@@ -806,7 +806,7 @@
 /**
  * Options for editing the live location of a message.
  * @typedef {Object} EditMessageLiveLocationOptions
- * @property {(number|string)} [chat_id] Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} [chat_id] Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_id] Identifier of the message to edit.
  * @property {string} [inline_message_id] Identifier of the inline message.
  * @property {number} latitude Latitude of new location.
@@ -820,7 +820,7 @@
 /**
  * Options for stopping a live location message.
  * @typedef {Object} StopMessageLiveLocationOptions
- * @property {(number|string)} [chat_id] Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} [chat_id] Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_id] Identifier of the message to stop showing the live location.
  * @property {string} [inline_message_id] Identifier of the inline message to stop showing the live location.
  * @property {InlineKeyboardMarkup} [reply_markup] A JSON-serialized object for an inline keyboard.
@@ -829,7 +829,7 @@
 /**
  * Options for stopping a live location message.
  * @typedef {Object} StopMessageLiveLocationOptions
- * @property {(number|string)} [chat_id] Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} [chat_id] Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_id] Identifier of the message with live location to stop.
  * @property {string} [inline_message_id] Identifier of the inline message with live location to stop.
  * @property {InlineKeyboardMarkup} [reply_markup] A JSON-serialized object for a new inline keyboard.
@@ -838,7 +838,7 @@
 /**
  * Options for editing the reply markup of messages.
  * @typedef {Object} EditMessageReplyMarkupOptions
- * @property {(number|string)} [chat_id] Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} [chat_id] Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_id] Identifier of the message to edit.
  * @property {string} [inline_message_id] Identifier of the inline message to edit.
  * @property {InlineKeyboardMarkup} [reply_markup] A JSON-serialized object for a new inline keyboard.
@@ -847,7 +847,7 @@
 /**
  * Options for stopping a poll.
  * @typedef {Object} StopPollOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} message_id Identifier of the original message with the poll.
  * @property {InlineKeyboardMarkup} [reply_markup] A JSON-serialized object for a new inline keyboard.
  */
@@ -855,21 +855,21 @@
 /**
  * Options for deleting a message.
  * @typedef {Object} DeleteMessageOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} message_id Identifier of the message to delete.
  */
 
 /**
  * Options for deleting multiple messages.
  * @typedef {Object} DeleteMessagesOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number[]} message_ids Array of message identifiers to delete.
  */
 
 /**
  * Options for sending a sticker.
  * @typedef {Object} SendStickerOptions
- * @property {(number|string)} chat_id Unique identifier for the target chat or username of the target channel, in the format @channelusername.
+ * @property {(number|string)} chat_id Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] Unique identifier for the target message thread, only for messages in threads.
  * @property {(InputFile|string)} sticker Sticker to send. Can be a file_id as String to send a sticker that exists on the Telegram servers, or a file from the filesystem.
  * @property {string} [emoji] Emoji associated with the sticker.
@@ -1300,7 +1300,7 @@
 /**
  * Options for sending a message to a chat.
  * @typedef {Object} SendMessageOptions
- * @property {number|string} chat_id - The unique identifier for the target chat or username of the target channel. This can be a numeric ID or a string in the format of @channelusername.
+ * @property {number|string} chat_id - Unique identifier for the target chat or username (in the format `@channelusername`).
  * @property {number} [message_thread_id] - Unique identifier for the target message thread.
  * @property {string} text - Text of the message to be sent.
  * @property {Format} [parse_mode] - Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message.
