@@ -244,7 +244,7 @@
  * @property {number} [message_thread_id] Unique identifier for the target message thread.
  * @property {(InputFile|string)} document File to send.
  * @property {(InputFile|string)} [thumbnail] Thumbnail of the file to send.
- * @property {string} [caption] Document caption, may also be used when resending documents by file_id), 0-1024 characters after entities parsing.
+ * @property {string} [caption] Document caption, may also be used when resending documents by file_id, 0-1024 characters after entities parsing.
  * @property {Format} [parse_mode] Format of the caption text: Markdown or HTML.
  * @property {MessageEntity[]} [caption_entities] List of special entities that appear in the caption, which can be specified instead of parse_mode.
  * @property {boolean} [disable_content_type_detection] Disables automatic server-side content type detection for files uploaded using multipart/form-data.
@@ -264,7 +264,7 @@
  * @property {number} [width] Video width.
  * @property {number} [height] Video height.
  * @property {(InputFile|string)} [thumbnail] Thumbnail of the file to send.
- * @property {string} [caption] Video caption, may also be used when resending videos by file_id), 0-1024 characters after entities parsing.
+ * @property {string} [caption] Video caption, may also be used when resending videos by file_id, 0-1024 characters after entities parsing.
  * @property {Format} [parse_mode] Format of the caption text: Markdown or HTML.
  * @property {MessageEntity[]} [caption_entities] List of special entities that appear in the caption, which can be specified instead of parse_mode.
  * @property {boolean} [has_spoiler] Marks the caption as containing a spoiler.
@@ -1451,7 +1451,7 @@
  * @typedef {Object} ChatBoostRemoved
  * @property {Chat} chat - Chat which was boosted
  * @property {string} boost_id - Unique identifier of the boost
- * @property {number} remove_date - Point in time (Unix timestamp) when the boost was removed
+ * @property {number} remove_date - Point in time - Unix timestamp, when the boost was removed
  * @property {ChatBoostSource} source - Source of the removed boost
  */
 
@@ -1514,7 +1514,7 @@
  * @property {string} id - Unique query identifier.
  * @property {User} from - User who sent the query.
  * @property {string} currency - Three-letter ISO 4217 currency code.
- * @property {number} total_amount - Total price in the smallest units of the currency (integer, not float/double).
+ * @property {number} total_amount - Total price in the smallest units of the currency. integer, not float/double.
  * @property {string} invoice_payload - Bot specified invoice payload.
  * @property {string} [shipping_option_id] - Identifier of the shipping option chosen by the user.
  * @property {OrderInfo} [order_info] - Order information provided by the user.
@@ -1775,7 +1775,7 @@
  */
 
 /**
- * an animation file (GIF or H.264/MPEG-4 AVC video without sound).
+ * an animation file, GIF or H.264/MPEG-4 AVC video without sound.
  * @typedef {Object} Animation
  * @property {string} file_id - Identifier for this file, which can be used to download or reuse the file.
  * @property {string} file_unique_id - Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
@@ -1803,7 +1803,7 @@
  */
 
 /**
- * a general file (as opposed to photos, voice messages and audio files).
+ * a general file, as opposed to photos, voice messages and audio files.
  * @typedef {Object} Document
  * @property {string} file_id - Identifier for this file, which can be used to download or reuse the file.
  * @property {string} file_unique_id - Unique identifier for this file, which is supposed to be the same over time and for different bots.
@@ -1858,11 +1858,11 @@
  */
 
 /**
- * a video message (available in Telegram apps as of v.4.0).
+ * a video message, available in Telegram apps as of v.4.0.
  * @typedef {Object} VideoNote
  * @property {string} file_id - Identifier for this file, which can be used to download or reuse the file.
  * @property {string} file_unique_id - Unique identifier for this file, which is supposed to be the same over time and for different bots.
- * @property {number} length - Video width and height (diameter of the video message) as defined by sender.
+ * @property {number} length - Video width and height, diameter of the video message as defined by sender.
  * @property {number} duration - Duration of the video in seconds as defined by sender.
  * @property {PhotoSize} [thumbnail] - Video thumbnail.
  * @property {number} [file_size] - File size in bytes.
@@ -1921,7 +1921,7 @@
  * @property {string} [explanation] - Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll.
  * @property {Array.<MessageEntity>} [explanation_entities] - Special entities like usernames, URLs, bot commands, etc.
  * @property {number} [open_period] - Amount of time in seconds the poll will be active after creation.
- * @property {number} [close_date] - Point in time (Unix timestamp) when the poll will be automatically closed.
+ * @property {number} [close_date] - Point in time - Unix timestamp, when the poll will be automatically closed.
  */
 
 /**
@@ -1931,7 +1931,7 @@
  * @property {string} title - Name of the venue
  * @property {string} address - Address of the venue
  * @property {string} [foursquare_id] - Foursquare identifier of the venue
- * @property {string} [foursquare_type] - Foursquare type of the venue. ex. `arts_entertainment/default`, `arts_entertainment/aquarium or `food/icecream`.)
+ * @property {string} [foursquare_type] - Foursquare type of the venue. ex. `arts_entertainment/default`, `arts_entertainment/aquarium or `food/icecream`.
  * @property {string} [google_place_id] - Google Places identifier of the venue.
  * @property {string} [google_place_type] - Google Places type of the venue.
  */
@@ -1960,14 +1960,14 @@
  * @property {string} description - Product description
  * @property {string} start_parameter - Unique bot deep-linking parameter that can be used to generate this invoice
  * @property {string} currency - Three-letter ISO 4217 currency code
- * @property {number} total_amount - Total price in the smallest units of the currency (integer, not float/double).
+ * @property {number} total_amount - Total price in the smallest units of the currency, integer, not float/double.
  */
 
 /**
  * contains basic information about a successful payment.
  * @typedef {Object} SuccessfulPayment
  * @property {string} currency - Three-letter ISO 4217 currency code.
- * @property {number} total_amount - Total price in the smallest units of the currency (integer, not float/double).
+ * @property {number} total_amount - Total price in the smallest units of the currency, integer, not float/double.
  * @property {string} invoice_payload - Bot specified invoice payload.
  * @property {string} shipping_option_id - Identifier of the shipping option chosen by the user.
  * @property {OrderInfo} order_info - Order information provided by the user.
@@ -2031,7 +2031,7 @@
  * a message about a scheduled giveaway.
  * @typedef {Object} Giveaway
  * @property {Array.<Chat>} chats - The list of chats which the user must join to participate in the giveaway
- * @property {number} winners_selection_date - Point in time (Unix timestamp) when winners of the giveaway will be selected
+ * @property {number} winners_selection_date - Point in time - Unix timestamp, when winners of the giveaway will be selected
  * @property {number} winner_count - The number of users which are supposed to be selected as winners of the giveaway
  * @property {boolean} [only_new_members] - True, if only users who join the chats after the giveaway started should be eligible to win
  * @property {boolean} [has_public_winners] - True, if the list of giveaway winners will be visible to everyone
@@ -2045,7 +2045,7 @@
  * @typedef {Object} GiveawayWinners
  * @property {Chat} chat - The chat that created the giveaway
  * @property {number} giveaway_message_id - Identifier of the message with the giveaway in the chat
- * @property {number} winners_selection_date - Point in time (Unix timestamp) when winners of the giveaway were selected
+ * @property {number} winners_selection_date - Point in time - Unix timestamp when winners of the giveaway were selected
  * @property {number} winner_count - Total number of winners in the giveaway
  * @property {Array.<User>} winners - List of up to 100 winners of the giveaway
  * @property {number} [additional_chat_count] - The number of other chats the user had to join in order to be eligible for the giveaway
@@ -2067,7 +2067,7 @@
 /**
  * a service message about a video chat scheduled in the chat.
  * @typedef {Object} VideoChatScheduled
- * @property {number} start_date - Point in time (Unix timestamp) when the video chat is supposed to be started by a chat administrator
+ * @property {number} start_date - Point in time - Unix timestamp, when the video chat is supposed to be started by a chat administrator
  */
 
 /**
@@ -2151,7 +2151,7 @@
  * a user's profile pictures.
  * @typedef {Object} UserProfilePhotos
  * @property {number} total_count - Total number of profile pictures the target user has.
- * @property {Array<Array<PhotoSize>>} photos - Requested profile pictures (in up to 4 sizes each).
+ * @property {Array<Array<PhotoSize>>} photos - Requested profile pictures, in up to 4 sizes each.
  */
 
 /**
@@ -2227,10 +2227,10 @@
 /**
  * a chat photo.
  * @typedef {Object} ChatPhoto
- * @property {string} small_file_id - File identifier of small (160x160) chat photo.
- * @property {string} small_file_unique_id - Unique file identifier of small (160x160) chat photo, which is supposed to be the same over time and for different bots.
- * @property {string} big_file_id - File identifier of big (640x640) chat photo.
- * @property {string} big_file_unique_id - Unique file identifier of big (640x640) chat photo, which is supposed to be the same over time and for different bots.
+ * @property {string} small_file_id - File identifier of small - 160x160 chat photo.
+ * @property {string} small_file_unique_id - Unique file identifier of small - 160x160 chat photo, which is supposed to be the same over time and for different bots.
+ * @property {string} big_file_id - File identifier of big - 640x640 chat photo.
+ * @property {string} big_file_unique_id - Unique file identifier of big - 640x640 chat photo, which is supposed to be the same over time and for different bots.
  */
 
 /**
@@ -2242,7 +2242,7 @@
  * @property {boolean} is_primary - True, if the link is primary.
  * @property {boolean} is_revoked - True, if the link is revoked.
  * @property {string} name - Invite link name.
- * @property {number} expire_date - Point in time (Unix timestamp) when the link will expire or has been expired.
+ * @property {number} expire_date - Point in time - Unix timestamp when the link will expire or has been expired.
  * @property {number} member_limit - The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link
  * @property {number} pending_join_request_count - Number of pending join requests created using this link
  */
@@ -2544,8 +2544,8 @@
  * contains information about a chat boost.
  * @typedef {Object} ChatBoost
  * @property {string} boost_id - Unique identifier of the boost.
- * @property {number} add_date - Point in time (Unix timestamp) when the chat was boosted.
- * @property {number} expiration_date - Point in time (Unix timestamp) when the boost will automatically expire.
+ * @property {number} add_date - Point in time - Unix timestamp when the chat was boosted.
+ * @property {number} expiration_date - Point in time - Unix timestamp when the boost will automatically expire.
  * @property {ChatBoostSource} source - Source of the added boost.
  */
 
@@ -2595,7 +2595,7 @@
  */
 
 /**
- * an animation file (GIF or H.264/MPEG-4 AVC video without sound) to be sent.
+ * an animation file GIF or H.264/MPEG-4 AVC video without sound to be sent.
  * @typedef {Object} InputMediaAnimation
  * @property {string} type - Type of the result, Must be `animation`.
  * @property {string} media - File to send.
@@ -2744,7 +2744,7 @@
  * @property {number} [gif_width] - Width of the GIF.
  * @property {number} [gif_height] - Height of the GIF.
  * @property {number} [gif_duration] - Duration of the GIF in seconds.
- * @property {string} thumbnail_url - URL of the static (JPEG or GIF) or animated (MPEG4) thumbnail for the result.
+ * @property {string} thumbnail_url - URL of the static JPEG or GIF or animated MPEG4 thumbnail for the result.
  * @property {string} [thumbnail_mime_type] - MIME type of the thumbnail, must be one of `image/jpeg`, `image/gif`, or `video/mp4`.
  * @property {string} [title] - Title for the result.
  * @property {string} [caption] - Caption of the GIF file to be sent, 0-1024 characters after entities parsing.
@@ -2755,7 +2755,7 @@
  */
 
 /**
- * a link to a video animation (H.264/MPEG-4 AVC video without sound).
+ * a link to a video animation H.264/MPEG-4 AVC video without sound.
  * @typedef {Object} InlineQueryResultMpeg4Gif
  * @property {string} type - Type of the result, must be mpeg4_gif
  * @property {string} id - Unique identifier for this result, 1-64 bytes
@@ -2763,7 +2763,7 @@
  * @property {number} [mpeg4_width] - Video width
  * @property {number} [mpeg4_height] - Video height
  * @property {number} [mpeg4_duration] - Video duration in seconds
- * @property {string} thumbnail_url - URL of the static (JPEG or GIF) or animated (MPEG4) thumbnail for the result
+ * @property {string} thumbnail_url - URL of the static JPEG or GIF or animated MPEG4 thumbnail for the result
  * @property {string} [thumbnail_mime_type] - MIME type of the thumbnail, must be one of `image/jpeg`, `image/gif`, or `video/mp4`. Defaults to `image/jpeg`
  * @property {string} [title] - Title for the result.
  * @property {string} [caption] - Caption of the MPEG-4 file to be sent, 0-1024 characters after entities parsing.
@@ -2780,7 +2780,7 @@
  * @property {string} id - Unique identifier for this result, 1-64 bytes.
  * @property {string} video_url - A valid URL for the embedded video player or video file.
  * @property {string} mime_type - MIME type of the content of the video URL, `text/html` or `video/mp4`.
- * @property {string} thumbnail_url - URL of the thumbnail (JPEG only) for the video.
+ * @property {string} thumbnail_url - URL of the thumbnail JPEG only for the video.
  * @property {string} title - Title for the result.
  * @property {string} [caption] - Caption of the video to be sent, 0-1024 characters after entities parsing.
  * @property {string} [parse_mode] - Mode for parsing entities in the video caption. See formatting options for more details.
@@ -2838,7 +2838,7 @@
  * @property {string} [description] - Short description of the result.
  * @property {InlineKeyboardMarkup} [reply_markup] - Inline keyboard attached to the message.
  * @property {InputMessageContent} [input_message_content] - Content of the message to be sent instead of the file.
- * @property {string} [thumbnail_url] - URL of the thumbnail (JPEG only) for the file.
+ * @property {string} [thumbnail_url] - URL of the thumbnail JPEG only for the file.
  * @property {number} [thumbnail_width] - Thumbnail width.
  * @property {number} [thumbnail_height] - Thumbnail height.
  */
@@ -2937,7 +2937,7 @@
  */
 
 /**
- * a link to a video animation (H.264/MPEG-4 AVC video without sound) stored on the Telegram servers.
+ * a link to a video animation H.264/MPEG-4 AVC video without sound stored on the Telegram servers.
  * @typedef {Object} InlineQueryResultCachedMpeg4Gif
  * @property {string} type - Type of the result, must be `mpeg4_gif`.
  * @property {string} id - Unique identifier for this result, 1-64 bytes.
@@ -3049,7 +3049,7 @@
  * @property {string} title - Name of the venue.
  * @property {string} address - Address of the venue.
  * @property {string} [foursquare_id] - Foursquare identifier of the venue.
- * @property {string} [foursquare_type] - Foursquare type of the venue, if known. (For example, `arts_entertainment/default`, `arts_entertainment/aquarium` or `food/icecream`.)
+ * @property {string} [foursquare_type] - Foursquare type of the venue, if known. For example, `arts_entertainment/default`, `arts_entertainment/aquarium` or `food/icecream`.
  * @property {string} [google_place_id] - Google Places identifier of the venue.
  * @property {string} [google_place_type] - Google Places type of the venue.
  */
