@@ -1098,7 +1098,7 @@
 
 /**
  * @typedef {Object} ctx
- * @property {function(): Update} update - incoming update.
+ * @property {Update} update - incoming update.
  * @property {function(): Message} message - New incoming message of any kind - text, photo, sticker, etc.
  * @property {function(): Message} editedMessage - Message edit notification for known messages.
  * @property {function(): Message} channelPost - New incoming channel post of any kind - text, photo, sticker, etc.
