@@ -8,8 +8,6 @@ Modern Telegram Bot API framework for App Script
 [![Telesun](https://img.shields.io/badge/telesun-v2.0-f36caf.svg?style=flat-square)](https://core.telegram.org/bots/api)
 [![English chat](https://img.shields.io/badge/English%20chat-grey?style=flat-square&logo=telegram)](https://t.me/App_Script_Js)
 
-</header>
-
 ## Introduction
 
 A Telegram bot is a program that offers functions and automations that Telegram users can integrate in their chats, channels, or groups
